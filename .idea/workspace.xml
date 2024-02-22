@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b220b6fa-cecb-4107-bcf5-1772d35348f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Shared/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Shared/components/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logofinalnews.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/UserSide/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/UserSide/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +178,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\Team-I-news_aggregator-\public" />
       <recent name="C:\laragon\www\Team-I-news_aggregator-\resources\views\General" />
     </key>
   </component>
