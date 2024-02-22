@@ -35,6 +35,9 @@ Route::post('/rss.store', [PromptController::class, 'store'])->name('rss.store')
 
 
 // START IMAD
+Route::get('/homeuser', function () {
+    return view('UserSide.home');
+})->name('homeuser');
 
 
 // END IMAD
