@@ -14,8 +14,25 @@ use App\Http\Controllers\AdminSide\MainController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+// START HAMZA
+
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
+// END HAMZA
+
+
+// START NAWFAL
+
+
+
+// END NAWFAL
+
+
+// START IMAD
+
+
+// END IMAD
