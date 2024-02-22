@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b220b6fa-cecb-4107-bcf5-1772d35348f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin-Side/deletemelater" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/UserSide/deletemelater" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User-Side/deletemelater" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin-Side/deletemelater" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Shared/components/side-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Shared/components/side-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/User-Side/deletemelater" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Shared/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Shared/components/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +176,16 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\Team-I-news_aggregator-\resources\views\General" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />

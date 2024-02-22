@@ -33,6 +33,9 @@ Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash
 
 
 // START IMAD
+Route::get('/homeuser', function () {
+    return view('UserSide.home');
+})->name('homeuser');
 
 
 // END IMAD
