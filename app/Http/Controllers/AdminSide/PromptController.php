@@ -4,7 +4,7 @@ namespace App\Http\Controllers\AdminSide;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SimpleXMLElement;
-use App\Models\AdminSide\Rssdata;
+use App\Models\AdminSide\Rsslist;
 
 class PromptController extends Controller
 {
@@ -32,13 +32,13 @@ class PromptController extends Controller
             $link = (string)$item->link;
             $description = (string)$item->description;
             $pubDate = (string)$item->pubDate;
-            $image = isset($item->image) ? (string)$item->image : null;
-            $creator = isset($item->children('dc', true)->creator) ? (string)$item->children('dc', true)->creator : null;
-            $category = isset($item->category) ? (string)$item->category : null;
+            $image = isset($item->image) ? (string)$item->image : 'no_image';
+            $creator = isset($item->children('dc', true)->creator) ? (string)$item->children('dc', true)->creator : 'no_creator';
+            $category = isset($item->category) ? (string)$item->category : 'no_category';
 
             // Push the extracted information into the items array
 //            $items[] = compact('title', 'link', 'description', 'pubDate', 'image', 'creator', 'category');
-            Rssdata::create([
+            Rsslist::create([
                 'title' => $title,
                 'link' => $link,
                 'description' => $description,

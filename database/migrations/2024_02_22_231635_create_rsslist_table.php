@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rssdata', function (Blueprint $table) {
+        Schema::create('rsslist', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->string('category');
+            $table->text('description');
+            $table->string('link', 500);
             $table->dateTime('pubDate');
-            $table->string('link');
-            $table->string('creator');
-            $table->string('image')->default(null);
+            $table->string('category')->nullable();
+            $table->string('creator')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rssdata');
+        Schema::dropIfExists('rsslist');
     }
 };
