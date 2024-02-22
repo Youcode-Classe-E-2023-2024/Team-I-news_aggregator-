@@ -1,18 +1,4 @@
 <?php
-//
-//namespace App\Http\Controllers\AdminSide;
-//
-//use App\Http\Controllers\Controller;
-//use Illuminate\Http\Request;
-//
-//class PromptController extends Controller
-//{
-//    public function trait_rss() {
-//        dd(request());
-//    }
-//}
-
-
 namespace App\Http\Controllers\AdminSide;
 
 use App\Http\Controllers\Controller;
@@ -27,8 +13,6 @@ class PromptController extends Controller
         $request->validate([
             'rssLink' => 'required|url',
         ]);
-
-//        dd($request->rssLink);
 
         // Fetch XML data from the RSS link
         $rssLink = $request->input('rssLink');
@@ -54,6 +38,6 @@ class PromptController extends Controller
         }
 
         // Pass the transformed data to the view for rendering
-        return view('AdminSide.layout.prompt-section', compact('items'));
+        return view('AdminSide.main', compact('items'));
     }
 }

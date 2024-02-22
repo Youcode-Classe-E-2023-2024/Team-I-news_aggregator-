@@ -1,66 +1,80 @@
 <main class="flex bg-gray-900">
     <!-- component -->
-    <div class="w-full flex flex-col gap-8 items-center justify-center min-h-screen bg-gray-800">
+    <div class="w-full h-full bg-gray-800 min-h-screen flex items-center justify-center">
+        <div class="flex flex-col gap-8 items-center justify-center bg-green-500 rounded-md p-12">
+            <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
+            <form
+                action="{{ route('rss.store') }}" method="post"
+                class="mx-auto min-w-[700px] relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-md gap-2 shadow-2xl focus-within:border-gray-300"
+                for="search-bar">
+                @csrf
+                <input name="rssLink" id="search-bar" placeholder="Search By RSS link"
+                       class="w-full px-6 py-2 w-full rounded-md flex-1 outline-none bg-white text-gray-700">
+                <button
+                    type="submit"
+                    class="w-full md:w-auto px-6 py-3 bg-black border-black text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70">
 
-        <h1 class="text-2xl">Add RSS links to DataBase</h1>
-        <!-- Search component  -->
-        <form action="{{ route('rss.store') }}" method="post" class="flex border border-white border-solid  rounded-full bg-[#0d1829] px-2 w-full max-w-[600px]">
-            @csrf
-            <input
-                type="text"
-                name="rssLink"
-                class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
-                placeholder="Search by RSS link"
-            />
-            <button type="submit" class="relative p-2 bg-[#0d1829] rounded-full">
-                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="relative">
 
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <!-- Loading animation change opacity to display -->
+                        <div
+                            class="flex items-center justify-center h-3 w-3 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 transition-all">
+                            <svg class="opacity-0 animate-spin w-full h-full" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                 viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </div>
 
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
-                    <g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
-
-                </svg>
-            </button>
-        </form>
-
-        <div class="w-[50%] h-[50%] border border-white border-solid bg-gray-900 rounded-md">
-            <a href="#" class="h-full w-full rounded-xl">
-
-                <!-- Badge -->
-                <p class="bg-sky-500 w-fit px-4 py-1 text-sm font-bold text-white rounded-tl-lg rounded-br-xl"> FEATURED </p>
-
-                <div class="grid grid-cols-6 p-5 gap-y-2">
-
-                    <!-- Profile Picture -->
-                    <div>
-                        <img src="https://picsum.photos/seed/2/200/200" class="max-w-16 max-h-16 rounded-full" />
-                    </div>
-
-                    <!-- Description -->
-                    <div class="col-span-5 md:col-span-4 ml-4">
-
-                        <p class="text-sky-500 font-bold text-xs"> 20+ SPOTS LEFT </p>
-
-                        <p class="text-gray-600 font-bold"> [Intermediate/Advanced] Tea Time Conversation </p>
-
-                        <p class="text-gray-400"> Sat, Mar 12 . 7:00 - 8:30 AM </p>
-
-                        <p class="text-gray-400"> Beginner speakers </p>
+                        <div class="flex items-center transition-all opacity-1 valid:"><span
+                                class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
+                    Search
+                </span>
+                        </div>
 
                     </div>
 
-                    <!-- Price -->
-                    <div class="flex col-start-2 ml-4 md:col-start-auto md:ml-0 md:justify-end">
-                        <p class="rounded-lg text-sky-500 font-bold bg-sky-100  py-1 px-3 text-sm w-fit h-fit"> $ 5 </p>
+                </button>
+            </form>
+
+            <div class="w-full h-[350px]  border-white border-solid bg-gray-900 rounded-md">
+                @if(null)
+                    <a href="#" class="h-full w-full rounded-xl">
+
+                    <!-- Badge -->
+                    <p></p>
+                    <div class="grid grid-cols-6 p-5 gap-y-2">
+
+                        <!-- Profile Picture -->
+                        <div>
+                            <img src="https://picsum.photos/seed/2/200/200" class="max-w-16 max-h-16 rounded-full" />
+                        </div>
+
+                        <!-- Description -->
+                        <div class="col-span-5 md:col-span-4 ml-4">
+
+                            <p class="text-sky-500 font-bold text-xs"> 20+ SPOTS LEFT </p>
+
+                            <p class="text-gray-600 font-bold"> [Intermediate/Advanced] Tea Time Conversation </p>
+
+                            <p class="text-gray-400"> Sat, Mar 12 . 7:00 - 8:30 AM </p>
+
+                            <p class="text-gray-400"> Beginner speakers </p>
+
+                        </div>
                     </div>
 
-                </div>
+                </a>
+                @else
+                    <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center">
 
-            </a>
+                    </div>
+                @endif
+            </div>
         </div>
-
     </div>
 </main>
 
@@ -75,9 +89,12 @@
                             <h2 class="text-xl font-bold mb-2">{{ $item['title'] }}</h2>
                             <p class="text-gray-700">{{ $item['pubDate'] }}</p>
                             <p class="text-gray-600 mt-2">{{ $item['description'] }}</p>
+                            <div>
+{{--                                <a href="{{$item['link'] }}">link</a>--}}
+                            </div>
                         </div>
                         @if ($item['image'])
-                            <img src="{{ $item['image'] }}" class="w-full h-auto" alt="{{ $item['title'] }}">
+                            <img src="{{ $item['image'] }}" class="w-full h-auto w-[100px]" alt="{{ $item['title'] }}">
                         @endif
                     </a>
                 @endforeach

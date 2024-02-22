@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('rssdata', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('category');
+            $table->dateTime('pubDate');
+            $table->string('link');
+            $table->string('creator');
+            $table->string('image')->default(null);
             $table->timestamps();
         });
     }
