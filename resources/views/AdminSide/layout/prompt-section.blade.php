@@ -1,7 +1,7 @@
 <main class="flex bg-gray-900">
     <!-- component -->
     <div class="w-full h-full bg-gray-800 min-h-screen flex items-center justify-center">
-        <div class="flex flex-col gap-8 items-center justify-center bg-green-500 rounded-md p-12">
+        <div class="flex flex-col gap-8 items-center justify-center bg-gray-900 rounded-md p-12 border-[0.4x] border-solid border-white">
             <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
             <form
                 action="{{ route('rss.store') }}" method="post"
@@ -68,6 +68,10 @@
                     </div>
 
                 </a>
+                @elseif(session('success'))
+                    <div class="text-2xl text-green-500">
+                        {{ session('success') }}
+                    </div>
                 @else
                     <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center">
 
@@ -89,9 +93,8 @@
                             <h2 class="text-xl font-bold mb-2">{{ $item['title'] }}</h2>
                             <p class="text-gray-700">{{ $item['pubDate'] }}</p>
                             <p class="text-gray-600 mt-2">{{ $item['description'] }}</p>
-                            <div>
-{{--                                <a href="{{$item['link'] }}">link</a>--}}
-                            </div>
+                            <p class="text-gray-600 mt-2">{{ $item['creator'] }}</p>
+                            <p class="text-gray-600 mt-2">{{ $item['category'] }}</p>
                         </div>
                         @if ($item['image'])
                             <img src="{{ $item['image'] }}" class="w-full h-auto w-[100px]" alt="{{ $item['title'] }}">
