@@ -7,7 +7,7 @@
             @include('Shared.components.side-bar')
 
             <!-- container -->
-            <main class="h-screen w-full overflow-auto" style="background-image: url('http://127.0.0.1:8000/storage/images/landingpageimage.jpg');">
+            <main class="h-screen w-full overflow-y-auto" style="background-image: url('http://127.0.0.1:8000/storage/images/landingpageimage.jpg');">
                 @yield('content')
             </main>
 
