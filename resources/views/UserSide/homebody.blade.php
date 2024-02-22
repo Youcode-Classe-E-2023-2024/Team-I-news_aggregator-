@@ -1,11 +1,11 @@
 @include('Shared.components.header')
 
-<body>
-    
+<body class=" py-52">
+
 <x-Navbar :links="['Home' => '/home', 'Page 2' => '/page2']" />
 
-<div class=" justify-between items-center flex mt-32 mx-auto w-11/12 ">
-    <div class="lg:flex items-stretch md:mt-12  bg-gray-400 w-10/12 ">
+<div style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;" class="  justify-between items-center bg-slate-50 rounded-lg flex mt-12 mx-auto w-11/12 border ">
+    <div class="lg:flex items-stretch md:mt-12 p-4  bg-gray-50 w-10/12 ">
       <div class="lg:w-1/2">
         <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
           <div class="sm:w-1/2 relative">
@@ -22,7 +22,7 @@
                 </a>
               </div>
             </div>
-            <img src="https://i.ibb.co/DYxtCJq/img-1.png" class="w-full" alt="chair" />
+            <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="w-full" alt="chair" />
           </div>
           <div class="sm:w-1/2 sm:mt-0 mt-4 relative">
             <div>
@@ -38,7 +38,7 @@
                 </a>
               </div>
             </div>
-            <img src="https://i.ibb.co/3C5HvxC/img-2.png" class="w-full" alt="wall design" />
+            <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="w-full" alt="wall design" />
           </div>
         </div>
         <div class="relative">
@@ -55,7 +55,7 @@
               </a>
             </div>
           </div>
-          <img src="https://i.ibb.co/Ms4qyXp/img-3.png" alt="sitting place" class="w-full mt-8 md:mt-6 hidden sm:block" />
+          <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" alt="sitting place" class="w-full mt-8 md:mt-6 hidden sm:block" />
           <img class="w-full mt-4 sm:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
         </div>
       </div>
@@ -74,7 +74,7 @@
               </a>
             </div>
           </div>
-          <img src="https://i.ibb.co/6Wfjf2w/img-4.png" alt="sitting place" class="w-full sm:block hidden" />
+          <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" alt="sitting place" class="w-full sm:block hidden" />
           <img class="w-full sm:hidden" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
         </div>
         <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6 md:mt-6 mt-4">
@@ -92,7 +92,7 @@
                 </a>
               </div>
             </div>
-            <img src="https://i.ibb.co/3yvZBpm/img-5.png" class="w-full" alt="chair" />
+            <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="w-full" alt="chair" />
           </div>
           <div class="relative w-full sm:mt-0 mt-4">
             <div>
@@ -108,14 +108,57 @@
                 </a>
               </div>
             </div>
-            <img src="https://i.ibb.co/gDdnJb5/img-6.png" class="w-full" alt="wall design" />
+            <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="w-full" alt="wall design" />
           </div>
         </div>
       </div>
   
   </div>
-  <div class=" w-3/12 border-l-2   border-black h-screen px-4 ml-4 ">
-        
+  <div style="box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;" class=" w-3/12 border-l-2   border-black h-screen px-4 ml-4 ">
+  <div class="overflow-y-auto py-2 ">
+			<div class="mb-8 space-x-5 border-b-2 border-opacity-10 dark:border-violet-400">
+				<button type="button" class="pb-5 text-xs font-bold uppercase border-b-2 dark:border-violet-400">Latest</button>
+				<button type="button" class="pb-5 text-xs font-bold uppercase border-b-2 dark:border-transparent dark:text-gray-400">Popular</button>
+			</div>
+			<div class="flex flex-col divide-y dark:divide-gray-700">
+				<div class="flex px-1 py-4">
+					<img alt="" class="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg">
+					<div class="flex flex-col flex-grow">
+						<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">Aenean ac tristique lorem, ut mollis dui.</a>
+						<p class="mt-auto text-xs dark:text-gray-400">5 minutes ago
+							<a rel="noopener noreferrer" href="#" class="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Politics</a>
+						</p>
+					</div>
+				</div>
+				<div class="flex px-1 py-4">
+					<img alt="" class="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg">
+					<div class="flex flex-col flex-grow">
+						<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">Nulla consectetur efficitur.</a>
+						<p class="mt-auto text-xs dark:text-gray-400">14 minutes ago
+							<a rel="noopener noreferrer" href="#" class="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Sports</a>
+						</p>
+					</div>
+				</div>
+				<div class="flex px-1 py-4">
+					<img alt="" class="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg">
+					<div class="flex flex-col flex-grow">
+						<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">Vitae semper augue purus tincidunt libero.</a>
+						<p class="mt-auto text-xs dark:text-gray-400">22 minutes ago
+							<a rel="noopener noreferrer" href="#" class="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">World</a>
+						</p>
+					</div>
+				</div>
+				<div class="flex px-1 py-4">
+					<img alt="" class="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg">
+					<div class="flex flex-col flex-grow">
+						<a rel="noopener noreferrer" href="#" class="font-serif hover:underline">Suspendisse potenti.</a>
+						<p class="mt-auto text-xs dark:text-gray-400">37 minutes ago
+							<a rel="noopener noreferrer" href="#" class="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Business</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
   </div>
 </div>
 </body>
