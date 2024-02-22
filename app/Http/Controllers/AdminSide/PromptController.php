@@ -1,54 +1,59 @@
 <?php
+//
+//namespace App\Http\Controllers\AdminSide;
+//
+//use App\Http\Controllers\Controller;
+//use Illuminate\Http\Request;
+//
+//class PromptController extends Controller
+//{
+//    public function trait_rss() {
+//        dd(request());
+//    }
+//}
+
 
 namespace App\Http\Controllers\AdminSide;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Log;
 use SimpleXMLElement;
 
 class PromptController extends Controller
 {
-    public function store()
+    public function trait_rss(Request $request)
     {
         // Validate the request
-        $validator = Validator::make(request()->all(), [
-            'rss_link' => 'required|url',
+        $request->validate([
+            'rssLink' => 'required|url',
         ]);
 
-        if ($validator->fails()) {
-            return abort(404, 'URL is not valid');
+//        dd($request->rssLink);
+
+        // Fetch XML data from the RSS link
+        $rssLink = $request->input('rssLink');
+        $xmlData = file_get_contents($rssLink);
+
+        // Parse XML data
+        $xml = new SimpleXMLElement($xmlData);
+
+        // Initialize an empty array to store transformed data
+        $items = [];
+
+        // Iterate over each item in the XML
+        foreach ($xml->channel->item as $item) {
+            // Extract relevant information from each item
+            $title = (string)$item->title;
+            $link = (string)$item->link;
+            $description = (string)$item->description;
+            $pubDate = (string)$item->pubDate;
+            $image = isset($item->image) ? (string)$item->image : null;
+
+            // Push the extracted information into the items array
+            $items[] = compact('title', 'link', 'description', 'pubDate', 'image');
         }
 
-        // Get the RSS link from the request
-        $rssLink = request()->input('rss_link');
-
-        try {
-            // Fetch the XML content from the RSS link
-            $response = Http::get($rssLink);
-            $xmlData = $response->body();
-
-            // Parse the XML content
-            $xml = new SimpleXMLElement($xmlData);
-            $items = [];
-
-            foreach ($xml->channel->item as $item) {
-                $items[] = [
-                    'title' => (string)$item->title,
-                    'link' => (string)$item->link,
-                    'description' => (string)$item->description,
-                    'pubDate' => (string)$item->pubDate,
-                    'image' => isset($item->enclosure['url']) ? (string)$item->enclosure['url'] : null,
-                ];
-            }
-
-            // Render the parsed content in the view
-            return view('AdminSide.prompt-section', compact('items'));
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return redirect()->back()->withErrors(['error' => 'Failed to parse RSS feed.'])->withInput();
-        }
+        // Pass the transformed data to the view for rendering
+        return view('AdminSide.layout.prompt-section', compact('items'));
     }
 }
