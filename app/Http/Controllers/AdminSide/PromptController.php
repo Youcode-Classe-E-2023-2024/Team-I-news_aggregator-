@@ -38,7 +38,7 @@ class PromptController extends Controller
 
             // Push the extracted information into the items array
 //            $items[] = compact('title', 'link', 'description', 'pubDate', 'image', 'creator', 'category');
-            Rsslink::create([
+            Rssdata::create([
                 'title' => $title,
                 'link' => $link,
                 'description' => $description,
