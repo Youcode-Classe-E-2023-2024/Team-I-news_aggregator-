@@ -37,5 +37,9 @@ Route::get('/homeuser', function () {
     return view('UserSide.home');
 })->name('homeuser');
 
+Route::get('/homebody', function () {
+    return view('UserSide.homebody');
+})->name('homebody');
+
 
 // END IMAD
