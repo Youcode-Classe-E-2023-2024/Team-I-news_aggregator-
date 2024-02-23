@@ -4,18 +4,22 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
+use App\Models\AdminSide\Rsslist;
+
+use Livewire\WithPagination;
+
 class RssDashboard extends Component
 {
     use WithPagination;
     public $search = '';
-    public $perPage = 8;
+    public $perPage = 4;
     public $admin = '';
 
     public $sortBy = 'name';
     public $sortDirection = 'DESC';
 
-    public function delete(User $user) {
-        $user->delete();
+    public function delete(Rsslist $rss) {
+        $rss->delete();
     }
 
     public function setSortBy($field) {
@@ -30,13 +34,10 @@ class RssDashboard extends Component
 
     public function render()
     {
-        $users = User::search($this->search)
-            ->when($this->admin !== '', function($query) {
-                $query->where('is_admin', $this->admin);
-            })
+        $rssLinks = Rsslist::search($this->search)
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate($this->perPage);
 
-        return view('livewire.dashboard',compact('users'));
+        return view('livewire.rss-dashboard',compact('rssLinks'));
     }
 }

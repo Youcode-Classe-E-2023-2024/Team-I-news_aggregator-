@@ -19,7 +19,7 @@ class PromptController extends Controller
         $rssLink = $request->input('rssLink');
 
         Rsslist::create([
-            'rss' =>  $rssLink
+            'name' =>  $rssLink
         ]);
 
         return redirect()->route('adminDash')->with('success', 'RSS link stored successfully');

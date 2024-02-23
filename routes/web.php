@@ -22,7 +22,12 @@ Route::get('/', function () {
 
 // START HAMZA
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
+
 Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
+
+Route::get('/stored-rss', function() {
+    return view('AdminSide.layout.rss-dashboard');
+})->name('storedPosts');
 
 // END HAMZA
 
