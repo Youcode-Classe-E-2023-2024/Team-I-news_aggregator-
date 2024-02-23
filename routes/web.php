@@ -16,7 +16,7 @@ use App\Http\Controllers\AdminSide\PromptController;
 */
 
 
-Route::get('/', function () {
+Route::get('/ooooo', function () {
     return view('welcome');
 });
 
