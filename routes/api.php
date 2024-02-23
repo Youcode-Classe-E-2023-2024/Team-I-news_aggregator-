@@ -27,6 +27,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // START NAWFAL
 
+Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
+    // ----------------------------login ------------------------------//
+    Route::controller(LoginController::class)->group(function () {
+        Route::post('login/push', 'authenticate')->name('login/push');
+    });
+
+    // ------------------------ register sccount ----------------------//
+    Route::controller(RegisterController::class)->group(function () {
+        Route::post('register/save', 'saveRecord')->name('register/save');
+    });
+}); 
 
 
 // END NAWFAL
