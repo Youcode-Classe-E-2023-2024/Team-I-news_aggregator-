@@ -75,6 +75,13 @@ class PromptController extends Controller
     
         return view('AdminSide.rss-items', compact('items'));
     }
+
+    public function rssItemDetails($id)
+{
+    $item = Rsslist::findOrFail($id);
+    return view('AdminSide.rss-item-details', compact('item'));
+}
+
     
 
 }

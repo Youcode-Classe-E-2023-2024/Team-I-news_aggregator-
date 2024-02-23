@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
 Route::post('/rss.store', [PromptController::class, 'trait_rss'])->name('rss.store');
 Route::get('/admin/rss-items-static', [PromptController::class, 'showRssItemsStatic'])->name('admin.rss.items.static');
+Route::get('/rss-item-details/{id}', [PromptController::class, 'rssItemDetails'])->name('rss.item.details');
 
 
 // END HAMZA
