@@ -2,21 +2,21 @@
 
 @section('content')
 <div class="container mx-auto p-8">
-    <h1 class="text-3xl font-bold mb-8">RSS Feed Items</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Example Card -->
-        @for ($i = 0; $i < 8; $i++)
-            <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                <img class="w-full h-48 object-cover" src="https://picsum.photos/400/300" alt="News Image">
-                <div class="p-4">
-                    <h2 class="font-bold text-xl mb-2">News Title Here</h2>
-                    <p class="text-gray-700 text-base mb-4">
-                        This is a short description of the news item. It provides a brief overview of the content.
-                    </p>
-                    <p class="text-gray-600 text-xs">Published on: 2024-02-23</p>
+    <h1 class="text-3xl font-bold text-gray-500 mb-8">RSS Feed Items</h1>
+    <!-- Container for cards, adopting the dark theme -->
+    <div class="space-y-4">
+        @foreach ($items as $item)
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <div class="md:flex">
+                    <img class="object-cover w-full md:w-1/3 h-48" src="{{ $item->image }}" alt="Image">
+                    <div class="p-4 flex flex-col justify-between leading-normal">
+                        <h2 class="font-bold text-xl mb-2 text-white">{{ $item->title }}</h2>
+                        <p class="text-gray-400 text-base mb-4">{{ $item->description }}</p>
+                        <p class="text-gray-500 text-xs">Published on: {{ $item->pubDate }}</p>
+                    </div>
                 </div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>
 @endsection
