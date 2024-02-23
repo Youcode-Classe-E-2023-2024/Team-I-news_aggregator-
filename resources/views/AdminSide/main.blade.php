@@ -1,5 +1,5 @@
 @extends('Shared.components.layout')
 
 @section('content')
-    hello world
+    @include('AdminSide.layout.prompt-section')
 @endsection
