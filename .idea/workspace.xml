@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7294df97-7445-4a0b-b225-678b16b3774f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/UserSide/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/UserSide/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,10 +181,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
-      <method v="2" />
-    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -194,7 +189,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b220b6fa-cecb-4107-bcf5-1772d35348f4" name="Changes" comment="" />
+      <changelist id="7294df97-7445-4a0b-b225-678b16b3774f" name="Changes" comment="" />
       <created>1708533073712</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -202,6 +197,7 @@
       <workItem from="1708533074749" duration="105000" />
       <workItem from="1708550039073" duration="640000" />
       <workItem from="1708550788323" duration="4323000" />
+      <workItem from="1708677495330" duration="678000" />
     </task>
     <servers />
   </component>
