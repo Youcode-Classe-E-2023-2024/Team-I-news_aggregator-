@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSide\MainController;
+use App\Http\Controllers\AdminSide\PromptController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,9 @@ Route::get('/', function () {
 });
 
 // START HAMZA
-
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
+Route::post('/rss.store', [PromptController::class, 'trait_rss'])->name('rss.store');
+
 // END HAMZA
 
 

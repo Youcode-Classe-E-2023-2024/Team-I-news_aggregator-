@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function adminDash() {
-        return 'hi their';
+        return view('AdminSide.main');
     }
 }
