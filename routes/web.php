@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 // START HAMZA
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
-Route::post('/rss.store', [PromptController::class, 'trait_rss'])->name('rss.store');
+Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
 
 // END HAMZA
 

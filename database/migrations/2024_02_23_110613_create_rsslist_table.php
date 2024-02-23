@@ -13,13 +13,7 @@ return new class extends Migration
     {
         Schema::create('rsslist', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('link', 500);
-            $table->dateTime('pubDate');
-            $table->string('category')->nullable();
-            $table->string('creator')->nullable();
-            $table->string('image')->nullable();
+            $table->string('rss');
             $table->timestamps();
         });
     }

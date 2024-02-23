@@ -69,12 +69,15 @@
 
                 </a>
                 @elseif(session('success'))
-                    <div class="text-2xl text-green-500">
-                        {{ session('success') }}
+                    <div class="h-full flex items-center justify-center">
+                        <p class="text-2xl text-green-500 text-3xl font-bold">
+                            {{ session('success') }}
+                        </p>
                     </div>
+
                 @else
                     <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center">
-
+                        <!-- illustration image is here -->
                     </div>
                 @endif
             </div>
@@ -82,26 +85,4 @@
     </div>
 </main>
 
-@if(isset($items))
-    <main>
-        <div class="container mx-auto py-8">
-            <h1 class="text-3xl font-bold mb-4">RSS Feed Items</h1>
-            <div class="space-y-4">
-                @foreach ($items as $item)
-                    <a href="{{ $item['link'] }}" class="block bg-white shadow-md hover:shadow-lg rounded-lg overflow-hidden">
-                        <div class="p-4">
-                            <h2 class="text-xl font-bold mb-2">{{ $item['title'] }}</h2>
-                            <p class="text-gray-700">{{ $item['pubDate'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['description'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['creator'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['category'] }}</p>
-                        </div>
-                        @if ($item['image'])
-                            <img src="{{ $item['image'] }}" class="w-full h-auto w-[100px]" alt="{{ $item['title'] }}">
-                        @endif
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </main>
-@endif
+
