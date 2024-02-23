@@ -14,11 +14,7 @@
         style="border-collapse:collapse;margin:0 auto; padding:0; max-width:600px">
         <tbody>
             <tr>
-                <td align="center" valign="center" style="text-align:center; padding: 10px">
-                    <a href="https://souysoeng.com" rel="noopener" target="_blank">
-                        <img alt="Logo" src="https://blogger.googleusercontent.com/img/a/AVvXsEi22QSrQgGkTlZ_KdmZx9jRwqTe40SpFx41DukLyxBKKK36XsOCHlPj9NA_ecEZ_ju3Olrt_HcLVrnLXn5Kjgx8pFgPeWslLIJhVu0-Yb5ehLElSJGdsNVamMWksTq8M6-M2_JTtx-2ge_CYS9i_sPgX7noLlbjLbQjFfVXUVS4vxyyp6ULiBR1FxXmYzDO=s256" style="min-height:30px;width: 15%;">
-                    </a>
-                </td>
+                
             </tr>
             <tr>
                 <td align="left" valign="center">
@@ -26,7 +22,7 @@
                         style="text-align:left; margin: 0 20px; padding: 40px; background-color:#ffffff; border-radius: 6px">
                         <!--begin:Email content-->
                         <div style="padding-bottom: 30px; font-size: 17px;">
-                            <strong>Welcome to Subscribers!</strong>
+                            <strong>Welcome !</strong>
                         </div>
                         <div style="padding-bottom: 30px">
                             To activate your account, please click on the button below to verify your email address.
@@ -52,7 +48,7 @@
                         <!--end:Email content-->
                         <div style="padding-bottom: 10px">
                             Kind regards,<br>
-                            The StarCode Kh.
+                            The Hackerman007.
                         </div>
                     </div>
                 </td>
@@ -61,7 +57,7 @@
                 <td align="center" valign="center"
                     style="font-size: 13px; text-align:center;padding: 20px; color: #6d6e7c;">
                     <p> #248, Preah Monivong Blvd. (Street 110),Phnom Phenh</p>
-                    <p> Copyright &copy; <a href="https://www.readfreekh.com/" rel="noopener" target="_blank">StarCode Kh</a>.
+                    <p> Copyright &copy; <a rel="noopener" target="_blank">Dank.777</a>.
                     </p>
                 </td>
             </tr>

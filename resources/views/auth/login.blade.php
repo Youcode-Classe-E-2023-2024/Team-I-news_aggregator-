@@ -9,10 +9,11 @@
                         <img alt="Logo" src="{{ URL::to('assets/media/avatars/aang.jpg') }}" class="theme-light-show h-70px h-lg-80px">
                     </a>
                     <h1 class="d-none d-lg-block fw-bold text-white fs-2qx pb-5 pb-md-10">
-                        Welcome to Subscribers </h1>
+                        Welcome Back</h1>
                     <p class="d-none d-lg-block fw-semibold fs-2 text-white">
-                        Plan your learn can choosing a sample creating <br>
-                        an online and free soure code
+                        Sign-in to get the best news<br>
+                        in the world in one place
+                        
                     </p>
                 </div>
                 <div class="d-none d-lg-block d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url({{ URL::to('assets/media/illustrations/dozzy-1/17.png') }})"></div>
@@ -23,7 +24,7 @@
                 <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                     <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="/home">
                         <div class="text-center mb-10">
-                            <h1 class="text-dark mb-3">Sign In to Learn Sample </h1>
+                            <h1 class="text-dark mb-3">Sign In</h1>
                             <div class="text-gray-400 fw-semibold fs-4">
                                 New Here?
                                 <a href="{{ route('register/form') }}" class="link-primary fw-bold">
