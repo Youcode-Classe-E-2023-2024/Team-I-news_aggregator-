@@ -1,10 +1,10 @@
 @include('Shared.components.header')
 
-<body class=" py-52">
+<body class=" ">
 
 <x-Navbar :links="['Home' => '/home', 'Page 2' => '/page2']" />
 
-<div style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;" class="  justify-between items-center bg-slate-50 rounded-lg flex mt-12 mx-auto w-11/12 border ">
+<div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class="  justify-between items-center bg-slate-50 rounded-lg flex mt-12 mx-auto px-12 border ">
     <div class="lg:flex items-stretch md:mt-12 p-4  bg-gray-50 w-10/12 ">
       <div class="lg:w-1/2">
         <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
