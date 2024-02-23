@@ -111,9 +111,7 @@
                         </form>
                     </div>
                 </div>
-                <!--Footer-->
-                @include('footer.footer')
-                <!--end::Footer-->
+              
             </div>
         </div>
     </div>
