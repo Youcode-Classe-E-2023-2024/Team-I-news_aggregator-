@@ -53,4 +53,28 @@ class PromptController extends Controller
 //        return view('AdminSide.main', compact('items'));
         return redirect()->back()->with('success', 'RSS link stored successfully');
     }
+
+    public function showRssItemsStatic()
+    {
+        // Static data for frontend development purposes
+        $items = [
+            (object)[
+                'title' => 'Sample News Item 1',
+                'description' => 'This is a short description of the first news item.',
+                'pubDate' => '2024-02-23',
+                'image' => 'https://picsum.photos/seed/picsum/400/300',
+            ],
+            (object)[
+                'title' => 'Sample News Item 2',
+                'description' => 'This is a short description of the second news item.',
+                'pubDate' => '2024-02-24',
+                'image' => 'https://picsum.photos/seed/picsum/400/300',
+            ],
+            // Add more items as needed
+        ];
+    
+        return view('AdminSide.rss-items', compact('items'));
+    }
+    
+
 }
