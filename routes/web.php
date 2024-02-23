@@ -118,9 +118,9 @@ Route::get('/homeuser', function () {
     return view('UserSide.home');
 })->name('homeuser');
 
-Route::get('/homebody', function () {
-    return view('UserSide.homebody');
-})->name('homebody');
+Route::get('/tendance', function () {
+    return view('UserSide.tendance');
+})->name('tendance');
 
 
 // END IMAD
