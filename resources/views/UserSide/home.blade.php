@@ -9,28 +9,22 @@
         overflow-y: auto; /* Enable vertical scrolling */
     }
 </style>
-<x-Navbar :links="['Home' => '/home', 'Trend' => '/Trend','Favoris' => '/Favoris', 'Trend' => '/Trend']" />
+<x-Navbar :links="['Home' => '/home', 'Trend' => '/Trend','Favorites' => '/Favorites', 'Categories' => '/Categories', 'Profile' => '/Profile','Details' => '/Details']" />
 <div class="h-screen overflow-hidden relative" style="background: #edf2f7;">
 
     <img src="bg.png" class=" absolute top-0 left-0 min-h-full before:bg-black " alt="">
 
     <div class="relative h-full  flex items-center justify-center flex-col ">
+        <h1>Welcome</h1>
         <img src="logo2.png" alt="Your Logo" class="max-w-full ">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="image1.jpg" alt="Image 1"></div>
-                <div class="swiper-slide"><img src="image2.jpg" alt="Image 2"></div>
-                <div class="swiper-slide"><img src="image3.jpg" alt="Image 3"></div>
-                <!-- Ajoutez autant d'images que nécessaire -->
-            </div>
-            <!-- Ajoutez la pagination ici si nécessaire -->
-            <div class="swiper-pagination"></div>
-            <!-- Ajoutez les boutons de navigation ici si nécessaire -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        <div>
+            <form class="m-4 flex">
+                <input class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="your@mail.com"/>
+                <button class="px-8 rounded-r-lg bg-yellow-400  text-gray-800 font-bold p-4 uppercase border-gray-500 border-t border-b border-r">Subscribe</button>
+            </form>
         </div>
-    </div>
 
+    </div>
 <div class="bg-[#f7d0b6] py-20">
     <div class="max-w-screen-lg mx-auto flex justify-between items-center">
         <div class="max-w-xl">
