@@ -11,12 +11,10 @@ class PromptController extends Controller
 {
     public function storeRss(Request $request)
     {
-        // Validate the request
         $request->validate([
             'rssLink' => 'required|url',
         ]);
 
-        // Fetch XML data from the RSS link
         $rssLink = $request->input('rssLink');
 
         try {
@@ -28,15 +26,22 @@ class PromptController extends Controller
                 throw new \Exception('Failed to fetch XML data from the RSS link');
             }
 
-            // If successful, create the Rsslist entry
+            // storing the rsslink into 'rsslist' table
             Rsslist::create([
                 'name' => $rssLink
             ]);
+
+            // storing the rsslink items into 'rss_items' table
 
             return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
         } catch (\Exception $e) {
             // Handle the exception by returning a session message
             return redirect()->back()->with('error', 'Invalid RSS link');
         }
+    }
+
+
+    public function displayRssItems() {
+
     }
 }
