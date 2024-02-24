@@ -7,6 +7,7 @@ use SimpleXMLElement;
 use Illuminate\Support\Facades\Http;
 use App\Models\AdminSide\Rsslist;
 use App\Models\AdminSide\RssItem;
+use App\Models\AdminSide\Category;
 
 class PromptController extends Controller
 {
@@ -46,7 +47,7 @@ class PromptController extends Controller
                 $title = (string) $item->title;
                 $link = (string) $item->link;
                 $description = (string) $item->description;
-                $category = isset($item->category) ? (string) $item->category : null;
+                $category = $this->matchCategory((string) $item->category);
 
                 RssItem::create([
                     'rss_id' => $newRssLink->id,
@@ -61,5 +62,15 @@ class PromptController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
+    }
+
+    // Function to match category against known categories
+    private function matchCategory($category)
+    {
+        // Perform a lookup in the categories table
+        $matchedCategory = Category::where('name', $category)->first();
+
+        // If a match is found, return the category name; otherwise, return null
+        return $matchedCategory ? $matchedCategory->name : null;
     }
 }
