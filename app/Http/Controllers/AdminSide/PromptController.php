@@ -47,7 +47,8 @@ class PromptController extends Controller
                 $title = (string) $item->title;
                 $link = (string) $item->link;
                 $description = (string) $item->description;
-                $category = $this->matchCategory((string) $item->category);
+
+                $category = $this->matchCategory($description);
 
                 RssItem::create([
                     'rss_id' => $newRssLink->id,
@@ -64,13 +65,32 @@ class PromptController extends Controller
         }
     }
 
-    // Function to match category against known categories
-    private function matchCategory($category)
-    {
-        // Perform a lookup in the categories table
-        $matchedCategory = Category::where('name', $category)->first();
+// At the top of your class, declare a private property to store categories
+    private $categories;
 
-        // If a match is found, return the category name; otherwise, return null
-        return $matchedCategory ? $matchedCategory->name : null;
+// Modify the matchCategory function to fetch and cache categories if not already fetched
+    private function matchCategory($description)
+    {
+        // Fetch categories if not already fetched
+        if (!$this->categories) {
+            $this->categories = Category::all();
+        }
+
+        // Convert description to lowercase for case-insensitive comparison
+        $description = strtolower($description);
+
+        // Check if any keyword appears in the description (case-insensitive)
+        foreach ($this->categories as $category) {
+            // Convert category name to lowercase for comparison
+            $categoryName = strtolower($category->name);
+
+            if (stripos($description, $categoryName) !== false) {
+                return $category->name; // Return the category name if a keyword is found
+            }
+        }
+
+        // If no matching category is found, default to 'General'
+        return 'General';
     }
+
 }
