@@ -28,12 +28,11 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 flex gap-2 items-center">
+                            <th scope="col" class="px-4 py-3">
                                 Rss link
                             </th>
-                            <th scope="col" class="px-4 py-3 flex gap-2 items-center" wire:click="setSortBy('created_at')">
-                                <span>Stored at</span>
-                                <ion-icon name="chevron-expand-outline" class="text-2xl text-black"></ion-icon>
+                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('created_at')">
+                                Stored at
                             </th>
                             <th scope="col" class="px-4 py-3">
                                 action

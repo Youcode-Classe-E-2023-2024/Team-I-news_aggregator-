@@ -89,7 +89,12 @@
                             {{ session('success') }}
                         </p>
                     </div>
-
+                @elseif(session('error'))
+                    <div class="h-full flex items-center justify-center">
+                        <p class="text-2xl text-red-400 text-3xl font-bold">
+                            {{ session('error') }}
+                        </p>
+                    </div>
                 @else
                     <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center; ">
                         <!-- illustration image is here -->

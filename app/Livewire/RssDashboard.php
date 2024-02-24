@@ -12,7 +12,7 @@ class RssDashboard extends Component
 {
     use WithPagination;
     public $search = '';
-    public $perPage = 5;
+    public $perPage = 8;
     public $admin = '';
 
     public $sortBy = 'name';

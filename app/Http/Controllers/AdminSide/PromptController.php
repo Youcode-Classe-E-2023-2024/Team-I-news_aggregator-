@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SimpleXMLElement;
 use App\Models\AdminSide\Rsslist;
+use Illuminate\Support\Facades\Http;
 
 class PromptController extends Controller
 {
@@ -18,41 +19,24 @@ class PromptController extends Controller
         // Fetch XML data from the RSS link
         $rssLink = $request->input('rssLink');
 
-        Rsslist::create([
-            'name' =>  $rssLink
-        ]);
+        try {
+            // Attempt to fetch XML data from the RSS link
+            $response = Http::get($rssLink);
 
-        return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
+            // Check if the response status is not successful
+            if (!$response->successful()) {
+                throw new \Exception('Failed to fetch XML data from the RSS link');
+            }
+
+            // If successful, create the Rsslist entry
+            Rsslist::create([
+                'name' => $rssLink
+            ]);
+
+            return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
+        } catch (\Exception $e) {
+            // Handle the exception by returning a session message
+            return redirect()->back()->with('error', 'Invalid RSS link');
+        }
     }
-
-    public function showRssItemsStatic()
-    {
-        // Static data for frontend development purposes
-        $items = [
-            (object)[
-                'title' => 'Sample News Item 1',
-                'description' => 'This is a short description of the first news item.',
-                'pubDate' => '2024-02-23',
-                'image' => 'https://picsum.photos/seed/picsum/400/300',
-            ],
-            (object)[
-                'title' => 'Sample News Item 2',
-                'description' => 'This is a short description of the second news item.',
-                'pubDate' => '2024-02-24',
-                'image' => 'https://picsum.photos/seed/picsum/400/300',
-            ],
-            // Add more items as needed
-        ];
-    
-        return view('AdminSide.rss-items', compact('items'));
-    }
-
-    public function rssItemDetails($id)
-{
-    $item = Rsslist::findOrFail($id);
-    return view('AdminSide.rss-item-details', compact('item'));
-}
-
-    
-
 }
