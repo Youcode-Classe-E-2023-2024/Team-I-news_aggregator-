@@ -46,12 +46,14 @@ class PromptController extends Controller
                 $title = (string) $item->title;
                 $link = (string) $item->link;
                 $description = (string) $item->description;
+                $category = isset($item->category) ? (string) $item->category : null;
 
                 RssItem::create([
                     'rss_id' => $newRssLink->id,
                     'title' => $title,
                     'link' => $link,
-                    'description' => $description
+                    'description' => $description,
+                    'category' => $category
                 ]);
             }
 
@@ -60,5 +62,4 @@ class PromptController extends Controller
             return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
     }
-
 }
