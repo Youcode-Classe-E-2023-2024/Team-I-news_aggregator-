@@ -1,7 +1,22 @@
-<main class="flex bg-gray-900">
+<style>
+    #prompt-section {
+        /*box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+        /*-webkit-box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+        /*-moz-box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+    }
+
+    #prompt-section:hover {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+        -webkit-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+        -moz-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+    }
+</style>
+<main class="flex">
     <!-- component -->
-    <div class="w-full h-full bg-gray-800 min-h-screen flex items-center justify-center">
-        <div class="flex flex-col gap-8 items-center justify-center bg-gray-900 rounded-md p-12 border-[0.4x] border-solid border-white">
+    <div class="w-full h-full min-h-screen flex items-center justify-center">
+        <div id="prompt-section" class="backdrop-blur-sm shadow-md flex flex-col gap-8 items-center justify-center rounded-md p-12 border-[2px] border-solid border-purple-500" style="background-color: rgba(0, 0, 0, 0.503);">
             <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
             <form
                 action="{{ route('rss.store') }}" method="post"
@@ -40,7 +55,7 @@
                 </button>
             </form>
 
-            <div class="w-full h-[350px]  border-white border-solid bg-gray-900 rounded-md">
+            <div class="w-full h-[350px]  border-white border-solid rounded-md" >
                 @if(null)
                     <a href="#" class="h-full w-full rounded-xl">
 
@@ -69,12 +84,15 @@
 
                 </a>
                 @elseif(session('success'))
-                    <div class="text-2xl text-green-500">
-                        {{ session('success') }}
+                    <div class="h-full flex items-center justify-center">
+                        <p class="text-2xl text-green-400 text-3xl font-bold">
+                            {{ session('success') }}
+                        </p>
                     </div>
-                @else
-                    <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center">
 
+                @else
+                    <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center; ">
+                        <!-- illustration image is here -->
                     </div>
                 @endif
             </div>
@@ -82,26 +100,4 @@
     </div>
 </main>
 
-@if(isset($items))
-    <main>
-        <div class="container mx-auto py-8">
-            <h1 class="text-3xl font-bold mb-4">RSS Feed Items</h1>
-            <div class="space-y-4">
-                @foreach ($items as $item)
-                    <a href="{{ $item['link'] }}" class="block bg-white shadow-md hover:shadow-lg rounded-lg overflow-hidden">
-                        <div class="p-4">
-                            <h2 class="text-xl font-bold mb-2">{{ $item['title'] }}</h2>
-                            <p class="text-gray-700">{{ $item['pubDate'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['description'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['creator'] }}</p>
-                            <p class="text-gray-600 mt-2">{{ $item['category'] }}</p>
-                        </div>
-                        @if ($item['image'])
-                            <img src="{{ $item['image'] }}" class="w-full h-auto w-[100px]" alt="{{ $item['title'] }}">
-                        @endif
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </main>
-@endif
+

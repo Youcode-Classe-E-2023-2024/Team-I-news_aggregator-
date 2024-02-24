@@ -11,12 +11,10 @@ class Rsslist extends Model
     protected $table = 'rsslist';
 
     protected $fillable = [
-        'title',
-        'link',
-        'description',
-        'pubDate',
-        'image',
-        'creator',
-        'category'
+        'name'
     ];
+
+    public function scopeSearch($query, $value) {
+        $query->where('name', 'like', "%{$value}%");
+    }
 }

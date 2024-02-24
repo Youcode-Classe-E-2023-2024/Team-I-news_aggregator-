@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.laravel.component" name="Laravel_2/21/24, 5:31 PM" invoke="3ab08c5c-5d5c-40c1-a3a3-91b8d9a251c4 C:/zProjects/Team-I-news_aggregator-/artisan" alias="artisan" enabled="true" version="2">
+<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.laravel.component" name="Laravel_2/24/24, 11:46 AM" invoke="3ab08c5c-5d5c-40c1-a3a3-91b8d9a251c4 C:/zProjects/Team-I-news_aggregator-/artisan" alias="artisan" enabled="true" version="2">
   <extraData><![CDATA[version:3]]></extraData>
   <command>
     <name>_complete</name>
@@ -1410,6 +1410,510 @@
     </optionsBefore>
   </command>
   <command>
+    <name>livewire:attribute</name>
+    <help><![CDATA[Create a new Livewire attribute class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:configure-s3-upload-cleanup</name>
+    <help><![CDATA[Configure temporary file upload s3 directory to automatically cleanup files older than 24hrs<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <optionsBefore>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:copy</name>
+    <help><![CDATA[Copy a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name new-name</params>
+    <optionsBefore>
+      <option name="--inline" shortcut="" />
+      <option name="--force" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:cp</name>
+    <help><![CDATA[Copy a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name new-name</params>
+    <optionsBefore>
+      <option name="--inline" shortcut="" />
+      <option name="--force" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:delete</name>
+    <help><![CDATA[Delete a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--inline" shortcut="" />
+      <option name="--force" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:form</name>
+    <help><![CDATA[Create a new Livewire form class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:layout</name>
+    <help><![CDATA[Create a new app layout file<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--stub</td><td></td><td>If you have several stubs, stored in subfolders</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--stub" shortcut="" pattern="equals">
+        <help><![CDATA[If you have several stubs, stored in subfolders]]></help>
+      </option>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:make</name>
+    <help><![CDATA[Create a new Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--pest</td><td></td><td></td></tr> <tr><td>--stub</td><td></td><td>If you have several stubs, stored in subfolders</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--inline" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--pest" shortcut="" />
+      <option name="--stub" shortcut="" pattern="equals">
+        <help><![CDATA[If you have several stubs, stored in subfolders]]></help>
+      </option>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:move</name>
+    <help><![CDATA[Move a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name new-name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--inline" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:mv</name>
+    <help><![CDATA[Move a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name new-name</params>
+    <optionsBefore>
+      <option name="--inline" shortcut="" />
+      <option name="--force" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:publish</name>
+    <help><![CDATA[Publish Livewire configuration<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--assets</td><td></td><td>Indicates if Livewire's front-end assets should be published</td></tr> <tr><td>--config</td><td></td><td>Indicates if Livewire's config file should be published</td></tr> <tr><td>--pagination</td><td></td><td>Indicates if Livewire's pagination views should be published</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <optionsBefore>
+      <option name="--assets" shortcut="">
+        <help><![CDATA[Indicates if Livewire's front-end assets should be published]]></help>
+      </option>
+      <option name="--config" shortcut="">
+        <help><![CDATA[Indicates if Livewire's config file should be published]]></help>
+      </option>
+      <option name="--pagination" shortcut="">
+        <help><![CDATA[Indicates if Livewire's pagination views should be published]]></help>
+      </option>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:rm</name>
+    <help><![CDATA[Delete a Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--inline" shortcut="" />
+      <option name="--force" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:stubs</name>
+    <help><![CDATA[Publish Livewire stubs<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <optionsBefore>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:touch</name>
+    <help><![CDATA[Create a new Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--pest</td><td></td><td></td></tr> <tr><td>--stub</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--inline" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--pest" shortcut="" />
+      <option name="--stub" shortcut="" pattern="equals" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>livewire:upgrade</name>
+    <help><![CDATA[Interactive upgrade helper to migrate from v2 to v3<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--run-only</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <optionsBefore>
+      <option name="--run-only" shortcut="" pattern="equals" />
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
     <name>make:cast</name>
     <help><![CDATA[Create a new custom Eloquent cast class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the cast already exists</td></tr> <tr><td>--inbound</td><td></td><td>Generate an inbound cast class</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
@@ -1807,6 +2311,42 @@
       <option name="--pest" shortcut="">
         <help><![CDATA[Generate an accompanying Pest test for the Listener]]></help>
       </option>
+      <option name="--help" shortcut="-h">
+        <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
+      </option>
+      <option name="--quiet" shortcut="-q">
+        <help><![CDATA[Do not output any message]]></help>
+      </option>
+      <option name="--verbose" shortcut="-v">
+        <help><![CDATA[Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug]]></help>
+      </option>
+      <option name="--version" shortcut="-V">
+        <help><![CDATA[Display this application version]]></help>
+      </option>
+      <option name="--ansi" shortcut="">
+        <help><![CDATA[Force (or disable --no-ansi) ANSI output]]></help>
+      </option>
+      <option name="--no-ansi" shortcut="">
+        <help><![CDATA[Negate the "--ansi" option]]></help>
+      </option>
+      <option name="--no-interaction" shortcut="-n">
+        <help><![CDATA[Do not ask any interactive question]]></help>
+      </option>
+      <option name="--env" shortcut="" pattern="equals">
+        <help><![CDATA[The environment the command should run under]]></help>
+      </option>
+    </optionsBefore>
+  </command>
+  <command>
+    <name>make:livewire</name>
+    <help><![CDATA[Create a new Livewire component<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td></td><td></td></tr> <tr><td>--inline</td><td></td><td></td></tr> <tr><td>--test</td><td></td><td></td></tr> <tr><td>--pest</td><td></td><td></td></tr> <tr><td>--stub</td><td></td><td></td></tr> <tr><td>--help</td><td>(-h)</td><td>Display help for the given command. When no command is given display help for the <b>list</b> command</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force (or disable --no-ansi) ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Negate the "--ansi" option</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <params>name</params>
+    <optionsBefore>
+      <option name="--force" shortcut="" />
+      <option name="--inline" shortcut="" />
+      <option name="--test" shortcut="" />
+      <option name="--pest" shortcut="" />
+      <option name="--stub" shortcut="" pattern="equals" />
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display help for the given command. When no command is given display help for the <b>list</b> command]]></help>
       </option>
