@@ -34,10 +34,10 @@ class RssItems extends Component
 
     public function render()
     {
-        $rssLinks = RssItem::search($this->search)
+        $rssItems = RssItem::search($this->search)
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate($this->perPage);
 
-        return view('livewire.rss-items',compact('rssLinks'));
+        return view('livewire.rss-items',compact('rssItems'));
     }
 }

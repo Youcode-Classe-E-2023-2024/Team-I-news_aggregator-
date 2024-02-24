@@ -28,13 +28,11 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 flex gap-2 items-center" wire:click="setSortBy('name')">
+                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('name')">
                                 <span>name</span>
-                                <ion-icon name="chevron-expand-outline" class="text-2xl text-black"></ion-icon>
                             </th>
-                            <th scope="col" class="px-4 py-3 flex gap-2 items-center" wire:click="setSortBy('category')">
+                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('category')">
                                 <span>category</span>
-                                <ion-icon name="chevron-expand-outline" class="text-2xl text-black"></ion-icon>
                             </th>
                             <th scope="col" class="px-4 py-3">
                                 link
@@ -42,72 +40,70 @@
                             <th scope="col" class="px-4 py-3">
                                 description
                             </th>
-                            <th scope="col" class="px-4 py-3 flex gap-2 items-center" wire:click="setSortBy('created_at')">
+                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('created_at')">
                                 <span>created at</span>
-                                <ion-icon name="chevron-expand-outline" class="text-2xl text-black"></ion-icon>
                             </th>
                             <th scope="col" class="px-4 py-3">
                                 updated at
                             </th>
                             <th scope="col" class="px-4 py-3">
-                                delete
+                                handle
                             </th>
                             <th scope="col" class="px-4 py-3">
-                                edit
+                                delete
                             </th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($users as $user)
-                            @if($user->roles->first()->name !== 'admin')
-                                <tr  class="border-b dark:border-gray-700">
-                                    <td scope="col" class="px-4 py-3 text-white" >{{ $user->name }}</td>
-                                    <td scope="col" class="px-4 py-3">{{ $user->email }}</td>
-                                    <td onclick="openModal('modelConfirm{{$user->id}}', {{$user->id}})" scope="col" class="px-4 py-3 text-white m-2 cursor-pointer {{ $user->roles->first()->name != 'member' ? 'bg-red-500': 'bg-green-500' }}">
-                                        {{ $user->roles->first()->name? $user->roles->first()->name: 'user' }}</td>
-                                     Give permission form start
-                                    <div id="modelConfirm{{$user->id}}" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
-                                        <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
+                        @foreach($rssItems as $rssItem)
+                            <tr  class="border-b dark:border-gray-700">
+                                <td scope="col" class="px-4 py-3 text-white" >{{ substr($rssItem->name, 0, 20) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->category }}</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->link, 0, 20) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->description, 0, 20) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->created_at }}</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->updated_at }}</td>
+                                <td onclick="openModal('modelConfirm{{$rssItem->id}}', {{$rssItem->id}})" scope="col" class="px-3 py-1 text-white cursor-pointer bg-green-500">
+                                    edit
+                                </td>
+                                <div id="modelConfirm{{$rssItem->id}}" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ">
+                                    <div class="relative top-40 mx-auto shadow-xl rounded-md bg-white max-w-md">
 
-                                            <div class="flex justify-end p-2">
-                                                <button onclick="closeModal('modelConfirm{{$user->id}}')" type="button"
-                                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
-                                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                              clip-rule="evenodd"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-
-                                            <form action="{{ route('users.assignRoleToUser', $user->id) }}" method="POST" class="rollForm p-6 pt-0 text-center">
-                                                @csrf
-                                                <svg class="w-20 h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        <div class="flex justify-end p-2">
+                                            <button onclick="closeModal('modelConfirm{{$rssItem->id}}')" type="button"
+                                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                          clip-rule="evenodd"></path>
                                                 </svg>
-                                                <h3 id="ttt" class="text-xl font-normal text-gray-500 mt-5 mb-6">Change the role of to:</h3>
-                                                <div class="">
-                                                    <select name="role" class="py-3 px-4 pe-9 block w-full border-green-500 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                                        <option value="member">Member</option>
-                                                        <option value="editor-lvl1">Editor lvl-1 (CRUD Template)</option>
-                                                        <option value="editor-lvl2">Editor lvl-2 (CRUD + SEND Template)</option>
-                                                        <option value="editor-lvl3">Editor lvl-3 (CRUD + SEND Template + HANDLE VIDEOS)</option>
-                                                    </select>
-                                                </div>
-                                                <button type="submit" class="SUBMIT bg-green-500 px-8 py-2 rounded-md mt-6">submit</button>
-                                            </form>
-
+                                            </button>
                                         </div>
+
+                                        <form action="#" method="POST" class="rollForm p-6 pt-0 text-center">
+                                            @csrf
+                                            <svg class="w-20 h-20 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <h3 id="ttt" class="text-xl font-normal text-gray-500 mt-5 mb-6">Change the role of to:</h3>
+                                            <div class="">
+                                                <select name="role" class="py-3 px-4 pe-9 block w-full border-green-500 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                                    <option value="member">Member</option>
+                                                    <option value="editor-lvl1">Editor lvl-1 (CRUD Template)</option>
+                                                    <option value="editor-lvl2">Editor lvl-2 (CRUD + SEND Template)</option>
+                                                    <option value="editor-lvl3">Editor lvl-3 (CRUD + SEND Template + HANDLE VIDEOS)</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="SUBMIT bg-green-500 px-8 py-2 rounded-md mt-6">submit</button>
+                                        </form>
+
                                     </div>
-                                     Give permission form end
-                                    <td scope="col" class="px-4 py-3">{{ $user->created_at }}</td>
-                                    <td scope="col" class="px-4 py-3">{{ $user->updated_at }}</td>
-                                    <td scope="col" class="px-4 py-3 flex items-center justify-end">
-                                        <button onclick="confirm('Are you sure you want to delete {{ $user->name }} ?') ? '' : event.stopImmediatePropagation()" wire:click="delete({{ $user->id }})" class="px-3 py-1 bg-red-500 text-white rounded">X</button>
-                                    </td>
-                                </tr>
-                            @endif
+                                </div>
+                                <td scope="col" class="px-4 py-3 flex items-center justify-end">
+                                    <button onclick="confirm('Are you sure you want to delete {{ $rssItem->name }} ?') ? '' : event.stopImmediatePropagation()" wire:click="delete({{ $rssItem->id }})" class="px-3 py-1 bg-red-500 text-white rounded">X</button>
+                                </td>
+                            </tr>
                         @endforeach
 
                         </tbody>
@@ -129,7 +125,7 @@
                             </select>
                         </div>
                     </div>
-                    {{ $users->links() }}
+                    {{ $rssItems->links() }}
                 </div>
             </div>
         </div>
