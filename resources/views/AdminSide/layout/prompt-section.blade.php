@@ -1,6 +1,6 @@
-<main class="flex bg-gray-900">
+<main class="flex">
     <!-- component -->
-    <div class="w-full h-full bg-gray-800 min-h-screen flex items-center justify-center">
+    <div class="w-full h-full min-h-screen flex items-center justify-center">
         <div class="flex flex-col gap-8 items-center justify-center bg-gray-900 rounded-md p-12 border-[0.4x] border-solid border-white">
             <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
             <form
