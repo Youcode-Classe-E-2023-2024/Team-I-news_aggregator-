@@ -1,7 +1,22 @@
+<style>
+    #prompt-section {
+        /*box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+        /*-webkit-box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+        /*-moz-box-shadow: 5px 4px 11px 2px rgba(160,65,178,1);*/
+    }
+
+    #prompt-section:hover {
+        margin-bottom: 5px;
+        margin-right: 5px;
+        box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+        -webkit-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+        -moz-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+    }
+</style>
 <main class="flex">
     <!-- component -->
     <div class="w-full h-full min-h-screen flex items-center justify-center">
-        <div class="flex flex-col gap-8 items-center justify-center bg-gray-900 rounded-md p-12 border-[0.4x] border-solid border-white">
+        <div id="prompt-section" class="backdrop-blur-sm shadow-md flex flex-col gap-8 items-center justify-center rounded-md p-12 border-[2px] border-solid border-purple-500" style="background-color: rgba(0, 0, 0, 0.503);">
             <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
             <form
                 action="{{ route('rss.store') }}" method="post"
@@ -40,7 +55,7 @@
                 </button>
             </form>
 
-            <div class="w-full h-[350px]  border-white border-solid bg-gray-900 rounded-md">
+            <div class="w-full h-[350px]  border-white border-solid rounded-md" >
                 @if(null)
                     <a href="#" class="h-full w-full rounded-xl">
 
@@ -70,13 +85,13 @@
                 </a>
                 @elseif(session('success'))
                     <div class="h-full flex items-center justify-center">
-                        <p class="text-2xl text-green-500 text-3xl font-bold">
+                        <p class="text-2xl text-green-400 text-3xl font-bold">
                             {{ session('success') }}
                         </p>
                     </div>
 
                 @else
-                    <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center">
+                    <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center; ">
                         <!-- illustration image is here -->
                     </div>
                 @endif

@@ -22,6 +22,6 @@ class PromptController extends Controller
             'name' =>  $rssLink
         ]);
 
-        return redirect()->route('adminDash')->with('success', 'RSS link stored successfully');
+        return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
     }
 }
