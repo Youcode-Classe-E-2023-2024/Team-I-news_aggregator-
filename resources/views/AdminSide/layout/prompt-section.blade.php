@@ -46,7 +46,7 @@
 
                         <div class="flex items-center transition-all opacity-1 valid:"><span
                                 class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
-                    Search
+                    Submit
                 </span>
                         </div>
 

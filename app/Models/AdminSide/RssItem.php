@@ -12,9 +12,13 @@ class RssItem extends Model
 
     protected $fillable = [
         'rss_id',
-        'title',
+        'name',
         'link',
         'description',
         'category'
     ];
+
+    public function scopeSearch($query, $value) {
+        $query->where('name', 'like', "%{$value}%");
+    }
 }

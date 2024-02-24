@@ -52,7 +52,7 @@ class PromptController extends Controller
 
                 RssItem::create([
                     'rss_id' => $newRssLink->id,
-                    'title' => $title,
+                    'name' => $title,
                     'link' => $link,
                     'description' => $description,
                     'category' => $category

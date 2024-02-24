@@ -23,13 +23,15 @@ Route::get('/ooooo', function () {
 // START HAMZA
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
 
-
 Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
 
-Route::get('/stored-rss', function() {
-    return view('AdminSide.layout.rss-dashboard');
-})->name('storedPosts');
+Route::get('/stored-rss-links', function() {
+    return view('AdminSide.layout.rss-links-list');
+})->name('storedRssLinks');
 
+Route::get('/stored-rss-items', function() {
+    return view('AdminSide.layout.rss-items-list');
+})->name('storedRssItems');
 
 
 // END HAMZA
