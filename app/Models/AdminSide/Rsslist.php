@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rsslist extends Model
 {
-    use HasFactory;
     protected $table = 'rsslist';
+    use HasFactory;
 
     protected $fillable = [
         'name'

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\AdminSide;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SimpleXMLElement;
-use App\Models\AdminSide\Rsslist;
 use Illuminate\Support\Facades\Http;
+use App\Models\AdminSide\Rsslist;
+//use App\Models\AdminSide\RssItem;
 
 class PromptController extends Controller
 {
@@ -32,6 +33,21 @@ class PromptController extends Controller
             ]);
 
             // storing the rsslink items into 'rss_items' table
+            $xmlData = file_get_contents($rssLink);
+
+            $xml = new SimpleXMLElement($xmlData);
+
+            $items = [];
+
+            // Iterate over each item in the XML
+            foreach ($xml->channel->item as $item) {
+                // Extract relevant information from each item
+                $title = (string)$item->title;
+                $link = (string)$item->link;
+                $description = (string)$item->description;
+
+            }
+
 
             return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
         } catch (\Exception $e) {
