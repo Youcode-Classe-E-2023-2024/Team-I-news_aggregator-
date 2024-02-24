@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use SimpleXMLElement;
 use Illuminate\Support\Facades\Http;
 use App\Models\AdminSide\Rsslist;
-//use App\Models\AdminSide\RssItem;
+use App\Models\AdminSide\RssItem;
 
 class PromptController extends Controller
 {
@@ -18,6 +18,12 @@ class PromptController extends Controller
 
         $rssLink = $request->input('rssLink');
 
+        // Check if the RSS link already exists in the rsslist table
+        $existingRss = Rsslist::where('name', $rssLink)->first();
+        if ($existingRss) {
+            return redirect()->back()->with('error', 'RSS link already exists 🤷‍♀️');
+        }
+
         try {
             // Attempt to fetch XML data from the RSS link
             $response = Http::get($rssLink);
@@ -27,37 +33,32 @@ class PromptController extends Controller
                 throw new \Exception('Failed to fetch XML data from the RSS link');
             }
 
-            // storing the rsslink into 'rsslist' table
-            Rsslist::create([
+            $newRssLink = Rsslist::create([
                 'name' => $rssLink
             ]);
 
-            // storing the rsslink items into 'rss_items' table
-            $xmlData = file_get_contents($rssLink);
-
+            // Parse XML data
+            $xmlData = $response->body();
             $xml = new SimpleXMLElement($xmlData);
 
-            $items = [];
-
-            // Iterate over each item in the XML
+            // Iterate over each item in the XML and store in the 'rss_items' table
             foreach ($xml->channel->item as $item) {
-                // Extract relevant information from each item
-                $title = (string)$item->title;
-                $link = (string)$item->link;
-                $description = (string)$item->description;
+                $title = (string) $item->title;
+                $link = (string) $item->link;
+                $description = (string) $item->description;
 
+                RssItem::create([
+                    'rss_id' => $newRssLink->id,
+                    'title' => $title,
+                    'link' => $link,
+                    'description' => $description
+                ]);
             }
 
-
-            return redirect()->route('adminDash')->with('success', 'RSS link stored successfully 👍');
+            return redirect()->route('adminDash')->with('success', 'RSS items stored successfully 👍');
         } catch (\Exception $e) {
-            // Handle the exception by returning a session message
-            return redirect()->back()->with('error', 'Invalid RSS link');
+            return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
     }
 
-
-    public function displayRssItems() {
-
-    }
 }

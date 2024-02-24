@@ -10,5 +10,10 @@ class RssItem extends Model
     protected $table = 'rss_items';
     use HasFactory;
 
-
+    protected $fillable = [
+        'rss_id',
+        'title',
+        'link',
+        'description'
+    ];
 }
