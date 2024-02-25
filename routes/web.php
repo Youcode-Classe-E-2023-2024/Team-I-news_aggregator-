@@ -27,13 +27,18 @@ Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.stor
 
 Route::get('/stored-rss-links', function() {
     return view('AdminSide.layout.rss-links-list');
+
 })->name('storedRssLinks');
 
 Route::get('/stored-rss-items', function() {
     return view('AdminSide.layout.rss-items-list');
+
 })->name('storedRssItems');
 
-//Route::put('/rss-item/{rssItem}', [RssItemController::class, 'update'])->name('rss-item.update');
+Route::get('/users-dash', function () {
+    return view('AdminSide.users-mng.users-dash');
+
+})->name('storedUsers');
 // END HAMZA
 
 
