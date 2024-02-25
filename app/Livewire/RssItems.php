@@ -49,7 +49,6 @@ class RssItems extends Component
             'category' => ['required','string'],
             'link' => 'required|string',
             'description' => 'required|string',
-            'trend' => 'string'
         ];
     }
 
