@@ -73,7 +73,8 @@
                                     </button>
                                 </td>
                                 <td scope="col" class="px-4 py-3 flex items-center justify-end">
-                                    <button onclick="confirm('Are you sure you want to delete {{ $rssItem->name }} ?') ? '' : event.stopImmediatePropagation()" wire:click="delete({{ $rssItem->id }})" class="px-3 py-1 bg-red-500 text-white rounded">X</button>
+{{--                                    <button onclick="confirm('Are you sure you want to delete {{ $rssItem->name }} ?') ? '' : event.stopImmediatePropagation()" wire:click="delete({{ $rssItem->id }})" class="px-3 py-1 bg-red-500 text-white rounded">X</button>--}}
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteRssItemModal" wire:click="deleteRssItem({{$rssItem->id}})" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -104,19 +105,10 @@
     </section>
 </div>
 
-
-{{--<script>--}}
-{{--    document.addEventListener('CloseModal', function(event) {--}}
-{{--        var modal = document.getElementById('updateRssItemModal');--}}
-{{--        if (modal) {--}}
-{{--            modal.style.display = 'none'; // Hide the modal by setting display style to 'none'--}}
-{{--            modal.setAttribute('aria-hidden', 'true'); // Set aria-hidden attribute to 'true'--}}
-{{--        }--}}
-{{--    });--}}
-{{--</script>--}}
+{{-- jQuery script --}}
 <script>
     window.addEventListener('close-modal', event => {
         $('#updateRssItemModal').modal('hide');
+        $('#deleteRssItemModal').modal('hide');
     })
 </script>
-

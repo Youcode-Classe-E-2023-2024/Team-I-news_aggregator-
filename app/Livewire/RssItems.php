@@ -95,4 +95,17 @@ class RssItems extends Component
         $this->link = '';
         $this->description = '';
     }
+
+    /*************** rss items popup delete form ***************/
+    public function deleteRssItem(int $rss_item_id)
+    {
+        $this->rss_item_id = $rss_item_id;
+    }
+
+    public function destroyRssItem()
+    {
+        RssItem::find($this->rss_item_id)->delete();
+        session()->flash('message','Student Deleted Successfully');
+        $this->dispatch('close-modal');
+    }
 }
