@@ -1,5 +1,32 @@
 
 <div id="dashboard-container" class="mt-8 flex items-center justify-center">
+    {{-- delete form START  --}}
+    <!-- Delete Rss Link Modal -->
+    <div wire:ignore.self class="modal fade" id="deleteRssLinkModal" tabindex="-1" aria-labelledby="deleteRssLinkModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header flex justify-between">
+                    <h5 class="modal-title" id="deleteRssLinkModalLabel">Delete Student</h5>
+                    <button type="button" data-bs-dismiss="modal" wire:click="closeModal"
+                            aria-label="Close">
+                        <div class="h-[20px] w-[20px]" style="background-image: url('http://127.0.0.1:8000/storage/images/close-outline.svg'); background-size: cover; background-position: center; "></div>
+                    </button>
+                </div>
+                <form wire:submit.prevent="destroyRssLink">
+                    <div class="modal-body">
+                        <h4>Are you sure you want to delete this RSS link ?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn text-white btn hover:bg-gray-600 bg-gray-500 border-0" wire:click="closeModal"
+                                data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="text-white btn hover:bg-red-600 bg-red-500 border-0">Yes! Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{--  delete form END  --}}
     <section class="mt-10 w-full">
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <!-- Start coding here -->
@@ -46,7 +73,7 @@
                                 <td scope="col" class="px-4 py-3 text-white" >{{ $rssLink->name }}</td>
                                 <td scope="col" class="px-4 py-3">{{ $rssLink->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 flex items-center justify-end">
-                                    <button onclick="confirm('Are you sure you want to delete {{ $rssLink->name }} ?') ? '' : event.stopImmediatePropagation()" wire:click="delete({{ $rssLink->id }})" class="px-3 py-1 bg-red-500 text-white rounded">X</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteRssLinkModal" wire:click="deleteRssLink({{$rssLink->id}})" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -76,3 +103,10 @@
         </div>
     </section>
 </div>
+
+{{-- jQuery script --}}
+<script>
+    window.addEventListener('close-modal', event => {
+        $('#deleteRssLinkModal').modal('hide');
+    })
+</script>

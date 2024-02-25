@@ -40,4 +40,18 @@ class RssDashboard extends Component
 
         return view('livewire.rss-dashboard',compact('rssLinks'));
     }
+
+    /*************** rss links popup delete form ***************/
+    public $rss_link_id;
+    public function deleteRssLink(int $rss_link_id)
+    {
+        $this->rss_link_id = $rss_link_id;
+    }
+
+    public function destroyRssLink()
+    {
+        Rsslist::find($this->rss_link_id)->delete();
+        session()->flash('message','Student Deleted Successfully');
+        $this->dispatch('close-modal');
+    }
 }
