@@ -14,6 +14,11 @@ class MainController extends Controller
         return view('AdminSide.main');
     }
 
+    public function rssItems() {
+        $rssItems = RssItem::latest()->get();
+        return view('AdminSide.display-items', compact('rssItems'));
+    }
+
     // for flowchart usage
     public function rssLists() {
         $rssLists = Rsslist::withCount('rssItems')->get();
@@ -28,4 +33,5 @@ class MainController extends Controller
 
         return response()->json($categoriesWithCounts);
     }
+
 }

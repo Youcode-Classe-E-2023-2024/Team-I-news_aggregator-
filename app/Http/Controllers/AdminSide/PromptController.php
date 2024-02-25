@@ -55,7 +55,8 @@ class PromptController extends Controller
                     'name' => $title,
                     'link' => $link,
                     'description' => $description,
-                    'category' => $category
+                    'category' => $category,
+                    'image' => 'https://source.unsplash.com/200x200/?' . $title
                 ]);
             }
 

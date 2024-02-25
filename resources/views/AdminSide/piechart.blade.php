@@ -29,14 +29,24 @@
                                 'rgba(54, 162, 235, 0.5)', // Blue
                                 'rgba(255, 206, 86, 0.5)', // Yellow
                                 'rgba(75, 192, 192, 0.5)', // Green
-                                // Add more colors if needed
-                                'rgba(10, 192, 192, 0.5)',
-                                'rgba(75, 6, 192, 0.5)',
-                                'rgba(75, 192, 2, 0.5)',
-                                'rgba(90, 100, 192, 0.5)',
-                                'rgba(50, 192, 300, 0.5)',
-                                'rgba(44, 192, 30, 0.5)',
+                                'rgba(10, 192, 192, 0.5)', // Cyan
+                                'rgba(75, 6, 192, 0.5)',   // Purple
+                                'rgba(75, 192, 2, 0.5)',   // Lime
+                                'rgba(90, 100, 192, 0.5)', // Lavender
+                                'rgba(50, 192, 300, 0.5)', // Aqua
+                                'rgba(44, 192, 30, 0.5)',  // Lime Green
+                                'rgba(255, 0, 0, 0.5)',    // Red
+                                'rgba(0, 255, 0, 0.5)',    // Green
+                                'rgba(0, 0, 255, 0.5)',    // Blue
+                                'rgba(255, 255, 0, 0.5)',  // Yellow
+                                'rgba(255, 0, 255, 0.5)',  // Magenta
+                                'rgba(0, 255, 255, 0.5)',  // Cyan
+                                'rgba(128, 0, 128, 0.5)',  // Purple
+                                'rgba(255, 165, 0, 0.5)',  // Orange
+                                'rgba(0, 128, 0, 0.5)',    // Dark Green
+                                'rgba(128, 128, 0, 0.5)'   // Olive
                             ],
+
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
                                 'rgba(54, 162, 235, 1)',
@@ -50,7 +60,13 @@
                     options: {
                         plugins: {
                             legend: {
-                                position: 'right' // Position of the legend
+                                position: 'right', // Position of the legend
+                                labels: {
+                                    font: {
+                                        size: 14,
+                                        color: 'white'
+                                    }
+                                }
                             }
                         }
                     }

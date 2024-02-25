@@ -47,11 +47,14 @@ Route::get('/flowchart', function () {
 
 Route::get('/piechart', function () {
     return view('AdminSide.piechart');
+
 })->name('piechart');
 
 Route::get('/rss-lists', [MainController::class, 'rssLists']);
 
 Route::get('/items-by-category', [MainController::class, 'itemsByCategory']);
+
+Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
 // END HAMZA
 
 
