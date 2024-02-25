@@ -54,4 +54,8 @@ class RssDashboard extends Component
         session()->flash('message','Student Deleted Successfully');
         $this->dispatch('close-modal');
     }
+
+    public function closeModal()
+    {
+    }
 }
