@@ -23,8 +23,8 @@
                         datasets: [{
                             label: 'NUMBERS OF ITEMS PER RSS LINK',
                             data: counts,
-                            backgroundColor: 'rgba(75, 192, 192, 0.9)',
-                            borderColor: 'rgba(75, 192, 192)',
+                            backgroundColor: 'rgb(154,43,180,0.9)',
+                            borderColor: 'rgb(200,43,180)',
                             borderWidth: 1
                         }]
                     },
@@ -34,11 +34,17 @@
                                 beginAtZero: true,
                                 ticks: {
                                     color: 'white' // Color of the ticks on the y-axis
+                                },
+                                grid: {
+                                    color: 'rgb(244,244,244, 0.2)'
                                 }
                             },
                             x: {
                                 ticks: {
                                     color: 'white'
+                                },
+                                grid: {
+                                    color: 'rgb(244,244,244,0.2)'
                                 }
                             }
                         },
