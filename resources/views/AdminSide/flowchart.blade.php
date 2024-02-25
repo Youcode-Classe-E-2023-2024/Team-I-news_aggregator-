@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex items-center justify-center h-full w-full">
-        <canvas class="backdrop-blur-sm shadow-md h-[90%] w-[90%] mx-10 rounded-md p-4 border-[1px] border-solid border-sky-700" id="rssListChart" style="background-color: rgba(0, 0, 0, 0.403);"></canvas>
+        <canvas class="backdrop-blur-sm shadow-md h-[90%] w-[90%] mx-10 rounded-md p-4 border-[1px] border-solid border-purple-700" id="rssListChart" style="background-color: rgba(0, 0, 0, 0.403);"></canvas>
     </div>
 
 

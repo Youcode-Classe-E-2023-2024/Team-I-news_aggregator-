@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AdminSide\RssItem;
 use App\Models\AdminSide\Rsslist;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -17,5 +18,14 @@ class MainController extends Controller
     public function rssLists() {
         $rssLists = Rsslist::withCount('rssItems')->get();
         return response()->json($rssLists);
+    }
+
+    public function itemsByCategory()
+    {
+        $categoriesWithCounts = RssItem::select('category', DB::raw('count(*) as count'))
+            ->groupBy('category')
+            ->get();
+
+        return response()->json($categoriesWithCounts);
     }
 }
