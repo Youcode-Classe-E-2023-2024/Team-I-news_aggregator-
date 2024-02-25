@@ -33,7 +33,7 @@ Route::get('/stored-rss-items', function() {
     return view('AdminSide.layout.rss-items-list');
 })->name('storedRssItems');
 
-
+//Route::put('/rss-item/{rssItem}', [RssItemController::class, 'update'])->name('rss-item.update');
 // END HAMZA
 
 
