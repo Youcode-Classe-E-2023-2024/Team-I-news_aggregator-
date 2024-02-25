@@ -67,9 +67,7 @@
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->updated_at }}</td>
                                 <td>
-                                    <!-- Emit the 'editRssItem' event when the button is clicked -->
                                     <!-- Update the button inside the foreach loop to emit the editRssItem event -->
-{{--                                    <button  class="px-3 py-1 text-white cursor-pointer bg-green-500">Edit</button>--}}
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#updateRssItemModal" wire:click="editRssItem({{$rssItem->id}})" class="btn btn-primary">
                                         Edit
                                     </button>
@@ -106,25 +104,19 @@
     </section>
 </div>
 
+
 {{--<script>--}}
-{{--    window.addEventListener('close-modal', event => {--}}
-{{--        $('#updateRssItemModal').modal('hide');--}}
-{{--    })--}}
-{{--</script>--}}
-<script>
-    document.addEventListener('close-modal', function(event) {
-        var modal = document.getElementById('updateRssItemModal');
-        if (modal) {
-            modal.style.display = 'none'; // Hide the modal by setting display style to 'none'
-            modal.setAttribute('aria-hidden', 'true'); // Set aria-hidden attribute to 'true'
-        }
-    });
-</script>
-{{--<script>--}}
-{{--    document.addEventListener('livewire:load', function () {--}}
-{{--        Livewire.on('rssItemUpdated', () => {--}}
-{{--            // Close the modal or perform other actions--}}
-{{--            $('#updateRssItemModal').modal('hide');--}}
-{{--        });--}}
+{{--    document.addEventListener('CloseModal', function(event) {--}}
+{{--        var modal = document.getElementById('updateRssItemModal');--}}
+{{--        if (modal) {--}}
+{{--            modal.style.display = 'none'; // Hide the modal by setting display style to 'none'--}}
+{{--            modal.setAttribute('aria-hidden', 'true'); // Set aria-hidden attribute to 'true'--}}
+{{--        }--}}
 {{--    });--}}
 {{--</script>--}}
+<script>
+    window.addEventListener('close-modal', event => {
+        $('#updateRssItemModal').modal('hide');
+    })
+</script>
+

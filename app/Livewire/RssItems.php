@@ -72,7 +72,6 @@ class RssItems extends Component
     {
         $validatedData = $this->validate();
 
-//        dd(RssItem::where('id',$this->rss_item_id)->value('name'));
         RssItem::where('id',$this->rss_item_id)->update([
             'name' => $validatedData['name'],
             'category' => $validatedData['category'],
@@ -82,7 +81,6 @@ class RssItems extends Component
         session()->flash('message','Student Updated Successfully');
         $this->resetInput();
         $this->dispatch('close-modal');
-//        $this->emit('rssItemUpdated');
     }
 
     public function closeModal()
