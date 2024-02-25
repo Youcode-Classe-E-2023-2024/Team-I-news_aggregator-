@@ -12,7 +12,7 @@ class RssItems extends Component
 {
     use WithPagination;
     public $search = '';
-    public $perPage = 7;
+    public $perPage = 5;
     public $admin = '';
 
     public $sortBy = 'name';
@@ -48,11 +48,12 @@ class RssItems extends Component
             'name' => 'required|string|min:6',
             'category' => ['required','string'],
             'link' => 'required|string',
-            'description' => 'required|string'
+            'description' => 'required|string',
+            'trend' => 'string'
         ];
     }
 
-    public $rss_item_id, $name, $category, $link, $description;
+    public $rss_item_id, $name, $category, $link, $description, $trend;
     public function editRssItem(int $rss_item_id)
     {
         $rssItem = RssItem::find($rss_item_id);
@@ -108,4 +109,36 @@ class RssItems extends Component
         session()->flash('message','Student Deleted Successfully');
         $this->dispatch('close-modal');
     }
+
+    /*************** rss items popup trend form ****************/
+    public function editRssItemTrend(int $rss_item_id)
+    {
+        $rssItem = RssItem::find($rss_item_id);
+        if($rssItem){
+            $this->rss_item_id = $rssItem->id;
+            $this->trend = $rssItem->trend;
+
+        }else{
+            return redirect()->to('/stored-rss-items');
+        }
+    }
+
+    public function updateRssItemTrend()
+    {
+        $validatedData = $this->validate([
+            'trend' => 'required'
+        ]);
+//        dump($validatedData['trend']);
+//        dd(RssItem::find($this->rss_item_id)->name);
+
+        RssItem::where('id', $this->rss_item_id)->update([
+            'trend' => $validatedData['trend'],
+        ]);
+
+        session()->flash('message', 'RSS Item Trend Updated Successfully');
+
+        $this->dispatch('close-modal');
+    }
+
 }
+

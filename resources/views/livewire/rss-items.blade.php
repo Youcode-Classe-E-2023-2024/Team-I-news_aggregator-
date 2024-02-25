@@ -49,6 +49,9 @@
                                 updated at
                             </th>
                             <th scope="col" class="px-4 py-3">
+                                trend
+                            </th>
+                            <th scope="col" class="px-4 py-3">
                                 handle
                             </th>
                             <th scope="col" class="px-4 py-3">
@@ -67,7 +70,11 @@
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->updated_at }}</td>
                                 <td>
-                                    <!-- Update the button inside the foreach loop to emit the editRssItem event -->
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateRssItemTrendModal" wire:click="editRssItemTrend({{$rssItem->id}})" class="btn  {{ $rssItem->trend == 'active'? 'bg-green-500 hover:bg-green-600' : 'bg-purple-500 hover:bg-purple-600' }}">
+                                        {{ $rssItem->trend }}
+                                    </button>
+                                </td>
+                                <td>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#updateRssItemModal" wire:click="editRssItem({{$rssItem->id}})" class="btn btn-primary">
                                         Edit
                                     </button>
@@ -110,5 +117,6 @@
     window.addEventListener('close-modal', event => {
         $('#updateRssItemModal').modal('hide');
         $('#deleteRssItemModal').modal('hide');
+        $('#updateRssItemTrendModal').modal('hide');
     })
 </script>

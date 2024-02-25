@@ -15,7 +15,8 @@ class RssItem extends Model
         'name',
         'link',
         'description',
-        'category'
+        'category',
+        'trend'
     ];
 
     public function scopeSearch($query, $value) {
