@@ -30,10 +30,10 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('name')">
+                            <th scope="col" class="px-4 py-3">
                                 <span>name</span>
                             </th>
-                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('category')">
+                            <th scope="col" class="px-4 py-3">
                                 <span>category</span>
                             </th>
                             <th scope="col" class="px-4 py-3">
@@ -42,7 +42,7 @@
                             <th scope="col" class="px-4 py-3">
                                 description
                             </th>
-                            <th scope="col" class="px-4 py-3" wire:click="setSortBy('created_at')">
+                            <th scope="col" class="px-4 py-3">
                                 <span>created at</span>
                             </th>
                             <th scope="col" class="px-4 py-3">
@@ -60,10 +60,10 @@
 
                         @foreach($rssItems as $rssItem)
                             <tr  class="border-b dark:border-gray-700">
-                                <td scope="col" class="px-4 py-3 text-white" >{{ substr($rssItem->name, 0, 20) }}...</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->category }}</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->link, 0, 20) }}...</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->description, 0, 20) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-white" >{{ substr($rssItem->name, 0, 10) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->category, 0, 20) }}</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->link, 0, 10) }}...</td>
+                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($rssItem->description, 0, 10) }}...</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $rssItem->updated_at }}</td>
                                 <td>
@@ -106,10 +106,25 @@
     </section>
 </div>
 
+{{--<script>--}}
+{{--    window.addEventListener('close-modal', event => {--}}
+{{--        $('#updateRssItemModal').modal('hide');--}}
+{{--    })--}}
+{{--</script>--}}
 <script>
-    window.addEventListener('close-modal', event => {
-
-        // $('#studentModal').modal('hide');
-        $('#updateRssItemModal').modal('hide');
-    })
+    document.addEventListener('close-modal', function(event) {
+        var modal = document.getElementById('updateRssItemModal');
+        if (modal) {
+            modal.style.display = 'none'; // Hide the modal by setting display style to 'none'
+            modal.setAttribute('aria-hidden', 'true'); // Set aria-hidden attribute to 'true'
+        }
+    });
 </script>
+{{--<script>--}}
+{{--    document.addEventListener('livewire:load', function () {--}}
+{{--        Livewire.on('rssItemUpdated', () => {--}}
+{{--            // Close the modal or perform other actions--}}
+{{--            $('#updateRssItemModal').modal('hide');--}}
+{{--        });--}}
+{{--    });--}}
+{{--</script>--}}

@@ -35,7 +35,7 @@ class RssItems extends Component
     public function render()
     {
         $rssItems = RssItem::search($this->search)
-            ->orderBy($this->sortBy, $this->sortDirection)
+            ->orderByDesc('updated_at')
             ->paginate($this->perPage);
 
         return view('livewire.rss-items',compact('rssItems'));
@@ -72,6 +72,7 @@ class RssItems extends Component
     {
         $validatedData = $this->validate();
 
+//        dd(RssItem::where('id',$this->rss_item_id)->value('name'));
         RssItem::where('id',$this->rss_item_id)->update([
             'name' => $validatedData['name'],
             'category' => $validatedData['category'],
@@ -80,7 +81,8 @@ class RssItems extends Component
         ]);
         session()->flash('message','Student Updated Successfully');
         $this->resetInput();
-        $this->dispatchBrowserEvent('close-modal');
+        $this->dispatch('close-modal');
+//        $this->emit('rssItemUpdated');
     }
 
     public function closeModal()
