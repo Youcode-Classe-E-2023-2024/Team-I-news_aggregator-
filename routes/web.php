@@ -39,6 +39,13 @@ Route::get('/users-dash', function () {
     return view('AdminSide.users-mng.users-dash');
 
 })->name('storedUsers');
+
+Route::get('/flowchart', function () {
+    return view('AdminSide.flowchart');
+
+})->name('flowchart');
+
+Route::get('/rss-lists', [MainController::class, 'rssLists']);
 // END HAMZA
 
 
