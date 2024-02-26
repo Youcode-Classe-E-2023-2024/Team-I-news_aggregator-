@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSide\MainController;
 use App\Http\Controllers\AdminSide\PromptController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,5 +151,6 @@ Route::get('/tendance', function () {
     return view('UserSide.tendance');
 })->name('tendance');
 
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 // END IMAD
