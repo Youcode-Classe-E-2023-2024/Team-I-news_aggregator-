@@ -1,11 +1,11 @@
 @include('Shared.components.header')
 
-<body class=" ">
+<body style="background-image: url('http://127.0.0.1:8000/images/anime_letters.jpg'); background-size: cover; background-position: center" class=" ">
 
 <x-Navbar :links="['Home' => '/home', 'Page 2' => '/page2']" />
 
-<div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class="  justify-between items-center bg-slate-50 rounded-lg flex mt-12 mx-auto px-12 border ">
-    <div class="lg:flex items-stretch md:mt-12 p-4  bg-gray-50 w-10/12 ">
+<div  style="background-color: rgba(0, 0, 0, 0.403); box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class=" w-11/12 backdrop-blur-sm shadow-md  my-14 justify-between items-center  rounded-lg flex  mx-auto px-12 border ">
+    <div class="lg:flex items-stretch md:mt-12 p-4    w-10/12 ">
       <div class="lg:w-1/2">
         <div class="sm:flex items-center justify-between xl:gap-x-8 gap-x-6">
           <div class="sm:w-1/2 relative">
