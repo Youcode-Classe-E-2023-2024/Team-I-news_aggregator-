@@ -3,11 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-// <<<<<<< HEAD
-//         'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
-// =======
-        'reference' => '86fc20d5d50da64e523f6e83fea8846bbd4bf7f7',
-// >>>>>>> 45d3db32aa0f1fde7b4a2f1100bcb6eb05a9cee2
+        'reference' => '9716b9200e86bc01f4864d048edf15b7ce3e2dc0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -413,11 +409,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-// <<<<<<< HEAD
-//             'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
-// =======
-            'reference' => '86fc20d5d50da64e523f6e83fea8846bbd4bf7f7',
-// >>>>>>> 45d3db32aa0f1fde7b4a2f1100bcb6eb05a9cee2
+            'reference' => '9716b9200e86bc01f4864d048edf15b7ce3e2dc0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1167,6 +1159,15 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'spatie/laravel-permission' => array(
+            'pretty_version' => '6.3.0',
+            'version' => '6.3.0.0',
+            'reference' => '4d119986c862ac0168b77338c85d8236bb559a88',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-permission',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/laravel-sluggable' => array(
             'pretty_version' => '3.5.0',
