@@ -15,7 +15,7 @@ use App\Http\Controllers\CategoryController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
- 
+
 
 Route::get('/ooooo', function () {
     return view('welcome');
@@ -152,5 +152,9 @@ Route::get('/tendance', function () {
 })->name('tendance');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
+Route::get('/favorite',function (){
+    return view('UserSide.favorite');
+})->name('favorite');
 
 // END IMAD
