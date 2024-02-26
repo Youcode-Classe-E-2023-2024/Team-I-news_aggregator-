@@ -103,7 +103,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var mySwiper = new Swiper('.swiper-container', {
-            // Options de Swiper, consultez la documentation pour plus d'options
             slidesPerView: 1,
             spaceBetween: 10,
             navigation: {

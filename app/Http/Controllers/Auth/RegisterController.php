@@ -49,7 +49,7 @@ class RegisterController extends Controller
             $data = [];
             $data['response_code']  = '400';
             $data['status']         = 'error';
-            $data['message']        = 'fail Register';
+            $data['message']        = $e;
             return response()->json($data);
         }
     }
