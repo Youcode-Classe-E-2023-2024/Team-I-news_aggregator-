@@ -46,15 +46,10 @@ class fill_categories_table extends Seeder
            'Sports', 'Travel', 'Food', 'Health', 'Business', 'Finance', 'Fashion', 'Education', 'Writing', 'Photography',
            'Science', 'History', 'Politics'
        ];
-
-       foreach ($categories as $category) {
-           Category::create([
-               'name' => $category
-           ]);
-       }
-
-        Category::create([
-            'name' => 'find'
-        ]);
+        foreach ($categories as $category) {
+            Category::create([
+                'name' => $category
+            ]);
+        }
     }
 }
