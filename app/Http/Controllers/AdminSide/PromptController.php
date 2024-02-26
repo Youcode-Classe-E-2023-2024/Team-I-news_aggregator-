@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\AdminSide;
 
 use App\Http\Controllers\Controller;
@@ -8,6 +9,10 @@ use Illuminate\Support\Facades\Http;
 use App\Models\AdminSide\Rsslist;
 use App\Models\AdminSide\RssItem;
 use App\Models\AdminSide\Category;
+use App\Mail\NewRssAdded;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+
 
 class PromptController extends Controller
 {
@@ -60,16 +65,22 @@ class PromptController extends Controller
                 ]);
             }
 
+            // Send email to all users
+            $users = User::all(); // Assuming you have a User model
+            foreach ($users as $user) {
+                Mail::to($user->email)->send(new NewRssAdded($newRssLink));
+            }
+
             return redirect()->route('adminDash')->with('success', 'RSS items stored successfully 👍');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
     }
 
-// At the top of your class, declare a private property to store categories
+    // At the top of your class, declare a private property to store categories
     private $categories;
 
-// Modify the matchCategory function to fetch and cache categories if not already fetched
+    // Modify the matchCategory function to fetch and cache categories if not already fetched
     private function matchCategory($description)
     {
         // Fetch categories if not already fetched
@@ -93,5 +104,4 @@ class PromptController extends Controller
         // If no matching category is found, default to 'General'
         return 'General';
     }
-
 }
