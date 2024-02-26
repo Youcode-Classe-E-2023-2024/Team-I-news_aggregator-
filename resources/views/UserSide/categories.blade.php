@@ -9,7 +9,6 @@
         <!-- Example Category Card -->
         @foreach($categories as $category)
             <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                <img class="w-full" src="{{ $category->image }}" alt="Category Image">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">{{ $category->name }}</div>
                     <p class="text-gray-700 text-base">
@@ -21,6 +20,10 @@
                 </div>
             </div>
         @endforeach
+        <div class="mt-4 mx">
+        {{ $categories->links() }}
+    </div>
+        </div>
     </div>
 </div>
 
