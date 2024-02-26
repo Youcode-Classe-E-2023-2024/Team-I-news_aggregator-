@@ -14,7 +14,7 @@ use App\Http\Controllers\AdminSide\PromptController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
- 
+
 
 Route::get('/ooooo', function () {
     return view('welcome');
@@ -150,5 +150,9 @@ Route::get('/tendance', function () {
     return view('UserSide.tendance');
 })->name('tendance');
 
+
+Route::get('/favorite',function (){
+    return view('UserSide.favorite');
+})->name('favorite');
 
 // END IMAD
