@@ -18,9 +18,10 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '47e1160838b5e5a10346ac4084b58c23' => __DIR__ . '/..' . '/laravel/prompts/src/helpers.php',
@@ -28,7 +29,6 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f57d353b41eb2e234b26064d63d8c5dd' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Filesystem/functions.php',
@@ -55,6 +55,11 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'U' => 
+        array (
+            'Unsplash\\OAuth2\\Client\\' => 23,
+            'Unsplash\\' => 9,
         ),
         'T' => 
         array (
@@ -133,6 +138,7 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
             'Livewire\\' => 9,
             'League\\Uri\\' => 11,
             'League\\OAuth2\\Server\\' => 21,
+            'League\\OAuth2\\Client\\' => 21,
             'League\\MimeTypeDetection\\' => 25,
             'League\\Flysystem\\Local\\' => 23,
             'League\\Flysystem\\' => 17,
@@ -217,6 +223,14 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unsplash\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hughbertd/oauth2-unsplash/src',
+        ),
+        'Unsplash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unsplash/unsplash/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -448,6 +462,10 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         array (
             0 => __DIR__ . '/..' . '/league/oauth2-server/src',
         ),
+        'League\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -643,6 +661,11 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Livewire\\RssDashboard' => __DIR__ . '/../..' . '/app/Livewire/RssDashboard.php',
+        'App\\Livewire\\RssItems' => __DIR__ . '/../..' . '/app/Livewire/RssItems.php',
+        'App\\Livewire\\UsersDashboard' => __DIR__ . '/../..' . '/app/Livewire/UsersDashboard.php',
+        'App\\Models\\AdminSide\\Category' => __DIR__ . '/../..' . '/app/Models/AdminSide/Category.php',
+        'App\\Models\\AdminSide\\RssItem' => __DIR__ . '/../..' . '/app/Models/AdminSide/RssItem.php',
         'App\\Models\\AdminSide\\Rsslist' => __DIR__ . '/../..' . '/app/Models/AdminSide/Rsslist.php',
         'App\\Models\\RolesPermissionDescription' => __DIR__ . '/../..' . '/app/Models/RolesPermissionDescription.php',
         'App\\Models\\RolesPermissionName' => __DIR__ . '/../..' . '/app/Models/RolesPermissionName.php',
@@ -764,6 +787,8 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\fill_categories_table' => __DIR__ . '/../..' . '/database/seeders/fill_categories_table.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
         'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
@@ -3528,6 +3553,32 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
+        'League\\OAuth2\\Client\\Grant\\AbstractGrant' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/AbstractGrant.php',
+        'League\\OAuth2\\Client\\Grant\\AuthorizationCode' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/AuthorizationCode.php',
+        'League\\OAuth2\\Client\\Grant\\ClientCredentials' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/ClientCredentials.php',
+        'League\\OAuth2\\Client\\Grant\\Exception\\InvalidGrantException' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/Exception/InvalidGrantException.php',
+        'League\\OAuth2\\Client\\Grant\\GrantFactory' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/GrantFactory.php',
+        'League\\OAuth2\\Client\\Grant\\Password' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/Password.php',
+        'League\\OAuth2\\Client\\Grant\\RefreshToken' => __DIR__ . '/..' . '/league/oauth2-client/src/Grant/RefreshToken.php',
+        'League\\OAuth2\\Client\\OptionProvider\\HttpBasicAuthOptionProvider' => __DIR__ . '/..' . '/league/oauth2-client/src/OptionProvider/HttpBasicAuthOptionProvider.php',
+        'League\\OAuth2\\Client\\OptionProvider\\OptionProviderInterface' => __DIR__ . '/..' . '/league/oauth2-client/src/OptionProvider/OptionProviderInterface.php',
+        'League\\OAuth2\\Client\\OptionProvider\\PostAuthOptionProvider' => __DIR__ . '/..' . '/league/oauth2-client/src/OptionProvider/PostAuthOptionProvider.php',
+        'League\\OAuth2\\Client\\Provider\\AbstractProvider' => __DIR__ . '/..' . '/league/oauth2-client/src/Provider/AbstractProvider.php',
+        'League\\OAuth2\\Client\\Provider\\Exception\\IdentityProviderException' => __DIR__ . '/..' . '/league/oauth2-client/src/Provider/Exception/IdentityProviderException.php',
+        'League\\OAuth2\\Client\\Provider\\GenericProvider' => __DIR__ . '/..' . '/league/oauth2-client/src/Provider/GenericProvider.php',
+        'League\\OAuth2\\Client\\Provider\\GenericResourceOwner' => __DIR__ . '/..' . '/league/oauth2-client/src/Provider/GenericResourceOwner.php',
+        'League\\OAuth2\\Client\\Provider\\ResourceOwnerInterface' => __DIR__ . '/..' . '/league/oauth2-client/src/Provider/ResourceOwnerInterface.php',
+        'League\\OAuth2\\Client\\Token\\AccessToken' => __DIR__ . '/..' . '/league/oauth2-client/src/Token/AccessToken.php',
+        'League\\OAuth2\\Client\\Token\\AccessTokenInterface' => __DIR__ . '/..' . '/league/oauth2-client/src/Token/AccessTokenInterface.php',
+        'League\\OAuth2\\Client\\Token\\ResourceOwnerAccessTokenInterface' => __DIR__ . '/..' . '/league/oauth2-client/src/Token/ResourceOwnerAccessTokenInterface.php',
+        'League\\OAuth2\\Client\\Tool\\ArrayAccessorTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/ArrayAccessorTrait.php',
+        'League\\OAuth2\\Client\\Tool\\BearerAuthorizationTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/BearerAuthorizationTrait.php',
+        'League\\OAuth2\\Client\\Tool\\GuardedPropertyTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/GuardedPropertyTrait.php',
+        'League\\OAuth2\\Client\\Tool\\MacAuthorizationTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/MacAuthorizationTrait.php',
+        'League\\OAuth2\\Client\\Tool\\ProviderRedirectTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/ProviderRedirectTrait.php',
+        'League\\OAuth2\\Client\\Tool\\QueryBuilderTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/QueryBuilderTrait.php',
+        'League\\OAuth2\\Client\\Tool\\RequestFactory' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/RequestFactory.php',
+        'League\\OAuth2\\Client\\Tool\\RequiredParameterTrait' => __DIR__ . '/..' . '/league/oauth2-client/src/Tool/RequiredParameterTrait.php',
         'League\\OAuth2\\Server\\AuthorizationServer' => __DIR__ . '/..' . '/league/oauth2-server/src/AuthorizationServer.php',
         'League\\OAuth2\\Server\\AuthorizationValidators\\AuthorizationValidatorInterface' => __DIR__ . '/..' . '/league/oauth2-server/src/AuthorizationValidators/AuthorizationValidatorInterface.php',
         'League\\OAuth2\\Server\\AuthorizationValidators\\BearerTokenValidator' => __DIR__ . '/..' . '/league/oauth2-server/src/AuthorizationValidators/BearerTokenValidator.php',
@@ -7160,6 +7211,20 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'Unsplash\\ArrayObject' => __DIR__ . '/..' . '/unsplash/unsplash/src/ArrayObject.php',
+        'Unsplash\\Collection' => __DIR__ . '/..' . '/unsplash/unsplash/src/Collection.php',
+        'Unsplash\\Connection' => __DIR__ . '/..' . '/unsplash/unsplash/src/Connection.php',
+        'Unsplash\\Endpoint' => __DIR__ . '/..' . '/unsplash/unsplash/src/Endpoint.php',
+        'Unsplash\\Exception' => __DIR__ . '/..' . '/unsplash/unsplash/src/Exception.php',
+        'Unsplash\\HttpClient' => __DIR__ . '/..' . '/unsplash/unsplash/src/HttpClient.php',
+        'Unsplash\\OAuth2\\Client\\Provider\\Unsplash' => __DIR__ . '/..' . '/hughbertd/oauth2-unsplash/src/Provider/Unsplash.php',
+        'Unsplash\\OAuth2\\Client\\Provider\\UnsplashResourceOwner' => __DIR__ . '/..' . '/hughbertd/oauth2-unsplash/src/Provider/UnsplashResourceOwner.php',
+        'Unsplash\\PageResult' => __DIR__ . '/..' . '/unsplash/unsplash/src/PageResult.php',
+        'Unsplash\\Photo' => __DIR__ . '/..' . '/unsplash/unsplash/src/Photo.php',
+        'Unsplash\\Search' => __DIR__ . '/..' . '/unsplash/unsplash/src/Search.php',
+        'Unsplash\\Stat' => __DIR__ . '/..' . '/unsplash/unsplash/src/Stat.php',
+        'Unsplash\\Topic' => __DIR__ . '/..' . '/unsplash/unsplash/src/Topic.php',
+        'Unsplash\\User' => __DIR__ . '/..' . '/unsplash/unsplash/src/User.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Webmozart\\Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/webmozart/assert/src/InvalidArgumentException.php',

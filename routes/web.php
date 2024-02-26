@@ -14,7 +14,7 @@ use App\Http\Controllers\AdminSide\PromptController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
 
 Route::get('/ooooo', function () {
     return view('welcome');
@@ -23,19 +23,38 @@ Route::get('/ooooo', function () {
 // START HAMZA
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
 
-
 Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
 
-Route::get('/stored-rss', function() {
-    return view('AdminSide.layout.rss-dashboard');
-})->name('storedPosts');
-=======
-Route::post('/rss.store', [PromptController::class, 'trait_rss'])->name('rss.store');
-Route::get('/admin/rss-items-static', [PromptController::class, 'showRssItemsStatic'])->name('admin.rss.items.static');
-Route::get('/rss-item-details/{id}', [PromptController::class, 'rssItemDetails'])->name('rss.item.details');
+Route::get('/stored-rss-links', function() {
+    return view('AdminSide.layout.rss-links-list');
 
+})->name('storedRssLinks');
 
+Route::get('/stored-rss-items', function() {
+    return view('AdminSide.layout.rss-items-list');
 
+})->name('storedRssItems');
+
+Route::get('/users-dash', function () {
+    return view('AdminSide.users-mng.users-dash');
+
+})->name('storedUsers');
+
+Route::get('/flowchart', function () {
+    return view('AdminSide.flowchart');
+
+})->name('flowchart');
+
+Route::get('/piechart', function () {
+    return view('AdminSide.piechart');
+
+})->name('piechart');
+
+Route::get('/rss-lists', [MainController::class, 'rssLists']);
+
+Route::get('/items-by-category', [MainController::class, 'itemsByCategory']);
+
+Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
 // END HAMZA
 
 

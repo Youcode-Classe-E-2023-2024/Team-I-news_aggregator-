@@ -17,7 +17,7 @@
     <!-- component -->
     <div class="w-full h-full min-h-screen flex items-center justify-center">
         <div id="prompt-section" class="backdrop-blur-sm shadow-md flex flex-col gap-8 items-center justify-center rounded-md p-12 border-[2px] border-solid border-purple-500" style="background-color: rgba(0, 0, 0, 0.503);">
-            <h1 class="text-2xl font-bold">ADD AN RSS LINK INTO DATABASE</h1>
+            <h1 class="text-2xl text-purple-600 font-bold">ADD AN RSS LINK INTO DATABASE</h1>
             <form
                 action="{{ route('rss.store') }}" method="post"
                 class="mx-auto min-w-[700px] relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-md gap-2 shadow-2xl focus-within:border-gray-300"
@@ -46,7 +46,7 @@
 
                         <div class="flex items-center transition-all opacity-1 valid:"><span
                                 class="text-sm font-semibold whitespace-nowrap truncate mx-auto">
-                    Search
+                    Submit
                 </span>
                         </div>
 
@@ -89,7 +89,12 @@
                             {{ session('success') }}
                         </p>
                     </div>
-
+                @elseif(session('error'))
+                    <div class="h-full flex items-center justify-center">
+                        <p class="text-2xl text-red-400 text-3xl font-bold">
+                            {{ session('error') }}
+                        </p>
+                    </div>
                 @else
                     <div class="h-full w-full rounded-xl" style="background-image: url('http://127.0.0.1:8000/storage/images/illustration.png'); background-size: cover; background-position: center; ">
                         <!-- illustration image is here -->

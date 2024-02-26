@@ -4,11 +4,12 @@ namespace App\Models\AdminSide;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AdminSide\RssItem;
 
 class Rsslist extends Model
 {
-    use HasFactory;
     protected $table = 'rsslist';
+    use HasFactory;
 
     protected $fillable = [
         'name'
@@ -16,5 +17,10 @@ class Rsslist extends Model
 
     public function scopeSearch($query, $value) {
         $query->where('name', 'like', "%{$value}%");
+    }
+
+    public function rssItems()
+    {
+        return $this->hasMany(RssItem::class, 'rss_id');
     }
 }
