@@ -17,8 +17,8 @@ class UserManagementController extends Controller
     /** user view */
     public function userView($user_id)
     {
-        $userView = User::where('user_id',$user_id)->first();
-        return view('usermanagement.view',compact('userView'));
+        $userView = User::where('id',$user_id)->first();
+        return view('userside.profile',compact('userView'));
     }
 }
 
