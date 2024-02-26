@@ -38,10 +38,11 @@ class UsersDashboard extends Component
             'name' => 'required|string|min:6',
             'email' => ['required','email'],
             'password' => 'required|string',
+            'role' => ''
         ];
     }
 
-    public $user_id, $name, $email, $password;
+    public $user_id, $name, $email, $password, $role = 'user';
     public function editUser(int $user_id)
     {
         $user = User::find($user_id);
@@ -95,5 +96,29 @@ class UsersDashboard extends Component
         session()->flash('message','User Deleted Successfully');
         $this->dispatch('close-modal');
     }
+    /*************** user role popup form ***************/
+    public function editUserRole(int $user_id)
+    {
+        $user = User::find($user_id);
+        if($user){
+            $this->user_id = $user->id;
+        }else{
+            return redirect()->to('/users-dash');
+        }
+    }
+
+    public function updateUserRole()
+    {
+        $user = User::where('id', $this->user_id)->first();
+
+//        dump($user->name);
+//        dd($this->role);
+        $user->assignRole($this->role);
+
+        session()->flash('message', 'RSS Item Trend Updated Successfully');
+
+        $this->dispatch('close-modal');
+    }
+
 }
 

@@ -57,6 +57,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 
     Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
 
+//  this route is just for a test purpose
     Route::post('/logout', function() {
         auth()->user()->logout();
     });
