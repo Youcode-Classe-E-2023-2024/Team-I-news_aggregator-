@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
+// <<<<<<< HEAD
+//         'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
+// =======
+        'reference' => '86fc20d5d50da64e523f6e83fea8846bbd4bf7f7',
+// >>>>>>> 45d3db32aa0f1fde7b4a2f1100bcb6eb05a9cee2
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -183,6 +187,15 @@
             'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'hughbertd/oauth2-unsplash' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => 'f451f4a49dca4027f6edaa850d2fccdfa8721bfe',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hughbertd/oauth2-unsplash',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -400,7 +413,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
+// <<<<<<< HEAD
+//             'reference' => '5119b5fe608c2045b6b26b401d1c093e22b369bb',
+// =======
+            'reference' => '86fc20d5d50da64e523f6e83fea8846bbd4bf7f7',
+// >>>>>>> 45d3db32aa0f1fde7b4a2f1100bcb6eb05a9cee2
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -547,6 +564,15 @@
             'reference' => 'ce0f4d1e8a6f4eb0ddff33f57c69c50fd09f4301',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/mime-type-detection',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'league/oauth2-client' => array(
+            'pretty_version' => '2.7.0',
+            'version' => '2.7.0.0',
+            'reference' => '160d6274b03562ebeb55ed18399281d8118b76c8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/oauth2-client',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1448,6 +1474,15 @@
             'reference' => '83ee6f38df0a63106a9e4536e3060458b74ccedb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'unsplash/unsplash' => array(
+            'pretty_version' => '3.2.1',
+            'version' => '3.2.1.0',
+            'reference' => 'cdb174beaf62d187db1a777cf5fb11ee554d85cf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../unsplash/unsplash',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

@@ -33,7 +33,7 @@ class User extends Authenticatable
         'department',
         'password',
     ];
-    
+
     /** auto create id */
     protected static function boot()
     {
@@ -53,5 +53,9 @@ class User extends Authenticatable
                 $model->user_id = 'KH_' . sprintf("%03s", $nextID);
             }
         });
+    }
+
+    public function scopeSearch($query, $value) {
+        $query->where('name', 'like', "%{$value}%");
     }
 }

@@ -4,84 +4,94 @@ namespace App\Http\Controllers\AdminSide;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SimpleXMLElement;
+use Illuminate\Support\Facades\Http;
 use App\Models\AdminSide\Rsslist;
+use App\Models\AdminSide\RssItem;
+use App\Models\AdminSide\Category;
 
 class PromptController extends Controller
 {
-    public function trait_rss(Request $request)
+    public function storeRss(Request $request)
     {
-        // Validate the request
         $request->validate([
             'rssLink' => 'required|url',
         ]);
 
-        // Fetch XML data from the RSS link
         $rssLink = $request->input('rssLink');
-        $xmlData = file_get_contents($rssLink);
 
-        // Parse XML data
-        $xml = new SimpleXMLElement($xmlData);
-
-        // Initialize an empty array to store transformed data
-        $items = [];
-
-        // Iterate over each item in the XML
-        foreach ($xml->channel->item as $item) {
-            // Extract relevant information from each item
-            $title = (string)$item->title;
-            $link = (string)$item->link;
-            $description = (string)$item->description;
-            $pubDate = (string)$item->pubDate;
-            $image = isset($item->image) ? (string)$item->image : 'no_image';
-            $creator = isset($item->children('dc', true)->creator) ? (string)$item->children('dc', true)->creator : 'no_creator';
-            $category = isset($item->category) ? (string)$item->category : 'no_category';
-
-            // Push the extracted information into the items array
-//            $items[] = compact('title', 'link', 'description', 'pubDate', 'image', 'creator', 'category');
-            Rsslist::create([
-                'title' => $title,
-                'link' => $link,
-                'description' => $description,
-                'pubDate' => $pubDate,
-                'image' => $image,
-                'creator' => $creator,
-                'category' => $category
-            ]);
+        // Check if the RSS link already exists in the rsslist table
+        $existingRss = Rsslist::where('name', $rssLink)->first();
+        if ($existingRss) {
+            return redirect()->back()->with('error', 'RSS link already exists 🤷‍♀️');
         }
 
-        // Pass the transformed data to the view for rendering
-//        return view('AdminSide.main', compact('items'));
-        return redirect()->back()->with('success', 'RSS link stored successfully');
+        try {
+            // Attempt to fetch XML data from the RSS link
+            $response = Http::get($rssLink);
+
+            // Check if the response status is not successful
+            if (!$response->successful()) {
+                throw new \Exception('Failed to fetch XML data from the RSS link');
+            }
+
+            $newRssLink = Rsslist::create([
+                'name' => $rssLink
+            ]);
+
+            // Parse XML data
+            $xmlData = $response->body();
+            $xml = new SimpleXMLElement($xmlData);
+
+            // Iterate over each item in the XML and store in the 'rss_items' table
+            foreach ($xml->channel->item as $item) {
+                $title = (string) $item->title;
+                $link = (string) $item->link;
+                $description = (string) $item->description;
+
+                $category = $this->matchCategory($description);
+
+                RssItem::create([
+                    'rss_id' => $newRssLink->id,
+                    'name' => $title,
+                    'link' => $link,
+                    'description' => $description,
+                    'category' => $category,
+                    'image' => 'https://source.unsplash.com/200x200/?' . $title
+                ]);
+            }
+
+            return redirect()->route('adminDash')->with('success', 'RSS items stored successfully 👍');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
+        }
     }
 
-    public function showRssItemsStatic()
+// At the top of your class, declare a private property to store categories
+    private $categories;
+
+// Modify the matchCategory function to fetch and cache categories if not already fetched
+    private function matchCategory($description)
     {
-        // Static data for frontend development purposes
-        $items = [
-            (object)[
-                'title' => 'Sample News Item 1',
-                'description' => 'This is a short description of the first news item.',
-                'pubDate' => '2024-02-23',
-                'image' => 'https://picsum.photos/seed/picsum/400/300',
-            ],
-            (object)[
-                'title' => 'Sample News Item 2',
-                'description' => 'This is a short description of the second news item.',
-                'pubDate' => '2024-02-24',
-                'image' => 'https://picsum.photos/seed/picsum/400/300',
-            ],
-            // Add more items as needed
-        ];
-    
-        return view('AdminSide.rss-items', compact('items'));
+        // Fetch categories if not already fetched
+        if (!$this->categories) {
+            $this->categories = Category::all();
+        }
+
+        // Convert description to lowercase for case-insensitive comparison
+        $description = strtolower($description);
+
+        // Check if any keyword appears in the description (case-insensitive)
+        foreach ($this->categories as $category) {
+            // Convert category name to lowercase for comparison
+            $categoryName = strtolower($category->name);
+
+            if (stripos($description, $categoryName) !== false) {
+                return $category->name; // Return the category name if a keyword is found
+            }
+        }
+
+        // If no matching category is found, default to 'General'
+        return 'General';
     }
-
-    public function rssItemDetails($id)
-{
-    $item = Rsslist::findOrFail($id);
-    return view('AdminSide.rss-item-details', compact('item'));
-}
-
-    
 
 }
