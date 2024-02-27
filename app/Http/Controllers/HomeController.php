@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\AdminSide\RssItem;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('UserSide.home');
+        // Fetch RSS items from the database
+        $rssItems = RssItem::all();
+
+        // Pass the RSS items to the view
+        return view('UserSide.home', compact('rssItems'));
     }
 }
