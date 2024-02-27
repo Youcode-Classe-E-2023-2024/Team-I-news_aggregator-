@@ -30,29 +30,24 @@ Route::group(['middleware' => ['role:admin']], function () {
 
     Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
 
-    Route::get('/stored-rss-links', function() {
+    Route::get('/stored-rss-links', function () {
         return view('AdminSide.layout.rss-links-list');
-
     })->name('storedRssLinks');
 
-    Route::get('/stored-rss-items', function() {
+    Route::get('/stored-rss-items', function () {
         return view('AdminSide.layout.rss-items-list');
-
     })->name('storedRssItems');
 
     Route::get('/users-dash', function () {
         return view('AdminSide.users-mng.users-dash');
-
     })->name('storedUsers');
 
     Route::get('/flowchart', function () {
         return view('AdminSide.flowchart');
-
     })->name('flowchart');
 
     Route::get('/piechart', function () {
         return view('AdminSide.piechart');
-
     })->name('piechart');
 
     Route::get('/rss-lists', [MainController::class, 'rssLists']);
@@ -61,8 +56,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 
     Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
 
-//  this route is just for a test purpose
-    Route::post('/logout', function() {
+    //  this route is just for a test purpose
+    Route::post('/logout', function () {
         auth()->user()->logout();
     });
 });
@@ -91,6 +86,10 @@ function set_active($route)
 Route::get('/', function () {
     return view('auth.login');
 });
+
+Route::post('/add-to-favorites/{rssItemId}', [PromptController::class, 'addToFavorites'])->name('addToFavorites');
+Route::delete('/remove-from-favorites/{rssItemId}', [PromptController::class, 'removeFromFavorites'])->name('removeFromFavorites');
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('home', function () {
@@ -163,7 +162,7 @@ Route::get('/tendance', function () {
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-Route::get('/favorite',function (){
+Route::get('/favorite', function () {
     return view('UserSide.favorite');
 })->name('favorite');
 
