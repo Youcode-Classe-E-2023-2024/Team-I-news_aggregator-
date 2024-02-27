@@ -15,7 +15,6 @@
     <meta property="og:site_name" content="Soeng Souy">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="{{ route('home') }}">
-    <link rel="shortcut icon" href="{{ URL::to('assets/media/avatars/aang.jpg') }}">
     <link href="{{ URL::to('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ URL::to('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css">
 </head>

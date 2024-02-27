@@ -13,4 +13,9 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function rssItems()
+    {
+        return $this->hasMany(RssItem::class);
+    }
 }
