@@ -10,7 +10,9 @@
             overflow-y: auto;
             /* Enable vertical scrolling */
         }
-
+#group{
+    background: linear-gradient(to bottom, #ccccccba , #FFFFFF 15%);
+}
         .collapsed {
             width: 10px;
             overflow: hidden;
@@ -46,54 +48,6 @@
             .categorie {
                 position: fixed;
             }
-        }
-
-        .flip-card {
-            background-color: transparent;
-            width: 300px;
-            height: 300px;
-            border: 1px solid #f1f1f1;
-            perspective: 1000px;
-            /* Remove this if you don't want the 3D effect */
-        }
-
-        /* This container is needed to position the front and back side */
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        /* Do an horizontal flip when you move the mouse over the flip box container */
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        /* Position the front and back side */
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            /* Safari */
-            backface-visibility: hidden;
-        }
-
-        /* Style the front side (fallback if image is missing) */
-        .flip-card-front {
-            background-color: #bbb;
-            color: black;
-        }
-
-        /* Style the back side */
-        .flip-card-back {
-            background-color: dodgerblue;
-            color: white;
-            transform: rotateY(180deg);
         }
     </style>
     <x-Navbar :links="[
@@ -240,6 +194,7 @@
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
+
         <!--
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
@@ -336,18 +291,57 @@
                                     </h3>
                                     <textarea id="story" name="story" rows="4" cols="33" style="overflow-y: hidden; width:full;">
                                     {{ $rssItem->description }}
-                                    </textarea>
+       
+        <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
+
+            @foreach ($rssItems as $rssItem)
+                <div class="group cursor-pointer ">
+                    <div class="flex flex-col  justify-center" >
+
+                        <div id="group"
+                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
+                            <div class="w-full md:w-1/3 bg-white grid place-items-center">
+                                <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
+                            </div>
+                            <div class="w-1/2 md:w-2/3 bg-white flex flex-col space-y-2 p-3">
+                                <div class="flex justify-between item-center">
+
+
+
+
+                                    <div
+                                        class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
+                                        {{ $rssItem->category }}</div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-500"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </svg>
                                 </div>
-                                <div class="flex justify-bottom">
-                                    <p class="text-sm font-black text-gray-800">
-                                        Created-at: {{ $rssItem->created_at }}
-                                    </p>
+                                <div class="flex flex-col justify-between h-60">
+                                    <div class="fixtheheight">
+                                        <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}
+                                        </h3>
+                                        <textarea id="story" name="story" rows="4" cols="33" style="overflow-y: hidden; width:full;">
+                                        {{ $rssItem->description }}
+
+                                    </textarea>
+                                    </div>
+                                    <div class="flex justify-bottom">
+                                        <p class="text-sm font-black text-gray-800">
+                                            Created-at:<font class="font-light text-gray-400 px-2">{{ $rssItem->created_at }}</font>
+
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
 
 
@@ -373,17 +367,25 @@
 
 
     -->
-    <div class="categorie mx-auto  grid grid-cols-1 z-20 lg:max-w-none m-6 py-2 right-2 top-3/4 w-12">
+    <div class="categorie mx-auto  grid grid-cols-1 z-20 lg:max-w-none m-6 py-2 right-2 bottom-24 w-12">
         <button id="toggleButton" class="bg-blue-900 text-white p-2 rounded-md mb-4"><-></button>
     </div>
-    <div id="collapsibleDiv" class="categorie mx-auto grid grid-cols-1 lg:max-w-none m-6 right-0 bottom-10 w-80">
+    <div id="collapsibleDiv" class="categorie mx-auto grid grid-cols-1 lg:max-w-none m-6 right-0 bottom-1 w-80">
 
 
         <div class="space-y-10 ">
 
             <form class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 bg-white" action="/thank-you">
+
                 <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6 flex-none">
                         <path d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500">
+
+                <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100"><svg viewBox="0 0 24 24"
+                        fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true" class="h-6 w-6 flex-none">
+                        <path d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
+                            class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500">
+
                         </path>
                         <path d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6" class="stroke-zinc-400 dark:stroke-zinc-500"></path>
                     </svg><span class="ml-3 text-black">Stay up to date</span></h2>
@@ -392,6 +394,7 @@
                 <div class="mt-6 flex"><input type="email" placeholder="Email address" aria-label="Email address" required="" class="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 dark:placeholder:text-zinc-400 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"><button class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none" type="submit">Join</button></div>
             </form>
 
+
             <div class="rounded-2xl border border-zinc-100 bg-white  p-6 dark:border-zinc-700/40">
                 <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="h-6 w-6 flex-none">
                         <path d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z" class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500">
@@ -399,10 +402,46 @@
                         <path d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5" class="stroke-zinc-400 dark:stroke-zinc-500"></path>
                     </svg><span class="ml-3 text-black">Categories</span></h2>
 
+            <div class="rounded-2xl border border-zinc-100 bg-white  p-3 dark:border-zinc-700/40">
+                 <!--
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+   
+    -->
+        <div class="mt-4 md:mt-6">
+            <div class="mr-10 w-full max-w-md">
+                <div class="relative">
+                    <div class="max-w-2xl lg:max-w-5xl">
+                        <div class="relative flex mb-6 items-center">
+                            <div class="absolute inset-y-0 px-2 flex items-center pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="searchInput" placeholder="Search rss Items"
+                                class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5 
+                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 
+                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 
+                            dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <ol class="mt-6 space-y-4" id="searchResults1">
 
-                </ol>
+
+        <!--
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~ END search bar ~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+   
+    -->
 
 
             </div>
