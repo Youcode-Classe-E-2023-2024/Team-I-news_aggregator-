@@ -12,6 +12,7 @@ use App\Models\AdminSide\Category;
 use App\Mail\NewRssAdded;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cache;
 
 
 class PromptController extends Controller
@@ -83,16 +84,19 @@ class PromptController extends Controller
     // Modify the matchCategory function to fetch and cache categories if not already fetched
     private function matchCategory($description)
     {
-        // Fetch categories if not already fetched
-        if (!$this->categories) {
-            $this->categories = Category::all();
-        }
+        // Define the cache key
+        $cacheKey = 'categories';
+
+        // Attempt to retrieve categories from cache
+        $categories = Cache::remember($cacheKey, now()->addHours(24), function () {
+            return Category::all();
+        });
 
         // Convert description to lowercase for case-insensitive comparison
         $description = strtolower($description);
 
         // Check if any keyword appears in the description (case-insensitive)
-        foreach ($this->categories as $category) {
+        foreach ($categories as $category) {
             // Convert category name to lowercase for comparison
             $categoryName = strtolower($category->name);
 
