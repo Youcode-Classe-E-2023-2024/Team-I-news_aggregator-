@@ -11,6 +11,7 @@ use App\Models\AdminSide\RssItem;
 use App\Models\AdminSide\Category;
 use App\Mail\NewRssAdded;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Cache;
 
@@ -107,5 +108,21 @@ class PromptController extends Controller
 
         // If no matching category is found, default to 'General'
         return 'General';
+    }
+
+    public function addToFavorites($rssItemId)
+    {
+        $user = Auth::user();
+        $user->favorites()->attach($rssItemId);
+
+        return redirect()->back()->with('success', 'Item added to favorites successfully');
+    }
+
+    public function removeFromFavorites($rssItemId)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($rssItemId);
+
+        return redirect()->back()->with('success', 'Item removed from favorites successfully');
     }
 }
