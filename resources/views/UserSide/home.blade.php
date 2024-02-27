@@ -233,7 +233,7 @@
                     <div class="flex flex-col  justify-center" >
 
                         <div id="group"
-                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-105 shadowrss shadow-xl">
+                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
                             <div class="w-full md:w-1/3 bg-white grid place-items-center">
                                 <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
                             </div>
