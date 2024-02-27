@@ -20,6 +20,9 @@ use App\Http\Controllers\CategoryController;
 Route::get('/ooooo', function () {
     return view('welcome');
 });
+Route::get('/profile', function () {
+    return view('userside/profile');
+});
 
 // START HAMZA
 Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
@@ -134,7 +137,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // ------------------------- User Management ----------------------//
     Route::controller(UserManagementController::class)->group(function () {
         Route::get('users/list/page', 'index')->middleware('auth')->name('users/list/page');
-        Route::get('users/view/{user_id}', 'userView')->middleware('auth');
+        Route::get('profile/{user_id}', 'userView')->middleware('auth');
     });
 });
 
