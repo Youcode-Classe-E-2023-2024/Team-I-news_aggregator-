@@ -83,7 +83,10 @@
                         <label>RSS item Status</label>
                         <select wire:model="role" class="form-control">
                             <option value="user">user</option>
-                            <option value="admin">admin</option>
+                            <option value="member-lvl1">member-lvl1 (add favorits)</option>
+                            <option value="member-lvl2">member-lvl2 (add favorits + see article details)</option>
+                            <option value="member-lvl3">member-lvl3 (add favorits + add comments + see article details)</option>
+{{--                            <option value="admin">admin</option>--}}
                         </select>
                         @error('role') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>

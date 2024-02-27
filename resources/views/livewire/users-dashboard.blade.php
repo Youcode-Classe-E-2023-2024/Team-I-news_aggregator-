@@ -55,25 +55,48 @@
                         <tbody>
 
                         @foreach($users as $user)
-                            <tr  class="border-b dark:border-gray-700">
-                                <td scope="col" class="px-4 py-3 text-white" >{{ substr($user->name, 0, 20) }}...</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($user->email, 0, 20) }}</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->created_at }}</td>
-                                <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->updated_at }}</td>
-                                <td>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserRoleModal" wire:click="editUserRole({{$user->id}})" class="btn  {{ $user->hasRole('admin')? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600' }}">
-                                        {{ $user->hasRole('admin')? 'admin' : 'user' }}
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserModal" wire:click="editUser({{$user->id}})" class="btn btn-primary">
-                                        Edit
-                                    </button>
-                                </td>
-                                <td scope="col" class="px-4 py-3 flex items-center justify-end">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteUserModal" wire:click="deleteUser({{$user->id}})" class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
+                            @if(!$user->hasRole('admin'))
+                                @if($user->roles->last()->name == 'admin')
+                                    @php
+                                        $color = 'green'
+                                    @endphp
+                                @elseif($user->roles->last()->name == 'member-lvl1')
+                                    @php
+                                        $color = 'yellow'
+                                    @endphp
+                                @elseif($user->roles->last()->name == 'member-lvl2')
+                                    @php
+                                        $color = 'orange'
+                                    @endphp
+                                @elseif($user->roles->last()->name == 'member-lvl3')
+                                    @php
+                                        $color = 'red'
+                                    @endphp
+                                @else
+                                    @php
+                                        $color = 'gray'
+                                    @endphp
+                                @endif
+                                <tr  class="border-b dark:border-gray-700">
+                                    <td scope="col" class="px-4 py-3 text-white" >{{ substr($user->name, 0, 20) }}...</td>
+                                    <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($user->email, 0, 20) }}</td>
+                                    <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->created_at }}</td>
+                                    <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->updated_at }}</td>
+                                    <td>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserRoleModal" wire:click="editUserRole({{$user->id}})" class="btn text-white bg-{{ $color }}-500 hover:bg-{{ $color }}-600">
+                                            {{ $user->roles->last()->name }}
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserModal" wire:click="editUser({{$user->id}})" class="btn btn-primary">
+                                            Edit
+                                        </button>
+                                    </td>
+                                    <td scope="col" class="px-4 py-3 flex items-center justify-end">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#deleteUserModal" wire:click="deleteUser({{$user->id}})" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
 
                         </tbody>

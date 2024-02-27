@@ -14,8 +14,11 @@ class PermissionsTableSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-            'user permission',
-            'admin permission'
+            'user permissions',
+            'add favorits',
+            'see article details',
+            'add comments',
+            'admin permissions'
         ];
 
         foreach($permissions as $permission) {

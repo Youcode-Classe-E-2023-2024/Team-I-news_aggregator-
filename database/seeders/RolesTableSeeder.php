@@ -15,6 +15,9 @@ class RolesTableSeeder extends Seeder
     {
         $roles = [
             'user',
+            'member-lvl1',
+            'member-lvl2',
+            'member-lvl3',
             'admin'
         ];
 
@@ -25,4 +28,3 @@ class RolesTableSeeder extends Seeder
         }
     }
 }
-
