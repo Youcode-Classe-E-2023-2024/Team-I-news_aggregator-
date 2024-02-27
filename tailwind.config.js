@@ -5,5 +5,12 @@ export default {
     extend: {},
   },
   plugins: [],
-}
+}.
 
+module.exports = {
+
+  content: [
+      "./node_modules/flowbite/**/*.js"
+  ]
+
+}
