@@ -1,28 +1,37 @@
 <?php
 
-namespace App\Http\Controllers\AdminSide;
+namespace App\Livewire;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use SimpleXMLElement;
-use Illuminate\Support\Facades\Http;
-use App\Models\AdminSide\Rsslist;
-use App\Models\AdminSide\RssItem;
-use App\Models\AdminSide\Category;
 use App\Mail\NewRssAdded;
+use App\Models\AdminSide\Category;
+use App\Models\AdminSide\RssItem;
+use App\Models\AdminSide\Rsslist;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Livewire\Component;
+use SimpleXMLElement;
 
-
-class PromptController extends Controller
+class RssPrompt extends Component
 {
+    public $rssLink;
+
+    public function render()
+    {
+        return view('livewire.rss-prompt');
+    }
+
+    protected function rules()
+    {
+        return [
+            'rssLink' => ''
+        ];
+    }
+
     public function storeRss(Request $request)
     {
-        $request->validate([
-            'rssLink' => 'required|url',
-        ]);
-
-        $rssLink = $request->input('rssLink');
+        $rssLink = trim($this->rssLink);
 
         // Check if the RSS link already exists in the rsslist table
         $existingRss = Rsslist::where('name', $rssLink)->first();
@@ -63,6 +72,7 @@ class PromptController extends Controller
                     'category' => $category,
                     'image' => 'https://source.unsplash.com/200x200/?' . $title
                 ]);
+
             }
 
             // Send email to all users
@@ -71,7 +81,7 @@ class PromptController extends Controller
                 Mail::to($user->email)->send(new NewRssAdded($newRssLink));
             }
 
-            return redirect()->route('adminDash')->with('success', 'RSS items stored successfully 👍');
+            return redirect()->back()->with('success', 'RSS items stored successfully 👍');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
@@ -103,5 +113,9 @@ class PromptController extends Controller
 
         // If no matching category is found, default to 'General'
         return 'General';
+    }
+    public function resetInput()
+    {
+        $this->rssLink = '';
     }
 }

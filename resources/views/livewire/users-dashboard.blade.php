@@ -108,6 +108,5 @@
         $('#updateUserModal').modal('hide');
         $('#deleteUserModal').modal('hide');
         $('#updateUserRoleModal').modal('hide');
-
     })
 </script>

@@ -123,6 +123,5 @@ class UsersDashboard extends Component
 
         $this->dispatch('close-modal');
     }
-
 }
 
