@@ -248,28 +248,7 @@
 
 
 
-        <div class="sm:px-8 mt-24 md:mt-28">
-
-            <div class="mx-auto w-full max-w-7xl lg:px-8">
-
-                <div class="relative px-4 sm:px-8 lg:px-12">
-
-                    <div class="mx-auto max-w-2xl lg:max-w-5xl">
-                        <div class="relative flex mb-6  items-center">
-                            <div class="absolute inset-y-0 flex  items-center  pointer-events-none">
-                                <svg class="w-4 h-4 m-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                            </div>
-                            <input type="search" id="searchInput" placeholder="Search rss Items"
-                                class="  rounded-md border border-zinc-900/10 bg-gray-50 px-8 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-sm">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </main>
 
 
@@ -289,7 +268,45 @@
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
-        <div class="mt-2 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-2">
+        <!--
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+   
+    -->
+    <div class="mt-24 md:mt-28">
+        <div class="mx-auto w-full max-w-7xl">
+            <div class="relative">
+                <div class="max-w-2xl lg:max-w-5xl">
+                    <div class="relative flex mb-6 items-center">
+                        <div class="absolute inset-y-0 px-2 flex items-center pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="searchInput" placeholder="Search rss Items"
+                            class="rounded-md border border-zinc-900/10 bg-gray-50 px-20 py-3 shadow-md shadow-zinc-800/5 
+                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 
+                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 
+                            dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+         <!--
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~ END search bar ~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+   
+    -->
+        <div class="mt-2 pl-20 grid gap-10 md:grid-cols-2 lg:gap-10 xl:grid-cols-2">
 
             @foreach ($rssItems as $rssItem)
             <div class="group cursor-pointer ">
@@ -319,8 +336,9 @@
                                 <div class="fixtheheight">
                                     <h3 class="font-black text-gray-800 md:text-3xl text-xl">{{ $rssItem->name }}
                                     </h3>
-                                    <p class="md:text-lg text-gray-500 text-base max-h-80">
-                                        {{ $rssItem->description }}</p>
+                                    <textarea id="story" name="story" rows="4" cols="33" style="overflow-y: hidden; width:full;">
+                                        {{ $rssItem->description }}
+                                    </textarea>
                                 </div>
                                 <div class="flex justify-bottom">
                                     <p class="text-sm font-black text-gray-800">
