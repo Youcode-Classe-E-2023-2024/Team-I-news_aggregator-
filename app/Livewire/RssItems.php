@@ -127,8 +127,6 @@ class RssItems extends Component
         $validatedData = $this->validate([
             'trend' => 'required'
         ]);
-//        dump($validatedData['trend']);
-//        dd(RssItem::find($this->rss_item_id)->name);
 
         RssItem::where('id', $this->rss_item_id)->update([
             'trend' => $validatedData['trend'],

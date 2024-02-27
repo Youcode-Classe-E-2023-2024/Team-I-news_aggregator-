@@ -42,6 +42,9 @@
                                 updated at
                             </th>
                             <th scope="col" class="px-4 py-3">
+                                role
+                            </th>
+                            <th scope="col" class="px-4 py-3">
                                 handle
                             </th>
                             <th scope="col" class="px-4 py-3">
@@ -57,6 +60,11 @@
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ substr($user->email, 0, 20) }}</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 text-gray-300">{{ $user->updated_at }}</td>
+                                <td>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserRoleModal" wire:click="editUserRole({{$user->id}})" class="btn  {{ $user->hasRole('admin')? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600' }}">
+                                        {{ $user->hasRole('admin')? 'admin' : 'user' }}
+                                    </button>
+                                </td>
                                 <td>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#updateUserModal" wire:click="editUser({{$user->id}})" class="btn btn-primary">
                                         Edit
@@ -99,5 +107,7 @@
     window.addEventListener('close-modal', event => {
         $('#updateUserModal').modal('hide');
         $('#deleteUserModal').modal('hide');
+        $('#updateUserRoleModal').modal('hide');
+
     })
 </script>

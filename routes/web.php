@@ -25,40 +25,47 @@ Route::get('/profile', function () {
 });
 
 // START HAMZA
-Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
 
-Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
+    Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
 
-Route::get('/stored-rss-links', function() {
-    return view('AdminSide.layout.rss-links-list');
+    Route::get('/stored-rss-links', function() {
+        return view('AdminSide.layout.rss-links-list');
 
-})->name('storedRssLinks');
+    })->name('storedRssLinks');
 
-Route::get('/stored-rss-items', function() {
-    return view('AdminSide.layout.rss-items-list');
+    Route::get('/stored-rss-items', function() {
+        return view('AdminSide.layout.rss-items-list');
 
-})->name('storedRssItems');
+    })->name('storedRssItems');
 
-Route::get('/users-dash', function () {
-    return view('AdminSide.users-mng.users-dash');
+    Route::get('/users-dash', function () {
+        return view('AdminSide.users-mng.users-dash');
 
-})->name('storedUsers');
+    })->name('storedUsers');
 
-Route::get('/flowchart', function () {
-    return view('AdminSide.flowchart');
+    Route::get('/flowchart', function () {
+        return view('AdminSide.flowchart');
 
-})->name('flowchart');
+    })->name('flowchart');
 
-Route::get('/piechart', function () {
-    return view('AdminSide.piechart');
+    Route::get('/piechart', function () {
+        return view('AdminSide.piechart');
 
-})->name('piechart');
+    })->name('piechart');
 
-Route::get('/rss-lists', [MainController::class, 'rssLists']);
+    Route::get('/rss-lists', [MainController::class, 'rssLists']);
 
-Route::get('/items-by-category', [MainController::class, 'itemsByCategory']);
+    Route::get('/items-by-category', [MainController::class, 'itemsByCategory']);
 
-Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
+    Route::get('/display-items', [MainController::class, 'rssItems'])->name('display-items');
+
+//  this route is just for a test purpose
+    Route::post('/logout', function() {
+        auth()->user()->logout();
+    });
+});
 // END HAMZA
 
 
