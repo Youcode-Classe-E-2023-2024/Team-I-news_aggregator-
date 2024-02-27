@@ -3,12 +3,15 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\AdminSide\RssItem;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -57,7 +60,13 @@ class User extends Authenticatable
         });
     }
 
-    public function scopeSearch($query, $value) {
+    public function scopeSearch($query, $value)
+    {
         $query->where('name', 'like', "%{$value}%");
+    }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(RssItem::class, 'user_favorites', 'user_id', 'rss_item_id');
     }
 }
