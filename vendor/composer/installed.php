@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'reference' => '9716b9200e86bc01f4864d048edf15b7ce3e2dc0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',

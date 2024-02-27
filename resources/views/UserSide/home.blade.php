@@ -9,7 +9,7 @@
         overflow-y: auto; /* Enable vertical scrolling */
     }
 </style>
-<x-Navbar :links="['Home' => '/home', 'Trend' => '/Trend','Favorites' => '/Favorites', 'Categories' => '/Categories', 'Profile' => '/Profile','Details' => '/Details']" />
+<x-Navbar :links="['Home' => '/home', 'Trend' => '/Trend','Favorites' => '/Favorites', 'Categories' => '/categories', 'Profile' => '/Profile','Details' => '/Details']" />
 <div class="h-screen overflow-hidden relative" style="background: #edf2f7;">
 
     <img src="bg.png" class=" absolute top-0 left-0 min-h-full before:bg-black " alt="">

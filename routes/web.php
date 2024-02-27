@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSide\MainController;
 use App\Http\Controllers\AdminSide\PromptController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\AdminSide\PromptController;
 
 Route::get('/ooooo', function () {
     return view('welcome');
+});
+Route::get('/profile', function () {
+    return view('userside/profile');
 });
 
 // START HAMZA
@@ -140,7 +144,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // ------------------------- User Management ----------------------//
     Route::controller(UserManagementController::class)->group(function () {
         Route::get('users/list/page', 'index')->middleware('auth')->name('users/list/page');
-        Route::get('users/view/{user_id}', 'userView')->middleware('auth');
+        Route::get('profile/{user_id}', 'userView')->middleware('auth');
     });
 });
 
@@ -157,5 +161,10 @@ Route::get('/tendance', function () {
     return view('UserSide.tendance');
 })->name('tendance');
 
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
+Route::get('/favorite',function (){
+    return view('UserSide.favorite');
+})->name('favorite');
 
 // END IMAD
