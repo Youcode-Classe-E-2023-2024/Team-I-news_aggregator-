@@ -7,8 +7,11 @@ use App\Models\AdminSide\Category;
 use App\Models\AdminSide\RssItem;
 use App\Models\AdminSide\Rsslist;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use SimpleXMLElement;
@@ -114,8 +117,26 @@ class RssPrompt extends Component
         // If no matching category is found, default to 'General'
         return 'General';
     }
+
+
+    public function addToFavorites($rssItemId)
+    {
+        $user = Auth::user();
+        $user->favorites()->attach($rssItemId);
+
+        return redirect()->back()->with('success', 'Item added to favorites successfully');
+    }
+
+    public function removeFromFavorites($rssItemId)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($rssItemId);
+
+        return redirect()->back()->with('success', 'Item removed from favorites successfully');
+    }
     public function resetInput()
     {
         $this->rssLink = '';
+
     }
 }
