@@ -86,7 +86,7 @@ class RssPrompt extends Component
             return redirect()->back()->with('error', 'Failed to store RSS items: ' . $e->getMessage());
         }
     }
-
+ 
     // At the top of your class, declare a private property to store categories
     private $categories;
 
