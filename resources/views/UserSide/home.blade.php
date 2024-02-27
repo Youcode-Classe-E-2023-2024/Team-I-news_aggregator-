@@ -300,8 +300,9 @@
                             </div> -->
 
                                 <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-                                    {{ $rssItem->category }}
+                                    <span class="font-black text-gray-800 md:text-5l text-xl">{{ $rssItem->category }}</span>
                                 </div>
+
 
                                 @if (Auth::check())
                                 @if (Auth::user()->favorites->contains($rssItem->id))
