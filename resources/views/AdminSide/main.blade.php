@@ -1,5 +1,5 @@
 @extends('Shared.components.layout')
 
 @section('content')
-    @include('AdminSide.layout.prompt-section')
+    <livewire:rss-prompt/>
 @endsection
