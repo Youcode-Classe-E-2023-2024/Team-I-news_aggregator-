@@ -111,9 +111,13 @@ class UsersDashboard extends Component
     {
         $user = User::where('id', $this->user_id)->first();
 
-//        dump($user->name);
-//        dd($this->role);
-        $user->assignRole($this->role);
+        if($this->role == 'user') {
+            $user->assignRole('user');
+            $user->removeRole('admin');
+        }else {
+            $user->assignRole('admin');
+            $user->removeRole('user');
+        }
 
         session()->flash('message', 'RSS Item Trend Updated Successfully');
 
