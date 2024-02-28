@@ -7,7 +7,7 @@
         'Trend' => '/Trend',
         'Favorites' => '/Favorites',
         'Categories' => '/categories',
-        'Profile' => '/Profile',
+        'Profile' => '/profile',
     ]" />
 
     <div class="container mx-auto px-4 mt-40">

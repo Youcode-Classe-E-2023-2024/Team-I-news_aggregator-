@@ -7,7 +7,7 @@
         'Trend' => '/Trend',
         'Favorites' => '/favorites',
         'Categories' => '/categories',
-        'Profile' => '/Profile',
+        'Profile' => '/profile',
     ]" />
 
 

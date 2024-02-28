@@ -7,7 +7,7 @@
         'Trend' => '/Trend',
         'Favorites' => '/favorites',
         'Categories' => '/categories',
-        'Profile' => '/Profile',
+        'Profile' => '/profile',
     ]" />
     <div class="container right-0 px-4 py-5 ml-0 mt-20">
         <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
