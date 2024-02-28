@@ -73,7 +73,7 @@ class RssPrompt extends Component
                     'link' => $link,
                     'description' => $description,
                     'category' => $category,
-                    'image' => 'https://source.unsplash.com/200x200/?' . $title
+                    'image' => 'https://source.unsplash.com/900x900/?' . $title
                 ]);
 
             }
