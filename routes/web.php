@@ -168,3 +168,5 @@ Route::get('/favorite', function () {
 })->name('favorite');
 
 // END IMAD
+
+Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('news.detail');

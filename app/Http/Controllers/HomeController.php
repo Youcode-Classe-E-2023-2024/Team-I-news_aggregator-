@@ -32,6 +32,16 @@ class HomeController extends Controller
         // Pass the RSS items to the view
         return view('UserSide.home', compact('rssItems'));
     }
+
+    public function newsDetail($id)
+    {
+        // Assuming RssItem model represents a news item
+        $newsItem = RssItem::findOrFail($id);
+
+        // Pass the news item to the view
+        return view('UserSide.newsDetail', compact('newsItem'));
+    }
+
     public function tendance()
     {
         $rssItems = RssItem::latest()->take(10)->get();
