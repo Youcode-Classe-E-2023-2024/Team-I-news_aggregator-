@@ -1,7 +1,5 @@
 @include('Shared.components.header')
 
-
-
 <body>
 
     <style>
@@ -35,91 +33,71 @@
         }
 
         .containerr {
-            position: relative;
-            width: 320px;
-            margin: 100px auto 0 auto;
-            perspective: 1000px;
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
 
-        }
-
-        .carouselll {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: rotate360 60s infinite forwards linear;
-        }
-
-        .carouselll__face {
-            position: absolute;
-            width: 200px;
-            height: 187px;
-            top: 20px;
-            left: 10px;
-            right: 10px;
-            background-size: cover;
-            display: flex;
-        }
+.carouselll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
+}
+.carouselll__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  display: flex;
+}
 
 
 
 
-        .carouselll__face:nth-child(1) {
-            background-image: url("{{$rssItems[0]->image}}");
-            transform: rotateY(0deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(2) {
-            background-image: url("{{$rssItems[1]->image}}");
-            transform: rotateY(40deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(3) {
-            background-image: url("{{$rssItems[2]->image}}");
-            transform: rotateY(80deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(4) {
-            background-image: url("{{$rssItems[3]->image}}");
-            transform: rotateY(120deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(5) {
-            background-image: url("{{$rssItems[4]->image}}");
-            transform: rotateY(160deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(6) {
-            background-image: url("{{$rssItems[5]->image}}");
-            transform: rotateY(200deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(7) {
-            background-image: url("{{$rssItems[6]->image}}");
-            transform: rotateY(240deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(8) {
-            background-image: url("{{$rssItems[7]->image}}");
-            transform: rotateY(280deg) translateZ(430px);
-        }
-
-        .carouselll__face:nth-child(9) {
-            background-image: url("{{$rssItems[8]->image}}");
-            transform: rotateY(320deg) translateZ(430px);
-        }
+.carouselll__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carouselll__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carouselll__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carouselll__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carouselll__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carouselll__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carouselll__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carouselll__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carouselll__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
 
 
 
-        @keyframes rotate360 {
-            from {
-                transform: rotateY(0deg);
-            }
-
-            to {
-                transform: rotateY(-360deg);
-            }
-        }
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
 
 
         .max-h-80 {
@@ -144,7 +122,8 @@
         'Trend' => '/Trend',
         'Favorites' => '/favorites',
         'Categories' => '/categories',
-        'Profile' => '/Profile',
+        'Profile' => '/profile',
+        'Details' => '/Details',
     ]" />
 
 
@@ -165,19 +144,19 @@
 
 
 
-    <div class="containerr ">
-        <div class="carouselll">
-            <div class="carouselll__face"><span>{{ $rssItems[0]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[1]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[2]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[3]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[4]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[5]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[6]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[7]->category }}</span></div>
-            <div class="carouselll__face"><span>{{ $rssItems[8]->category }}</span></div>
-        </div>
+<div class="containerr">
+    <div class="carouselll">
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
     </div>
+  </div>
 
 
     <main class="flex-auto invisible m-40">
