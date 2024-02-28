@@ -10,7 +10,13 @@
         'Profile' => '/profile',
     ]" />
 
+
+
     <div class="container mx-auto px-4 mt-40">
+        <div class="container mx-auto px-4 mt-4">
+            <!-- Button to uncheck all categories -->
+            <button onclick="uncheckAllCategories()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Uncheck </button>
+        </div>
         @php $i = 0; @endphp
         @foreach($categories as $category)
         @if($i % 3 == 0)
@@ -66,5 +72,16 @@
                 }
             }
         }
+
+        // Function to uncheck all categories
+        function uncheckAllCategories() {
+            selectedCategories = []; // Empty the selectedCategories array
+            // Update UI to show that all categories are unchecked
+            var buttons = document.querySelectorAll('button[id$="Button"]');
+            buttons.forEach(function(button) {
+                button.innerHTML = '+'; // Change button content to plus symbol
+            });
+            console.log(selectedCategories);
+            localStorage.setItem("catgerie", JSON.stringify(selectedCategories));
+        }
     </script>
-</body>
