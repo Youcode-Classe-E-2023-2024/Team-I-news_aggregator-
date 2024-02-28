@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminSide\MainController;
 use App\Livewire\RssPrompt;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserSide\TrendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,10 @@ Route::group(['middleware' => ['role:admin']], function () {
         auth()->user()->logout();
     });
 });
+
+// Trend Route:
+Route::get('/Trend', [TrendController::class, 'index'])->name('news.trend');
+
 // END HAMZA
 
 
