@@ -8,9 +8,7 @@
         'Favorites' => '/Favorites',
         'Categories' => '/categories',
         'Profile' => '/Profile',
-        'Details' => '/Details',
     ]" />
-
 
     <div class="container mx-auto px-4 mt-40">
         @php $i = 0; @endphp
@@ -23,6 +21,8 @@
                 <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
                 <div class="absolute inset-0 flex items-center justify-center">
                     <h2 class="text-white text-3xl font-bold">{{ $category->name }}</h2>
+                    <!-- Make the category name clickable -->
+                    <button onclick="toggleCategory('{{ $category->name }}')" class="absolute bottom-5 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="{{ $category->name }}Button">+</button>
                 </div>
             </div>
             @php $i++; @endphp
@@ -35,11 +35,36 @@
     @endif
     </div>
 
+    <script>
+        var selectedCategories = JSON.parse(localStorage.getItem("catgerie")) || [];
 
+        window.onload = function() {
+            // Update UI based on selected categories retrieved from localStorage
+            selectedCategories.forEach(function(categoryId) {
+                var button = document.getElementById(categoryId + 'Button');
+                if (button) {
+                    button.innerHTML = '✓'; // Change button content to check mark
+                }
+            });
+        };
 
-
-
-
-
-
+        function toggleCategory(categoryId) {
+            var button = document.getElementById(categoryId + 'Button');
+            // Check if the category is already selected
+            if (!selectedCategories.includes(categoryId)) {
+                selectedCategories.push(categoryId);
+                button.innerHTML = '✓'; // Change button content to check mark
+                console.log(selectedCategories);
+                localStorage.setItem("catgerie", JSON.stringify(selectedCategories));
+            } else {
+                var index = selectedCategories.indexOf(categoryId);
+                if (index !== -1) {
+                    selectedCategories.splice(index, 1);
+                    button.innerHTML = '+'; // Change button content to plus symbol
+                    console.log(selectedCategories);
+                    localStorage.setItem("catgerie", JSON.stringify(selectedCategories));
+                }
+            }
+        }
+    </script>
 </body>
