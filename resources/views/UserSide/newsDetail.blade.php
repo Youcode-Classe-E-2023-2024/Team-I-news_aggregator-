@@ -5,11 +5,12 @@
   height: 100%;
   --sz: 4px; /*** size ***/
   --sp: 5s; /*** speed ***/
-  --b1: #211e1e; /*** color ***/
-  --b2: #1c1b18; /*** color ***/
-  --b3: #0c0b0a; /*** color ***/
-  --b4: #0c0b0ae0; /*** color ***/
-  --c1: #ffffff; /*** color ***/
+  --b1: #ffffff; /*** color ***/
+--b2: #f0f0f0; /*** color ***/
+--b3: #e0e0e0; /*** color ***/
+--b4: #e0e0e0e0; /*** color ***/
+--c1: #000000; /*** color ***/
+
   --ts: 50% / calc(var(--sz) * 17.5) calc(var(--sz) * 29.5);
   background:
 		/* black shadows */ radial-gradient(
