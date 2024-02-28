@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSide\MainController;
-use App\Http\Controllers\AdminSide\PromptController;
+use App\Livewire\RssPrompt;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -87,8 +87,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::post('/add-to-favorites/{rssItemId}', [PromptController::class, 'addToFavorites'])->name('addToFavorites');
-Route::delete('/remove-from-favorites/{rssItemId}', [PromptController::class, 'removeFromFavorites'])->name('removeFromFavorites');
+Route::post('/add-to-favorites/{rssItemId}', [RssPrompt::class, 'addToFavorites'])->name('addToFavorites');
+Route::delete('/remove-from-favorites/{rssItemId}', [RssPrompt::class, 'removeFromFavorites'])->name('removeFromFavorites');
 
 
 Route::group(['middleware' => 'auth'], function () {
