@@ -32,4 +32,11 @@ class HomeController extends Controller
         // Pass the RSS items to the view
         return view('UserSide.home', compact('rssItems'));
     }
+    public function tendance()
+    {
+        $rssItems = RssItem::latest()->take(10)->get();
+
+// Pass the RSS items to the view
+        return view('UserSide.tendance', compact('rssItems'));
+    }
 }
