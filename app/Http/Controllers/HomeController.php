@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AdminSide\RssItem;
-use App\Models\Adminside\UserFavorite;
-
+use App\Models\ItemComment;
 
 class HomeController extends Controller
 {
@@ -27,19 +26,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-       // Get all RSS items
-    $rssItems = RssItem::all();
-    // Pass both sets of RSS items to the view
-    return view('UserSide.home', compact('rssItems'));
+        // Fetch RSS items from the database
+        $rssItems = RssItem::all();
+
+        // Pass the RSS items to the view
+        return view('UserSide.home', compact('rssItems'));
     }
 
     public function newsDetail($id)
     {
         // Assuming RssItem model represents a news item
         $newsItem = RssItem::findOrFail($id);
-
+        $comments = ItemComment::where('item_id', $id)->get();
         // Pass the news item to the view
-        return view('UserSide.newsDetail', compact('newsItem'));
+        return view('UserSide.newsDetail', compact('newsItem','comments'));
     }
 
     public function tendance()

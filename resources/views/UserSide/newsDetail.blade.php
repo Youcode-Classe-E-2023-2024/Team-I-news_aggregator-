@@ -175,7 +175,7 @@
 }
 
 </style>
-<body class="container bg-gray-100 overflow-hidden h-screen w-screen">
+<body class=" bg-gray-100 overflow-hidden h-screen w-screen">
     <div class="container mx-auto my-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Data Section -->
