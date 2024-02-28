@@ -1,32 +1,45 @@
 @include('Shared.components.header')
 
-<body style="background-image: url('http://127.0.0.1:8000/images/anime_letters.jpg'); background-size: cover; background-position: center" class=" ">
+<body>
 
-<x-Navbar :links="['Home' => '/home', 'Page 2' => '/page2']" />
+    <x-Navbar :links="[
+        'Home' => '/home',
+        'Trend' => '/Trend',
+        'Favorites' => '/Favorites',
+        'Categories' => '/categories',
+        'Profile' => '/Profile',
+        'Details' => '/Details',
+    ]" />
 
-<div class="container mx-auto p-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Example Category Card -->
+
+    <div class="container mx-auto px-4 mt-40">
+        @php $i = 0; @endphp
         @foreach($categories as $category)
-            <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">{{ $category->name }}</div>
-                    <p class="text-gray-700 text-base">
-                        {{ $category->description }}
-                    </p>
-                </div>
-                <div class="px-6 pt-4 pb-2">
-                    <a href="{{ $category->link }}" class="inline-block bg-sky-950 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Explore</a>
+        @if($i % 3 == 0)
+        <div class="flex justify-between mt-6">
+            @endif
+            <div class="relative max-w-xl mx-auto w-[400px]">
+                <img class="h-64 w-full object-cover rounded-md" src="https://source.unsplash.com/1000x1000/?{{ $category->name }}" alt="Random image">
+                <div class="absolute inset-0 bg-gray-700 opacity-60 rounded-md"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h2 class="text-white text-3xl font-bold">{{ $category->name }}</h2>
                 </div>
             </div>
-        @endforeach
-        <div class="mt-4 mx">
-        {{ $categories->links() }}
-    </div>
+            @php $i++; @endphp
+            @if($i % 3 == 0)
         </div>
+        @endif
+        @endforeach
+        @if($i % 3 != 0)
+    </div> <!-- Close the last row if not already closed -->
+    @endif
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+
+
+
+
+
+
 
 </body>
