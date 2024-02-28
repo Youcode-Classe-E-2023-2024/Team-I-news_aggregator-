@@ -30,6 +30,74 @@
             width: 100vw;
             overflow-x: hidden;
         }
+        
+.containerr {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carouselll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
+}
+.carouselll__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  display: flex;
+}
+
+
+
+
+.carouselll__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carouselll__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carouselll__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carouselll__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carouselll__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carouselll__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carouselll__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carouselll__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carouselll__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
 
         .max-h-80 {
             max-height: 200px;
@@ -245,216 +313,31 @@
 
 
 
-<section id="tranding">
-    <div class="container">
-      <h3 class="text-center section-subheading">- popular Delivery -</h3>
-      <h1 class="text-center section-heading">Tranding food</h1>
+
+
+
+
+
+
+
+<div class="containerr">
+    <div class="carouselll">
+      <div class="carouselll__face"><span>This is something</span></div>
+      <div class="carouselll__face"><span>Very special</span></div>
+      <div class="carouselll__face"><span>Special is the key</span></div>
+      <div class="carouselll__face"><span>For you</span></div>
+      <div class="carouselll__face"><span>Just give it</span></div>
+      <div class="carouselll__face"><span>A try</span></div>
+      <div class="carouselll__face"><span>And see</span></div>
+      <div class="carouselll__face"><span>How IT Works</span></div>
+      <div class="carouselll__face"><span>Woow</span></div>
     </div>
-    <div class="container">
-      <div class="swiper tranding-slider">
-        <div class="swiper-wrapper">
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-1.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Special Pizza
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-2.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Meat Ball
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-3.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$40</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Burger
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-4.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Frish Curry
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-5.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$15</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Pane Cake
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-6.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$20</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Vanilla cake
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-          <!-- Slide-start -->
-          <div class="swiper-slide tranding-slide">
-            <div class="tranding-slide-img">
-              <img src="images/tranding-food-7.png" alt="Tranding">
-            </div>
-            <div class="tranding-slide-content">
-              <h1 class="food-price">$8</h1>
-              <div class="tranding-slide-content-bottom">
-                <h2 class="food-name">
-                  Straw Cake
-                </h2>
-                <h3 class="food-rating">
-                  <span>4.5</span>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </h3>
-              </div>
-            </div>
-          </div>
-          <!-- Slide-end -->
-        </div>
-
-        <div class="tranding-slider-control">
-          <div class="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div class="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  </div>
 
 
+    <main class="flex-auto invisible m-40">
+        
 
-
-
-
-
-
-
-
-
-    <main class="flex-auto">
         <div class="sm:px-8 mt-9">
             <div class="mx-auto w-full max-w-7xl lg:px-8">
                 <div class="relative px-4 sm:px-8 lg:px-12">
@@ -515,8 +398,7 @@
         -->
 
 
-
-
+        
 
 
 
@@ -539,52 +421,103 @@
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
-    <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
-        @foreach ($rssItems as $rssItem)
-            <div class="group cursor-pointer">
-                <div class="flex flex-col justify-center">
-                    <div id="group" class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
-                        <div class="w-full md:w-1/3 bg-white grid place-items-center">
-                            <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
-                        </div>
-                        <div class="w-1/2 md:w-2/3 bg-white flex flex-col space-y-2 p-3">
-                            <div class="flex justify-between item-center">
-                                <!-- Category and Favorites Button -->
+        <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
+            @foreach ($rssItems as $rssItem)
+                <div class="group cursor-pointer">
+                    <div class="flex flex-col justify-center">
+                        <div id="group"
+                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
+                            <div class="w-full md:w-1/3 bg-white grid place-items-center">
+                                <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
                             </div>
-                            <div class="flex flex-col justify-between h-60">
-                                <div class="fixtheheight">
-                                    <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}</h3>
-                                    <p class="text-gray-600 overflow-hidden" style="height: 4.5em;">{{ $rssItem->description }}</p>
+
+
+                            <div class="w-1/2 md:w-2/3 bg-white flex flex-col space-y-2 p-3">
+                                <div class="flex justify-between item-center">
+
+                                    <div
+                                        class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
+                                        <span
+                                            class="font-black text-gray-800 md:text-1xl text-lg">{{ $rssItem->category }}</span>
+                                    </div>
+                                    @if (Auth::check())
+                                        @if (Auth::user()->favorites->contains($rssItem->id))
+                                            <!-- Show button/icon to remove from favorites -->
+                                            <form action="{{ route('removeFromFavorites', $rssItem->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-8 w-8 text-pink-500" viewBox="0 0 20 20"
+                                                        fill="currentColor">
+                                                        <path fill-rule="evenodd"
+                                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        @else
+                                            <!-- Show button/icon to add to favorites -->
+                                            <form action="{{ route('addToFavorites', $rssItem->id) }}" method="POST"
+                                                id="addToFavoritesForm">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none"
+                                                    id="addToFavoritesButton">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-8 w-8 text-gray-500" viewBox="0 0 20 20"
+                                                        fill="currentColor">
+                                                        <path fill-rule="evenodd"
+                                                            d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        @endif
+                                    @else
+                                        <!-- Show button/icon to add to favorites for non-logged-in users -->
+                                        <button type="button"
+                                            class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none"
+                                            onclick="showLoginAlert()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500"
+                                                viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    @endif
+
                                 </div>
-                                <div class="flex justify-between items-center mt-4">
-                                    <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
-                                    <p class="text-sm font-black text-gray-800">
-                                        Created-at: <span class="font-light text-gray-400">{{ $rssItem->created_at->toFormattedDateString() }}</span>
-                                    </p>
+                                <div class="flex flex-col justify-between h-60">
+                                    <div class="fixtheheight">
+                                        <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}
+                                        </h3>
+                                        <p class="text-gray-600 overflow-hidden" style="height: 4.5em;">
+                                            {{ $rssItem->description }}</p>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-4">
+                                        <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}"
+                                            class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
+                                        <p class="text-sm font-black text-gray-800">
+                                            Created-at: <span
+                                                class="font-light text-gray-400">{{ $rssItem->created_at->toFormattedDateString() }}</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- Other grid items go here -->
+            @endforeach
         </div>
     </div>
+
+
+
+
+
 
 
 
@@ -623,38 +556,39 @@
             </form>
 
             <div class="rounded-2xl border border-zinc-100 bg-white  p-3 dark:border-zinc-700/40">
-                 <!--
+                <!--
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
    
     -->
-        <div class="mt-4 md:mt-6">
-            <div class="mr-10 w-full max-w-md">
-                <div class="relative">
-                    <div class="max-w-2xl lg:max-w-5xl">
-                        <div class="relative flex mb-6 items-center">
-                            <div class="absolute inset-y-0 px-2 flex items-center pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                            </div>
-                            <input type="search" id="searchInput" placeholder="Search rss Items"
-                                class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5 
+                <div class="mt-4 md:mt-6">
+                    <div class="mr-10 w-full max-w-md">
+                        <div class="relative">
+                            <div class="max-w-2xl lg:max-w-5xl">
+                                <div class="relative flex mb-6 items-center">
+                                    <div class="absolute inset-y-0 px-2 flex items-center pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2"
+                                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </div>
+                                    <input type="search" id="searchInput" placeholder="Search rss Items"
+                                        class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5 
                             placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 
                             focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 
                             dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
-        <!--
+                <!--
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ END search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
