@@ -157,9 +157,9 @@ Route::get('/homeuser', function () {
     return view('UserSide.home');
 })->name('homeuser');
 
-Route::get('/tendance', function () {
-    return view('UserSide.tendance');
-})->name('tendance');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/tendance', 'tendance')->name('tendance');
+});
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 

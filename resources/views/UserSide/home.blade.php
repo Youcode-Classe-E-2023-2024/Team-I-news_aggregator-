@@ -68,65 +68,204 @@
 
 
 
-    <div id="default-carousel" class="relative m-12 w-2/3 mx-auto bg-gray-200 rounded-lg p-4" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-48 md:h-72 overflow-hidden rounded-lg">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <!-- Other items go here -->
-        </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                data-carousel-slide-to="4"></button>
-        </div>
-        <!-- Slider controls -->
-        <button type="button"
-            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev>
-            <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 1 1 5l4 4" />
-                </svg>
-                <span class="sr-only">Previous</span>
-            </span>
-        </button>
-        <button type="button"
-            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next>
-            <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 9 4-4-4-4" />
-                </svg>
-                <span class="sr-only">Next</span>
-            </span>
-        </button>
+<section id="tranding">
+    <div class="container">
+      <h3 class="text-center section-subheading">- popular Delivery -</h3>
+      <h1 class="text-center section-heading">Tranding food</h1>
     </div>
+    <div class="container">
+      <div class="swiper tranding-slider">
+        <div class="swiper-wrapper">
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-1.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Special Pizza
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-2.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Meat Ball
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-3.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$40</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Burger
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-4.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$15</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Frish Curry
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-5.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$15</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Pane Cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-6.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Vanilla cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-7.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$8</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Straw Cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+        </div>
+
+        <div class="tranding-slider-control">
+          <div class="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </div>
+          <div class="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -364,5 +503,9 @@
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/js/home.js') }}"></script>
 
 </body>
