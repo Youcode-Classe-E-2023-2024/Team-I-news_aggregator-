@@ -9,6 +9,7 @@ use App\Models\AdminSide\Rsslist;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -67,17 +68,22 @@ class RssPrompt extends Component
 
                 $category = $this->matchCategory($description);
 
+               
+
+                $slug = Str::slug($title);
+                
                 RssItem::create([
                     'rss_id' => $newRssLink->id,
                     'name' => $title,
                     'link' => $link,
                     'description' => $description,
                     'category' => $category,
-                    'image' => 'https://source.unsplash.com/900x900/?' . $title
+                    'image' => 'https://source.unsplash.com/900x900/?' . $title,
+                    'slug' => $slug
                 ]);
 
             }
-
+            
             // Send email to all users
             $users = User::all(); // Assuming you have a User model
             foreach ($users as $user) {

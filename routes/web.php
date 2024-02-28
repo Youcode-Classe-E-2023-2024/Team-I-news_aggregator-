@@ -28,7 +28,7 @@ Route::get('/profile', function () {
 });
 
 // START HAMZA
-Route::group(['middleware' => ['role:admin']], function () {
+// Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin-dash', [MainController::class, 'adminDash'])->name('adminDash');
 
     Route::post('/rss.store', [PromptController::class, 'storeRss'])->name('rss.store');
@@ -72,7 +72,7 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::put('/profile/password', [ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
 
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// });
 
 // Trend Route:
 Route::get('/Trend', [TrendController::class, 'index'])->name('news.trend');
