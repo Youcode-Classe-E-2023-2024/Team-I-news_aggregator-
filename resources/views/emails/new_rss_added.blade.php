@@ -181,7 +181,7 @@ table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: under
   <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
 <div class="v-text-align" align="center">
   <!--[if mso]><table border="0" cellspacing="0" cellpadding="0"><tr><td align="center" bgcolor="#9f2323" style="padding:10px 20px;" valign="top"><![endif]-->
-    <a href="https://unlayer.com" target="_blank" class="v-button v-size-width v-font-size" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #9f2323; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:31%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
+    <a href="https://unlayer.com" target="_blank" class="v-button v-size-width v-font-size" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #9f2323; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:70%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
       <span style="display:block;padding:10px 20px;line-height:120%;"><span style="line-height: 16.8px;"> <ul>
         <li><strong>Name:</strong> {{ $rssLink->name }}</li>
     </ul></span></span>
