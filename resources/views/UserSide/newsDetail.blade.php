@@ -1,6 +1,6 @@
 @include('Shared.components.header')
 <style>
-    .container {
+    .containerbg {
   width: 100%;
   height: 100%;
   --sz: 4px; /*** size ***/
@@ -221,11 +221,13 @@
                 </h2>
 
                 <!-- List of Comments with overflow-y-auto -->
-                <ul class="p-6 space-y-4 overflow-y-auto max-h-80">
+                <ul id="commentsList" class="p-6 space-y-4 overflow-y-auto max-h-80">
                     @foreach($comments as $comment)
                         <li class="bg-gray-100 p-4 rounded-lg shadow-md">
                             <div class="flex items-start space-x-4">
-                                <!-- Remove the image -->
+                                <!-- Add sender's photo -->
+                                <img src="{{ $comment->sender_photo }}" alt="{{ $comment->msgsender }}" class="w-8 h-8 rounded-full">
+
                                 <div>
                                     <p class="text-gray-800 font-semibold text-md">{{ $comment->msgsender }}</p>
                                     <p class="text-gray-600 text-sm">{{ $comment->msg }}</p>
@@ -251,29 +253,62 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script>
-        function sendmsg(id){
-            // Your JavaScript code (using Fetch API)
+    function sendmsg(id) {
+        // Your JavaScript code (using Fetch API)
 
-            const itemId = id;  // Replace with the actual item ID
-            const msg = document.getElementById('comment').value;
+        const itemId = id;  // Replace with the actual item ID
+        const msg = document.getElementById('comment').value;
 
-            fetch('/comments/store', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                },
-                body: JSON.stringify({ item_id: itemId, msg: msg }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Comment saved:', data);
-                // Handle the response as needed
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Handle errors
-            });
-        }
-    </script>
+        fetch('/comments/store', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            },
+            body: JSON.stringify({ item_id: itemId, msg: msg }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Comment saved:', data);
+
+            // Append the new message to the comments section
+            const commentsList = document.getElementById('commentsList');
+            const newComment = document.createElement('li');
+            newComment.className = 'bg-gray-100 p-4 rounded-lg shadow-md';
+
+            const senderPhoto = document.createElement('img');
+            senderPhoto.src = data.sender_photo;  // Replace with the actual sender's photo URL
+            senderPhoto.alt = data.msgsender;
+            senderPhoto.className = 'w-8 h-8 rounded-full';
+
+            const commentContent = document.createElement('div');
+            commentContent.className = 'flex items-start space-x-4';
+            
+            const senderInfo = document.createElement('div');
+            const senderName = document.createElement('p');
+            senderName.className = 'text-gray-800 font-semibold text-md';
+            senderName.textContent = data.msgsender;
+
+            const messageText = document.createElement('p');
+            messageText.className = 'text-gray-600 text-sm';
+            messageText.textContent = data.msg;
+
+            senderInfo.appendChild(senderName);
+            senderInfo.appendChild(messageText);
+            
+            commentContent.appendChild(senderPhoto);
+            commentContent.appendChild(senderInfo);
+
+            newComment.appendChild(commentContent);
+            commentsList.appendChild(newComment);
+
+            // Clear the textarea after sending the message
+            document.getElementById('comment').value = '';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle errors
+        });
+    }
+</script>
 </body>

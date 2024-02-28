@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AdminSide\RssItem;
 use App\Models\ItemComment;
+use App\Models\AdminSide\UserFavorite;
 
 class HomeController extends Controller
 {
