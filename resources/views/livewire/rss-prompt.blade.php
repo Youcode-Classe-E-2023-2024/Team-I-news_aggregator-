@@ -9,16 +9,16 @@
         #prompt-section:hover {
             margin-bottom: 5px;
             margin-right: 5px;
-            box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
-            -webkit-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
-            -moz-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);
+            /*box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);*/
+            /*-webkit-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);*/
+            /*-moz-box-shadow: 0px 0px 11px 11px rgba(160,65,178,0.31);*/
         }
     </style>
     <main class="flex">
         <!-- component -->
         <div class="w-full h-full min-h-screen flex items-center justify-center">
-            <div id="prompt-section" class="backdrop-blur-sm shadow-md flex flex-col gap-8 items-center justify-center rounded-md p-12 border-[2px] border-solid border-purple-500" style="background-color: rgba(0, 0, 0, 0.503);">
-                <h1 class="text-2xl text-purple-600 font-bold">ADD AN RSS LINK INTO DATABASE</h1>
+            <div id="prompt-section" class="backdrop-blur-sm shadow-md flex flex-col gap-8 items-center justify-center rounded-md p-12 border-[2px] border-solid border-white" style="background-color: rgba(0, 0, 0, 0.503);">
+                <h1 class="text-2xl text-white font-bold">ADD AN RSS LINK INTO DATABASE</h1>
                 <form
                     wire:submit.prevent="storeRss"
                     class="mx-auto min-w-[700px] relative bg-white min-w-sm max-w-2xl flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-md gap-2 shadow-2xl focus-within:border-gray-300"
