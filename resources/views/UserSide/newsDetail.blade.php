@@ -279,12 +279,12 @@
 
                 <!-- Add Comment Input -->
                 <div class="p-6 flex">
-                  
-                    <textarea id="comment" class="w-full h-16 px-3 py-2 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 resize-none"></textarea>
-                    <button onclick="sendmsg('{{ $newsItem->id }}')" class="w-full mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition ease-in-out duration-150">
-                        Add Comment
+                    <textarea id="comment" class="w-full h-16 px-3 py-2 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 resize-none" placeholder="Add your comment..."></textarea>
+                    <button onclick="sendmsg('{{ $newsItem->id }}')" class="ml-4 px-2 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition ease-in-out duration-150">
+                        <ion-icon class="text-2xl" name="add-outline"></ion-icon>
                     </button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -323,7 +323,7 @@
 
             const commentContent = document.createElement('div');
             commentContent.className = 'flex items-start space-x-4';
-            
+
             const senderInfo = document.createElement('div');
             const senderName = document.createElement('p');
             senderName.className = 'text-gray-800 font-semibold text-md';
@@ -335,7 +335,7 @@
 
             senderInfo.appendChild(senderName);
             senderInfo.appendChild(messageText);
-            
+
             commentContent.appendChild(senderPhoto);
             commentContent.appendChild(senderInfo);
 

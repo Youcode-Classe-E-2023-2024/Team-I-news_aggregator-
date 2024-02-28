@@ -42,6 +42,13 @@
                 </a>
             </li>
             @endforeach
+            @if(auth()->user()->hasRole('admin'))
+                <li class="p-3 xl:p-6 active">
+                    <a href="/admin-dash">
+                        Admin Dash
+                    </a>
+                </li>
+            @endif
         </ul>
     </nav>
     <nav class="hidden xl:contents flex items-center">

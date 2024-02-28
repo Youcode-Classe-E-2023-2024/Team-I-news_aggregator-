@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::take(30)->get();
+
         return view('UserSide.categories', compact('categories'));
     }
 }
