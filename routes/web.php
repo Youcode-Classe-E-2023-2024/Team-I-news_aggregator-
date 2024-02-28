@@ -166,4 +166,10 @@ Route::get('/favorite', function () {
     return view('UserSide.favorite');
 })->name('favorite');
 
+// routes/web.php
+
+use App\Http\Controllers\UserSide\CommentController;
+
+Route::post('/comments/store', [CommentController::class, 'store']);
+
 // END IMAD
