@@ -32,6 +32,20 @@ class HomeController extends Controller
     // Pass both sets of RSS items to the view
     return view('UserSide.home', compact('rssItems'));
     }
+    public function favorites()
+    {
+       // Get the current user's ID (assuming you have authenticated users)
+    $userId = auth()->id();
+
+    // Retrieve the RSS items that the user has favorited
+    $userFavorites = UserFavorite::where('user_id', $userId)->pluck('rss_item_id');
+
+    // Fetch RSS items based on the user favorites
+    $userFavoriteRssItems = RssItem::whereIn('id', $userFavorites)->get();
+
+
+    return view('UserSide.favorite', compact('userFavoriteRssItems'));
+    }
 
     public function newsDetail($id)
     {
