@@ -10,7 +10,7 @@ class ItemComment extends Model
 {
     protected $table = 'itemcomments';
 
-    protected $fillable = ['item_id', 'msg'];
+    protected $fillable = ['item_id', 'msg','msgsender'];
 
    
 }
