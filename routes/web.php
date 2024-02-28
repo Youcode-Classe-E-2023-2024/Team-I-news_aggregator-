@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSide\MainController;
 use App\Livewire\RssPrompt;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -167,3 +168,5 @@ Route::get('/favorite', function () {
 })->name('favorite');
 
 // END IMAD
+
+Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('news.detail');

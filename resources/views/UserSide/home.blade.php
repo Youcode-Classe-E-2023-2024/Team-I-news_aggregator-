@@ -292,6 +292,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <a href="{{ route('news.detail', $rssItem->id) }}" class="text-blue-700 hover:underline">Read More</a>
                         </div>
                     </div>
                 </div>
