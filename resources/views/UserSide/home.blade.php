@@ -317,6 +317,7 @@
                                 </div>
                                 <div class="flex flex-col justify-between h-60">
                                     <div class="fixtheheight">
+                                    
                                         <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}
                                         </h3>
                                         <p class="text-gray-600 overflow-hidden" style="height: 4.5em;">
