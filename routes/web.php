@@ -165,12 +165,13 @@ Route::get('/homeuser', function () {
 Route::controller(HomeController::class)->group(function () {
     Route::get('/tendance', 'tendance')->name('tendance');
 });
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/favorites', 'favorites')->name('favorites');
+});
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
-Route::get('/favorite', function () {
-    return view('UserSide.favorite');
-})->name('favorite');
+
 
 // routes/web.php
 
