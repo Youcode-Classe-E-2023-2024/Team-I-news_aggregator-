@@ -1,7 +1,12 @@
 @include('Shared.components.header')
 <body style="background-image: url('http://127.0.0.1:8000/images/anime_letters.jpg'); background-size: cover; background-position: center" class=" ">
-<x-Navbar :links="['Home' => '/home', 'Trend' => '/Trend','Favorites' => '/Favorites', 'Categories' => '/Categories', 'Profile' => '/Profile','Details' => '/Details']" />
-
+<x-Navbar :links="[
+        'Home' => '/home',
+        'Trend' => '/Trend',
+        'Favorites' => '/favorites',
+        'Categories' => '/categories',
+        'Profile' => '/profile',
+    ]" />
 <div class="container mx-auto p-8  bg-gray-100 font-sans">
 
     <!-- En-tête de la Page -->

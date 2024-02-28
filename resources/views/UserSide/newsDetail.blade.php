@@ -174,11 +174,50 @@
     filter: hue-rotate(360deg);
   }
 }
+.bbb{
 
+  --s: 1px; /* control the size */
+  --c1: #b9b9b9;
+  --c2: #dcdcdc;
+  --c3: #fafafa;
+
+  background: conic-gradient(
+        from 75deg,
+        var(--c1) 15deg,
+        var(--c2) 0 30deg,
+        #0000 0 180deg,
+        var(--c2) 0 195deg,
+        var(--c1) 0 210deg,
+        #0000 0
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) / 0.577),
+    conic-gradient(
+      var(--c1) 30deg,
+      var(--c3) 0 75deg,
+      var(--c1) 0 90deg,
+      var(--c2) 0 105deg,
+      var(--c3) 0 150deg,
+      var(--c2) 0 180deg,
+      var(--c3) 0 210deg,
+      var(--c1) 0 256deg,
+      var(--c2) 0 270deg,
+      var(--c1) 0 286deg,
+      var(--c2) 0 331deg,
+      var(--c3) 0
+    );
+  background-size: var(--s) calc(var(--s) / 0.577);
+    }
 </style>
-<body class=" bg-gray-100 overflow-hidden h-screen w-screen">
-    <div class="container mx-auto my-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<body class=" bg-gray-100 overflow-hidden h-screen w-screen bbb">
+<x-Navbar :links="[
+        'Home' => '/home',
+        'Trend' => '/Trend',
+        'Favorites' => '/favorites',
+        'Categories' => '/categories',
+        'Profile' => '/profile',
+    ]" />
+    <div class="container mx-auto my-8 mt-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-32">
             <!-- Data Section -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                 <!-- Image -->
@@ -239,8 +278,8 @@
                 </ul>
 
                 <!-- Add Comment Input -->
-                <div class="p-6">
-                    <label for="comment" class="text-gray-800 font-medium">Add a Comment:</label>
+                <div class="p-6 flex">
+                  
                     <textarea id="comment" class="w-full h-16 px-3 py-2 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 resize-none"></textarea>
                     <button onclick="sendmsg('{{ $newsItem->id }}')" class="w-full mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition ease-in-out duration-150">
                         Add Comment

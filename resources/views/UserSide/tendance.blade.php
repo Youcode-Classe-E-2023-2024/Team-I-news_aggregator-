@@ -2,7 +2,7 @@
 
 <body>
 
-    <x-Navbar :links="[
+<x-Navbar :links="[
         'Home' => '/home',
         'Trend' => '/Trend',
         'Favorites' => '/favorites',

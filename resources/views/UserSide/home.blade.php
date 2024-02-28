@@ -1,9 +1,13 @@
 @include('Shared.components.header')
 
-<body class="">
+<body class="bbb">
 <style>
-    .containerbg {
+    .bbb{
         z-index: 100;
+        /* background: url("https://wallpapers.com/images/hd/white-hd-1920-x-1200-background-w5xsbyermln13aks.jpg"); */
+    }
+    .containerbg {
+
   --sz: 4px; /*** size ***/
   --sp: 5s; /*** speed ***/
   --b1: #ffffff; /*** color ***/
@@ -352,7 +356,7 @@
     </div>
 
 
-    <main class="flex-auto invisible m-40  border">
+    <main class="flex-auto invisible m-40 ">
 
 
         <div class="sm:px-8 mt-9">
