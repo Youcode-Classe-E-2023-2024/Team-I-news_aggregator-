@@ -31,7 +31,7 @@
             overflow-x: hidden;
 
         }
-        
+
 .containerr {
   position: relative;
   width: 320px;
@@ -44,10 +44,10 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d; 
+  transform-style: preserve-3d;
   animation: rotate360 60s infinite forwards linear;
 }
-.carouselll__face { 
+.carouselll__face {
   position: absolute;
   width: 200px;
   height: 187px;
@@ -64,7 +64,7 @@
 .carouselll__face:nth-child(1) {
   background-image: url("{{$rssItems[0]->image}}");
   transform: rotateY(  0deg) translateZ(430px); }
-.carouselll__face:nth-child(2) { 
+.carouselll__face:nth-child(2) {
   background-image: url("{{$rssItems[1]->image}}");
     transform: rotateY( 40deg) translateZ(430px); }
 .carouselll__face:nth-child(3) {
@@ -73,13 +73,13 @@
 .carouselll__face:nth-child(4) {
   background-image: url("{{$rssItems[3]->image}}");
   transform: rotateY(120deg) translateZ(430px); }
-.carouselll__face:nth-child(5) { 
+.carouselll__face:nth-child(5) {
   background-image: url("{{$rssItems[4]->image}}");
  transform: rotateY(160deg) translateZ(430px); }
-.carouselll__face:nth-child(6) { 
+.carouselll__face:nth-child(6) {
   background-image: url("{{$rssItems[5]->image}}");
  transform: rotateY(200deg) translateZ(430px); }
-.carouselll__face:nth-child(7) { 
+.carouselll__face:nth-child(7) {
   background-image: url("{{$rssItems[6]->image}}");
  transform: rotateY(240deg) translateZ(430px); }
 .carouselll__face:nth-child(8) {
@@ -161,7 +161,7 @@
 
 
     <main class="flex-auto invisible m-40">
-        
+
 
         <div class="sm:px-8 mt-9">
             <div class="mx-auto w-full max-w-7xl lg:px-8">
@@ -223,7 +223,7 @@
         -->
 
 
-        
+
 
 
 
@@ -241,12 +241,12 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ rss list ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
-        <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
+        <div id="rssItemList" class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
             @foreach ($rssItems as $rssItem)
                 <div class="group cursor-pointer">
                     <div class="flex flex-col justify-center">
@@ -350,8 +350,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ Subscribe/Categories list ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-    
+
+
     -->
     <div class="categorie mx-auto  grid grid-cols-1 z-20 lg:max-w-none m-6 py-2 right-2 bottom-24 w-12">
         <button id="toggleButton" class="bg-blue-900 text-white p-2 rounded-md mb-4"><-></button>
@@ -385,8 +385,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
                 <div class="mt-4 md:mt-6">
                     <div class="mr-10 w-full max-w-md">
@@ -402,9 +402,9 @@
                                         </svg>
                                     </div>
                                     <input type="search" id="searchInput" placeholder="Search rss Items"
-                                        class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5 
-                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 
-                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 
+                                        class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5
+                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4
+                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600
                             dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
                                 </div>
                             </div>
@@ -417,8 +417,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ END search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
 
 
@@ -432,6 +432,33 @@
         document.getElementById("toggleButton").addEventListener("click", function() {
             const div = document.getElementById("collapsibleDiv");
             div.classList.toggle("collapsed");
+        });
+    </script>
+
+
+    {{--  Search bar functionnality  --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the search input element
+            const searchInput = document.getElementById('searchInput');
+            // Get the list of RSS items container
+            const rssItemList = document.getElementById('rssItemList');
+
+            // Add event listener for input change
+            searchInput.addEventListener('input', function () {
+                // Get the search query value
+                const query = searchInput.value.trim().toLowerCase();
+
+                // Filter RSS items based on the search query
+                Array.from(rssItemList.children).forEach(item => {
+                    const name = item.querySelector('h3').textContent.trim().toLowerCase();
+                    if (name.includes(query)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 
