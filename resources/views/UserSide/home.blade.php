@@ -121,7 +121,7 @@
     <x-Navbar :links="[
         'Home' => '/home',
         'Trend' => '/Trend',
-        'Favorites' => '/Favorites',
+        'Favorites' => '/favorites',
         'Categories' => '/categories',
         'Profile' => '/Profile',
         'Details' => '/Details',

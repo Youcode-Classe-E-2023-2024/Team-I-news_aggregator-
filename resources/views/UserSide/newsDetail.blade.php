@@ -277,7 +277,7 @@
             newComment.className = 'bg-gray-100 p-4 rounded-lg shadow-md';
 
             const senderPhoto = document.createElement('img');
-            senderPhoto.src = data.sender_photo;  // Replace with the actual sender's photo URL
+            senderPhoto.src = "https://media.istockphoto.com/id/682897825/fr/photo/confident-businesswoman-over-gray-background.jpg?s=2048x2048&w=is&k=20&c=Vekuca6Dk-CVIO3Wk4fi1tCak0uX6gZdXxoiWWzimp4=";  // Replace with the actual sender's photo URL
             senderPhoto.alt = data.msgsender;
             senderPhoto.className = 'w-8 h-8 rounded-full';
 
