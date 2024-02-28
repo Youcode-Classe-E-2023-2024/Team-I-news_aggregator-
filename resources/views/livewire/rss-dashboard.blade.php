@@ -10,7 +10,7 @@
                     <h5 class="modal-title" id="deleteRssLinkModalLabel">Delete Student</h5>
                     <button type="button" data-bs-dismiss="modal" wire:click="closeModal"
                             aria-label="Close">
-                        <div class="h-[20px] w-[20px]" style="background-image: url('http://127.0.0.1:8000/storage/images/close-outline.svg'); background-size: cover; background-position: center; "></div>
+                        <div class="h-[20px] w-[20px]"></div>
                     </button>
                 </div>
                 <form wire:submit.prevent="destroyRssLink">
@@ -31,26 +31,24 @@
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <!-- Start coding here -->
             <div class="backdrop-blur-sm relative shadow-md sm:rounded-lg overflow-hidden border-purple-500 border-solid border-[.5px]" style="background-color: rgba(0, 0, 0, 0.403);">
-                <div class="flex items-center justify-between d p-4">
+                <div class="flex items-center justify-between p-4">
                     <div class="flex">
-                        <div class="relative w-full">
+                        <div class="relative">
+                            <input wire:model.live.debounce.300s="search" type="text"
+                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 pr-4 py-2"
+                                   placeholder="Search" required="">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                     fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                           d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                           clip-rule="evenodd" />
                                 </svg>
                             </div>
-
-                            <input
-                                wire:model.live.debounce.300s = "search"
-                                type="text"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 "
-                                placeholder="Search" required="">
                         </div>
                     </div>
                 </div>
+
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -71,7 +69,7 @@
                         @foreach($rssLinks as $rssLink)
                             <tr  class="border-b dark:border-gray-700">
                                 <td scope="col" class="px-4 py-3 text-white" >{{ $rssLink->name }}</td>
-                                <td scope="col" class="px-4 py-3">{{ $rssLink->created_at }}</td>
+                                <td scope="col" class="px-4 py-3 text-white">{{ $rssLink->created_at }}</td>
                                 <td scope="col" class="px-4 py-3 flex items-center justify-end">
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#deleteRssLinkModal" wire:click="deleteRssLink({{$rssLink->id}})" class="btn btn-danger">Delete</button>
                                 </td>

@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         // Fetch RSS items from the database
-        $rssItems = RssItem::all();
+        $rssItems = RssItem::paginate(30);
 
         // Pass the RSS items to the view
         return view('UserSide.home', compact('rssItems'));
