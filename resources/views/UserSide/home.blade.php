@@ -220,12 +220,12 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ rss list ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
-       
+
         <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
 
             @foreach ($rssItems as $rssItem)
@@ -297,8 +297,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ Subscribe/Categories list ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-    
+
+
     -->
     <div class="categorie mx-auto  grid grid-cols-1 z-20 lg:max-w-none m-6 py-2 right-2 bottom-24 w-12">
         <button id="toggleButton" class="bg-blue-900 text-white p-2 rounded-md mb-4"><-></button>
@@ -332,8 +332,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
         <div class="mt-4 md:mt-6">
             <div class="mr-10 w-full max-w-md">
@@ -348,9 +348,9 @@
                                 </svg>
                             </div>
                             <input type="search" id="searchInput" placeholder="Search rss Items"
-                                class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5 
-                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4 
-                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600 
+                                class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5
+                            placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4
+                            focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600
                             dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
                         </div>
                     </div>
@@ -363,8 +363,8 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~ END search bar ~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
-   
+
+
     -->
 
 

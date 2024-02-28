@@ -10,13 +10,9 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        
-        $categories = Category::whereExists(function ($query) {
-            $query->select(DB::raw(1))
-                  ->from('rss_items')
-                  ->whereRaw('rss_items.category = categories.name');
-        })->paginate(6);
-        
-        return view('UserSide.categories', compact('categories'));
+
+
+
+        return view('UserSide.categories');
     }
 }

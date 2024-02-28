@@ -35,7 +35,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 
     })->name('storedRssLinks');
 
-    Route::get('/stored-rss-items', function() {
+    Route::get('', function() {
         return view('AdminSide.layout.rss-items-list');
 
     })->name('storedRssItems');
