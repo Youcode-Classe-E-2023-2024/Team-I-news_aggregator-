@@ -179,6 +179,7 @@ use App\Http\Controllers\UserSide\CommentController;
 
 Route::post('/comments/store', [CommentController::class, 'store']);
 
+
 // END IMAD
 
 Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('news.detail');
