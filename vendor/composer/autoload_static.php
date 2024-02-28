@@ -108,6 +108,7 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
             'Spatie\\Backtrace\\' => 17,
+            'Spatie\\ArrayToXml\\' => 18,
         ),
         'R' => 
         array (
@@ -403,6 +404,10 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'Spatie\\Backtrace\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/backtrace/src',
+        ),
+        'Spatie\\ArrayToXml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/array-to-xml/src',
         ),
         'RingCentral\\Psr7\\' => 
         array (
@@ -725,7 +730,6 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminSide\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminSide/MainController.php',
-        'App\\Http\\Controllers\\AdminSide\\PromptController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminSide/PromptController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -735,7 +739,10 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\OwnRssController' => __DIR__ . '/../..' . '/app/Http/Controllers/OwnRssController.php',
         'App\\Http\\Controllers\\UserManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserManagementController.php',
+        'App\\Http\\Controllers\\UserSide\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserSide/CommentController.php',
+        'App\\Http\\Controllers\\UserSide\\TrendController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserSide/TrendController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -748,11 +755,14 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Livewire\\RssDashboard' => __DIR__ . '/../..' . '/app/Livewire/RssDashboard.php',
         'App\\Livewire\\RssItems' => __DIR__ . '/../..' . '/app/Livewire/RssItems.php',
+        'App\\Livewire\\RssPrompt' => __DIR__ . '/../..' . '/app/Livewire/RssPrompt.php',
         'App\\Livewire\\UsersDashboard' => __DIR__ . '/../..' . '/app/Livewire/UsersDashboard.php',
         'App\\Mail\\NewRssAdded' => __DIR__ . '/../..' . '/app/Mail/NewRssAdded.php',
         'App\\Models\\AdminSide\\Category' => __DIR__ . '/../..' . '/app/Models/AdminSide/Category.php',
         'App\\Models\\AdminSide\\RssItem' => __DIR__ . '/../..' . '/app/Models/AdminSide/RssItem.php',
         'App\\Models\\AdminSide\\Rsslist' => __DIR__ . '/../..' . '/app/Models/AdminSide/Rsslist.php',
+        'App\\Models\\AdminSide\\UserFavorite' => __DIR__ . '/../..' . '/app/Models/AdminSide/UserFavorite.php',
+        'App\\Models\\ItemComment' => __DIR__ . '/../..' . '/app/Models/ItemComment.php',
         'App\\Models\\RolesPermissionDescription' => __DIR__ . '/../..' . '/app/Models/RolesPermissionDescription.php',
         'App\\Models\\RolesPermissionName' => __DIR__ . '/../..' . '/app/Models/RolesPermissionName.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -6362,6 +6372,7 @@ class ComposerStaticInitc22463f52bcbeb568bda7ab03a2a6d13
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\ArrayToXml\\ArrayToXml' => __DIR__ . '/..' . '/spatie/array-to-xml/src/ArrayToXml.php',
         'Spatie\\Backtrace\\Arguments\\ArgumentReducers' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ArgumentReducers.php',
         'Spatie\\Backtrace\\Arguments\\ProvidedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ProvidedArgument.php',
         'Spatie\\Backtrace\\Arguments\\ReduceArgumentPayloadAction' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReduceArgumentPayloadAction.php',

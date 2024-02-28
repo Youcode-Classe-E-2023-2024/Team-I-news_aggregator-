@@ -35,6 +35,7 @@
         }
 
         .containerr {
+
             position: relative;
             width: 320px;
             margin: 100px auto 0 auto;
@@ -121,6 +122,73 @@
             }
         }
 
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carouselll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
+}
+.carouselll__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  display: flex;
+}
+
+
+
+
+.carouselll__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carouselll__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carouselll__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carouselll__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carouselll__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carouselll__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carouselll__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carouselll__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carouselll__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+
 
         .max-h-80 {
             max-height: 200px;
@@ -165,6 +233,7 @@
 
 
 
+
     <div class="containerr ">
         <div class="carouselll">
             <div class="carouselll__face"><span>{{ $rssItems[0]->category }}</span></div>
@@ -177,6 +246,19 @@
             <div class="carouselll__face"><span>{{ $rssItems[7]->category }}</span></div>
             <div class="carouselll__face"><span>{{ $rssItems[8]->category }}</span></div>
         </div>
+
+<div class="containerr">
+    <div class="carouselll">
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+      <div class="carouselll__face"><span></span></div>
+
     </div>
 
 
@@ -250,10 +332,11 @@
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+
     -->
     <!-- Your existing HTML code -->
     <div class="container right-0 px-4 py-5 ml-0">
-        <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
+        <div id="rssItemList" class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
             @foreach ($rssItems as $rssItem)
             <div class="group cursor-pointer" data-category="{{ $rssItem->category }}">
                 <div class="flex flex-col justify-center">
@@ -388,7 +471,12 @@
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                         </svg>
                                     </div>
+
                                     <input type="search" id="searchInput" placeholder="Search rss Items" class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5
+
+                                    <input type="search" id="searchInput" placeholder="Search rss Items"
+                                        class="rounded-md border border-zinc-900/10 bg-gray-50 px-12 py-2 shadow-md shadow-zinc-800/5
+
                             placeholder:text-gray-400 focus:border-teal-500 focus:outline-none focus:ring-4
                             focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-600
                             dark:placeholder:text-gray-400 dark:focus:border-teal-400 dark:focus:ring-teal-100 sm:text-base">
@@ -418,6 +506,33 @@
         document.getElementById("toggleButton").addEventListener("click", function() {
             const div = document.getElementById("collapsibleDiv");
             div.classList.toggle("collapsed");
+        });
+    </script>
+
+
+    {{--  Search bar functionnality  --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the search input element
+            const searchInput = document.getElementById('searchInput');
+            // Get the list of RSS items container
+            const rssItemList = document.getElementById('rssItemList');
+
+            // Add event listener for input change
+            searchInput.addEventListener('input', function () {
+                // Get the search query value
+                const query = searchInput.value.trim().toLowerCase();
+
+                // Filter RSS items based on the search query
+                Array.from(rssItemList.children).forEach(item => {
+                    const name = item.querySelector('h3').textContent.trim().toLowerCase();
+                    if (name.includes(query)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 

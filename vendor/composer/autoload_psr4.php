@@ -50,6 +50,7 @@ return array(
     'Spatie\\Ignition\\' => array($vendorDir . '/spatie/ignition/src'),
     'Spatie\\FlareClient\\' => array($vendorDir . '/spatie/flare-client-php/src'),
     'Spatie\\Backtrace\\' => array($vendorDir . '/spatie/backtrace/src'),
+    'Spatie\\ArrayToXml\\' => array($vendorDir . '/spatie/array-to-xml/src'),
     'RingCentral\\Psr7\\' => array($vendorDir . '/ringcentral/psr7/src'),
     'React\\Stream\\' => array($vendorDir . '/react/stream/src'),
     'React\\Socket\\' => array($vendorDir . '/react/socket/src'),

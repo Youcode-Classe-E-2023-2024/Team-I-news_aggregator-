@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OwnRssController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
 
 // START IMAD
 
+
+
+Route::prefix('api')->group(function () {
+    Route::prefix('ownrss')->group(function () {
+        Route::get('/', [OwnRssController::class, 'index']);
+        // Other routes for OwnRssController
+    });
+});
+
+Route::get('/Ownrss', [OwnRssController::class, 'index']); // http://127.0.0.1:8000/api/Ownrss
 
 // END IMAD

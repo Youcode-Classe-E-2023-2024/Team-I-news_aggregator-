@@ -6,6 +6,7 @@ use App\Livewire\RssPrompt;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserSide\TrendController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,15 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('/logout', function () {
         auth()->user()->logout();
     });
+
+    /* Profile Route */
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    Route::put('/profile/userInfo', [ProfileController::class, 'userInfoUpdate'])->name('profile.userInfo.update');
+
+    Route::put('/profile/password', [ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
+
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 // Trend Route:
@@ -178,6 +188,7 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 use App\Http\Controllers\UserSide\CommentController;
 
 Route::post('/comments/store', [CommentController::class, 'store']);
+
 
 // END IMAD
 
