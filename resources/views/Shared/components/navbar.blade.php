@@ -44,7 +44,7 @@
             @endforeach
         </ul>
     </nav>
-    <nav class="hidden xl:contents">
+    <nav class="hidden xl:contents flex items-center">
         <ul class="flex items-center mr-4 lg:mr-6 xl:mr-8">
             <li class="p-1">
                 <a href="" class="inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5">
@@ -77,6 +77,12 @@
         </ul>
     </nav>
     <div class="border flex items-center px-4 lg:px-6 xl:px-8">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+             <button>
+                 <ion-icon class="text-3xl" name="log-out-outline"></ion-icon>
+             </button>
+        </form>
 
     </div>
 </header>

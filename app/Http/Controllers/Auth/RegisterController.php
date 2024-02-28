@@ -36,7 +36,8 @@ class RegisterController extends Controller
             $user->role_name    = $request->role_name;
             $user->password     = Hash::make($request->password);
             $user->save();
-       
+
+            $user->assignRole('user');
 
             $data = [];
             $data['response_code']  = '200';
