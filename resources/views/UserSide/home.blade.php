@@ -68,65 +68,204 @@
 
 
 
-    <div id="default-carousel" class="relative m-12 w-2/3 mx-auto bg-gray-200 rounded-lg p-4" data-carousel="slide">
-        <!-- Carousel wrapper -->
-        <div class="relative h-48 md:h-72 overflow-hidden rounded-lg">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt="...">
-            </div>
-            <!-- Other items go here -->
-        </div>
-        <!-- Slider indicators -->
-        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                data-carousel-slide-to="3"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                data-carousel-slide-to="4"></button>
-        </div>
-        <!-- Slider controls -->
-        <button type="button"
-            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev>
-            <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 1 1 5l4 4" />
-                </svg>
-                <span class="sr-only">Previous</span>
-            </span>
-        </button>
-        <button type="button"
-            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next>
-            <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m1 9 4-4-4-4" />
-                </svg>
-                <span class="sr-only">Next</span>
-            </span>
-        </button>
+<section id="tranding">
+    <div class="container">
+      <h3 class="text-center section-subheading">- popular Delivery -</h3>
+      <h1 class="text-center section-heading">Tranding food</h1>
     </div>
+    <div class="container">
+      <div class="swiper tranding-slider">
+        <div class="swiper-wrapper">
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-1.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Special Pizza
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-2.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Meat Ball
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-3.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$40</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Burger
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-4.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$15</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Frish Curry
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-5.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$15</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Pane Cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-6.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$20</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Vanilla cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+          <!-- Slide-start -->
+          <div class="swiper-slide tranding-slide">
+            <div class="tranding-slide-img">
+              <img src="images/tranding-food-7.png" alt="Tranding">
+            </div>
+            <div class="tranding-slide-content">
+              <h1 class="food-price">$8</h1>
+              <div class="tranding-slide-content-bottom">
+                <h2 class="food-name">
+                  Straw Cake
+                </h2>
+                <h3 class="food-rating">
+                  <span>4.5</span>
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide-end -->
+        </div>
+
+        <div class="tranding-slider-control">
+          <div class="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </div>
+          <div class="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -223,79 +362,38 @@
     -->
 
     <div class="container right-0 px-4 py-5 ml-0">
-       
-        <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
-
-            @foreach ($rssItems as $rssItem)
-                <div class="group cursor-pointer ">
-                    <div class="flex flex-col  justify-center" >
-
-                        <div id="group"
-                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
-                            <div class="w-full md:w-1/3 bg-white grid place-items-center">
-                                <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
+    <div class="mt-2 pl-10 grid gap-10 md:grid-cols-2 xl:mr-80 lg:gap-10 xl:grid-cols-2">
+        @foreach ($rssItems as $rssItem)
+            <div class="group cursor-pointer">
+                <div class="flex flex-col justify-center">
+                    <div id="group" class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-full mx-auto border border-white transition-all duration-300 transform hover:scale-102 shadowrss shadow-xl">
+                        <div class="w-full md:w-1/3 bg-white grid place-items-center">
+                            <img src="{{ $rssItem->image }}" alt="RSS Image" class="rounded-xl" />
+                        </div>
+                        <div class="w-1/2 md:w-2/3 bg-white flex flex-col space-y-2 p-3">
+                            <div class="flex justify-between item-center">
+                                <!-- Category and Favorites Button -->
                             </div>
-                            <div class="w-1/2 md:w-2/3 bg-white flex flex-col space-y-2 p-3">
-                                <div class="flex justify-between item-center">
-
-
-
-
-                                <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-                                    <span class="font-black text-gray-800 md:text-1xl text-lg">{{ $rssItem->category }}</span>
+                            <div class="flex flex-col justify-between h-60">
+                                <div class="fixtheheight">
+                                    <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}</h3>
+                                    <p class="text-gray-600 overflow-hidden" style="height: 4.5em;">{{ $rssItem->description }}</p>
                                 </div>
-                                        @if (Auth::check())
-                                @if (Auth::user()->favorites->contains($rssItem->id))
-                                <!-- Show button/icon to remove from favorites -->
-                                <form action="{{ route('removeFromFavorites', $rssItem->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </form>
-                                @else
-                                <!-- Show button/icon to add to favorites -->
-                                <form action="{{ route('addToFavorites', $rssItem->id) }}" method="POST" id="addToFavoritesForm">
-                                    @csrf
-                                    <button type="submit" class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none" id="addToFavoritesButton">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </form>
-                                @endif
-                                @else
-                                <!-- Show button/icon to add to favorites for non-logged-in users -->
-                                <button type="button" class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none" onclick="showLoginAlert()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                @endif
-                            </div>
-                                <div class="flex flex-col justify-between h-60">
-                                    <div class="fixtheheight">
-                                        <h3 class="font-black text-gray-800 md:text-md text-xl">{{ $rssItem->name }}
-                                        </h3>
-                                        <textarea id="story" name="story" rows="4" cols="33" style="overflow-y: hidden; width:full;">
-                                        {{ $rssItem->description }}
-                                    </textarea>
-                                    </div>
-                                    <div class="flex justify-bottom">
-                                        <p class="text-sm font-black text-gray-800">
-                                            Created-at:<font class="font-light text-gray-400 px-2">{{ $rssItem->created_at }}</font>
-
-                                        </p>
-                                    </div>
+                                <div class="flex justify-between items-center mt-4">
+                                    <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
+                                    <p class="text-sm font-black text-gray-800">
+                                        Created-at: <span class="font-light text-gray-400">{{ $rssItem->created_at->toFormattedDateString() }}</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            </div>
+        @endforeach
+    </div>
+</div>
+
 
 
 
@@ -405,5 +503,9 @@
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ asset('assets/js/home.js') }}"></script>
 
 </body>
