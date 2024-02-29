@@ -48,10 +48,11 @@ class HomeController extends Controller
     return view('UserSide.favorite', compact('userFavoriteRssItems'));
     }
 
-    public function newsDetail($id)
+    public function newsDetail($id,$slug)
     {
         // Assuming RssItem model represents a news item
         $newsItem = RssItem::findOrFail($id);
+
         $comments = ItemComment::where('item_id', $id)->get();
         // Pass the news item to the view
         return view('UserSide.newsDetail', compact('newsItem','comments'));

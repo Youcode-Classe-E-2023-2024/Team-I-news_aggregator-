@@ -71,7 +71,7 @@
                                     </p>
                                 </div>
                                 <div class="flex justify-between items-center mt-4">
-                                    <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
+                                    <a href="{{ route('news.detail', ['id' => $rssItem->id, 'slug' => $rssItem->slug]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
                                     <p class="text-sm font-black text-gray-800">
                                         Created-at: <span class="font-light text-gray-400">{{ $rssItem->created_at->toFormattedDateString() }}</span>
                                     </p>

@@ -194,4 +194,4 @@ Route::post('/comments/store', [CommentController::class, 'store']);
 
 // END IMAD
 
-Route::get('/news/{id}', [HomeController::class, 'newsDetail'])->name('news.detail');
+Route::get('/news/{id}/{slug}', [HomeController::class, 'newsDetail'])->name('news.detail');
