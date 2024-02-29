@@ -294,6 +294,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script>
+
     function sendmsg(id) {
         // Your JavaScript code (using Fetch API)
 
