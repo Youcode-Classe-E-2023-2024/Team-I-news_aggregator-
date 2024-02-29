@@ -278,13 +278,14 @@
                 </ul>
 
                 <!-- Add Comment Input -->
-                <div class="p-6 flex">
-                    <textarea id="comment" class="w-full h-16 px-3 py-2 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 resize-none" placeholder="Add your comment..."></textarea>
-                    <button onclick="sendmsg('{{ $newsItem->id }}')" class="ml-4 px-2 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition ease-in-out duration-150">
-                        <ion-icon class="text-2xl" name="add-outline"></ion-icon>
-                    </button>
-                </div>
-
+                @if(auth()->user()->hasRole('member-lvl3'))
+                    <div class="p-6 flex">
+                        <textarea id="comment" class="w-full h-16 px-3 py-2 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 resize-none" placeholder="Add your comment..."></textarea>
+                        <button onclick="sendmsg('{{ $newsItem->id }}')" class="ml-4 px-2 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition ease-in-out duration-150">
+                            <ion-icon class="text-2xl" name="add-outline"></ion-icon>
+                        </button>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

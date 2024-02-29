@@ -457,14 +457,16 @@
                                 </form>
                                 @else
                                 <!-- Show button/icon to add to favorites -->
-                                <form action="{{ route('addToFavorites', $rssItem->id) }}" method="POST" id="addToFavoritesForm">
-                                    @csrf
-                                    <button type="submit" class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none" id="addToFavoritesButton">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
-                                </form>
+                                    @if(auth()->user()->hasRole('member-lvl1'))
+                                        <form action="{{ route('addToFavorites', $rssItem->id) }}" method="POST" id="addToFavoritesForm">
+                                            @csrf
+                                            <button type="submit" class="flex items-center justify-center bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none" id="addToFavoritesButton">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M10 4.472l1.546-1.455a4.347 4.347 0 016.156 6.1l-7.65 7.205a1.2 1.2 0 01-1.656 0l-7.65-7.205a4.347 4.347 0 016.156-6.1L10 4.472z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </form>
+                                    @endif
                                 @endif
                                 @else
                                 <!-- Show button/icon to add to favorites for non-logged-in users -->
@@ -481,7 +483,9 @@
                                     <p class="text-gray-600 overflow-hidden" style="height: 4.5em;">{{ $rssItem->description }}</p>
                                 </div>
                                 <div class="flex justify-between items-center mt-4">
-                                    <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
+                                    @if(auth()->user()->hasRole('member-lvl2'))
+                                        <a href="{{ route('news.detail', ['id' => $rssItem->id]) }}" class="text-blue-600 hover:text-blue-700 font-semibold">Read More</a>
+                                    @endif
                                     <p class="text-sm font-black text-gray-800">Created-at: <span class="font-light text-gray-400">{{ $rssItem->created_at->toFormattedDateString() }}</span></p>
                                 </div>
                             </div>
