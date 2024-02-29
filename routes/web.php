@@ -65,6 +65,9 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     })->name('logout');
 
     /* Profile Route */
+
+ });
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 
     Route::put('/profile/userInfo', [ProfileController::class, 'userInfoUpdate'])->name('profile.userInfo.update');
@@ -72,11 +75,10 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::put('/profile/password', [ProfileController::class, 'passwordUpdate'])->name('profile.password.update');
 
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
- });
 
-// Trend Route:
-Route::get('/Trend', [TrendController::class, 'index'])->name('news.trend')->middleware('auth');
-
+    // Trend Route:
+    Route::get('/Trend', [TrendController::class, 'index'])->name('news.trend');
+});
 // END HAMZA
 
 

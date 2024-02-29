@@ -112,7 +112,21 @@ class UsersDashboard extends Component
         $user = User::where('id', $this->user_id)->first();
 
         $user->syncRoles([]);
-        $user->assignRole($this->role);
+
+        if($this->role == 'member-lvl1') {
+            $user->assignRole('member-lvl1');
+
+        }elseif($this->role == 'member-lvl2') {
+            $user->assignRole('member-lvl1');
+            $user->assignRole('member-lvl2');
+
+        }elseif($this->role == 'member-lvl3') {
+            $user->assignRole('member-lvl1');
+            $user->assignRole('member-lvl2');
+            $user->assignRole('member-lvl3');
+        }elseif($this->role == 'user') {
+            $user->assignRole('user');
+        }
 
         session()->flash('message', 'RSS Item Trend Updated Successfully');
 
